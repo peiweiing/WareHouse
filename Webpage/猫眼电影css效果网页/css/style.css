@@ -7,7 +7,7 @@ body{
 
 
 #div1{
-	/* display: none; */
+	 display: none; 
 	padding: 0 80px;
 	width: 360px;
 	height: 430px;

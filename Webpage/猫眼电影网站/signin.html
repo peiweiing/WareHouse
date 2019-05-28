@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/signin.css">
+    
+    <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+    <script type="text/javascript" src="js/signin.js"></script>
+    <title>注册账号</title>
+</head>
+<body>
+    <div id="box">
+        <div id="box-lift">
+            <a href="index.html"><img src="images/201122.png" alt=""></a>    
+        </div>
+        <div id="box-right">
+
+            <div id="div1" >
+                <p>用户名注册</p>
+                <form class="div-1" method="get" action="PHP/signin.php">
+                    <input id="userId" class="in1" type="text" name="username" placeholder="用户名为6-16位，不能以数字开头"/><span></span> <br>
+                    <input class="in2" type="password" name="userpass" placeholder="请输入密码"><span></span><br>
+                    <input class="in3" type="submit" value="点击注册">
+                </form>
+                <div class="div-2">
+                        
+                    <div>
+                        <span><a href="#div2">手机号注册</a></span>
+                        <span><a href="forget.html">找回密码</a></span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="div2">
+                <p>手机号注册</p>
+                <form class="div-1"  method="get" action="PHP/signin.php">
+                    <input id="phoneId" class="in1" type="text" name="username" placeholder="手机号为11位数"><span></span> <br>
+                    <input class="in2" type="password" name="userpass" placeholder="请输入密码"><span></span><br>
+                    <input class="in3" type="submit" value="点击注册">
+                </form>
+                <div class="div-2">
+                    
+                    <div>
+                        <span><a href="#div1">用户名注册</a></span>
+                        <span><a href="forget.html">找回密码</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

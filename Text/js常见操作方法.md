@@ -109,9 +109,47 @@ tip：要与appendChild()或insertBefore()方法联合使用，将元素显示�
 
 
 
+### ES6中属性
 
+writable:true		为真表示这个属性可以修改
 
+enumerable:true		为真表示这个属性可以被遍历，枚举
 
+configurable:true		为真表示这个属性可不可以被delete删除
+
+`var person={};
+Object.defineProperty(person,'name',{
+	configurable:false,//表示属性可不可被delete删除
+	writable:false,//表示属性可不可被修改
+	enumerable:true,
+	value:'Bosn Ma'`
+`});`
+
+​	`person.name;//Bosn Ma
+​	person.name=1;//无法修改属性值
+​	person.name;//still Bosn Ma
+​	delete person.name;//false，无法删除属性`
+
+extensible（obj）		表示该对象属性是否可扩展
+		isExtensible（obj）	查看对象属性是否可扩展
+		preventExtensions（obj）	禁止该对象属性扩展
+
+seal（obj）		表示该对象属性不可扩展，不可删除
+		isSealed（obj）	查看对象属性是否不可扩展，不可删除
+
+freeze（obj）		表示该对象属性不可扩展，不可修改，不可删除
+		isFrozen（obj）	查看对象属性是否不可扩展，不可修改，不可删除
+
+### 对象序列化
+
+var obj = {x:1,y:true,z:[1,2,3],nullVal:null};
+	JSON.stringify(obj);//输出结果为"{"x":1,"y":true,"z":[1,2,3],"nullVal":null}"
+
+obj = {val:undefined,a:NaN,b:Infinity,c:new Date()};
+	JSON.stringify(obj);//输出结果为"{"a":null,"b":null,"c":2015-01-20T14:15:43.910Z"}"
+
+obj=JSON.parse("{"x":1}");
+	obj.x;//输出结果为1
 
 
 

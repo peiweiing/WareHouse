@@ -1,0 +1,124 @@
+
+#box{
+    display: flex;
+    justify-content: space-around;
+    margin: 5% auto;
+}
+#box #box-right{
+    margin: 3% 0;
+    height: 400px;
+    overflow: hidden;
+}
+#div1{
+   padding: 0 80px;
+   width: 360px;
+   height: 430px;
+   background-color:#fff;
+   text-align: right;
+}
+
+#div1 p{
+   text-align: center;
+   font-size: 30px;
+   color:red;
+}
+
+#div1 .div-1{
+   /* display: inline-block; */
+   margin: 50px 0;
+   text-align: center;
+}
+#div1 .div-1 .in1,
+#div1 .div-1 .in2{
+   margin: 10px 0;
+   width: 300px;
+   height: 40px;
+}
+#div1 .div-1 .in3{
+   margin-top: 20px;
+   color: #fff;
+   background-color: red;
+   width: 300px;
+   height: 30px;
+}
+#div1 .div-2{
+   text-align: center;
+}
+#div1 .in3{
+	border-radius:20px; 
+	outline: none;
+}
+#div1 .in3:hover{
+	box-shadow:5px 5px 10px gray;
+}
+#div1 .div-2 div{
+   display: flex;
+   justify-content: space-around;
+   margin-top: 20px;
+}
+#div1 .div-2 a{
+   color:blue;
+}
+#div1 .div-2 span:hover{
+   /* box-shadow:5px 5px 10px gray; */
+   text-shadow:gray 10px 10px 7px;
+   /* transition: 1s; */
+}
+
+
+#div2{
+    padding: 0 80px;
+    width: 360px;
+    height: 430px;
+    background-color:#fff;
+    text-align: right;
+ }
+ 
+ #div2 p{
+    text-align: center;
+    font-size: 30px;
+    color:red;
+ }
+
+ 
+ #div2 .div-1{
+    margin: 50px 0;
+    text-align: center;
+ }
+ #div2 .div-1 .in1,
+ #div2 .div-1 .in2{
+    margin: 10px 0;
+    width: 300px;
+    height: 40px;
+ }
+ #div2 .div-1 .in3{
+    margin-top:20px; 
+    color: #fff;
+    background-color: red;
+    width: 300px;
+    height: 30px;
+ }
+ #div2 .div-2{
+    text-align: center;
+ }
+ #div2 .in3{
+	border-radius:20px; 
+	outline: none;
+}
+#div2 .in3:hover{
+	box-shadow:5px 5px 10px gray;
+}
+ #div2 .div-2 div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+ }
+ #div2 .div-2 a{
+    color:blue;
+ }
+ #div2 .div-2 span:hover{
+    /* box-shadow:5px 5px 10px gray; */
+    text-shadow:gray 10px 10px 7px;
+    /* transition: 1s; */
+ }
+ 

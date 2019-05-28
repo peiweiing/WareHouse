@@ -52,7 +52,7 @@
 		`this.name = name;`
 		`//方法：`
 		`this.eat = function(str){`
-			` alert(this.name+"在吃"+str); ` 
+			` alert(this.name+"它是"+str); ` 
 		`}`
 	`}`
 
