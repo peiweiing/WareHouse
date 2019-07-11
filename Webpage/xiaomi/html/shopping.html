@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/shopping.css">
+</head>
+<body>
+    <nav>
+        <div>
+            <div class="left-g">
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="">
+                </a>
+                <h1>我的购物车</h1>
+            </div>
+            <div class="right-g">
+                <a href="login.html">登录</a>
+                <a href="signin.html">注册</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <table id="t" >
+            <tr>
+                <td><input type="checkbox">全选</td>
+                <td>商品名称</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>小计</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>小米9 全网通版 </td>
+                <td>2999元</td>
+                <td>
+                    <input class="reduceCls" type="button" value="-" />
+                    <span id="spanIdOne" style="padding-right: 5px;padding-left: 10px;">1</span>
+                    <input class="addcls" type="button" value="+" />
+                </td>
+                <td>
+                    <span id="spanThree">
+                        2999元
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>小米MIX3 全网通版</td>
+                <td>3299元</td>
+                <td>
+                    <input class="reduceCls" type="button" value="-" />
+                        <span id="spanIdTwo" style="padding-right: 5px;padding-left: 10px;">1</span>
+                    <input class="addcls" type="button" value="+" />
+                </td>
+                <td>
+                    <span>
+                        3299元
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Redmi Note 7 全网通</td>
+                <td>999元</td>
+                <td>
+                    <input class="reduceCls" type="button" value="-" />
+                    <span id="spanIdTwo" style="padding-right: 5px;padding-left: 10px;">1</span>
+                    <input class="addcls" type="button" value="+" />
+                </td>
+                <td>
+                    <span>
+                        999元
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="last-td" colspan="5" style="text-align: center;">
+                    <span>继续购物</span>
+                    <span style="font-size: 20px" id="spanTotalMoney">7297</span>元<input class="last-input" type="button" value="去结算">
+                </td>
+            </tr>
+        </table>
+    </main>
+
+    <footer>
+        连接服务器后引入页脚
+
+        连接服务器后引入页脚
+        
+        连接服务器后引入页脚
+    </footer>
+</body>
+</html>
+<script src="../js/jquery.js"></script>
+<script src="../js/shopping.js"></script>
+<script>
+    $(function(){
+        $("footer").load("footer.html",function(){
+            $("footer").click(function(){
+                alert($(this).html());
+            });
+        });
+        console.log("123456");
+    });
+</script>
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机详情页</title>
+    <link rel="stylesheet" href="../font/iconfont.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/details.css">
+</head>
+<body>
+    <header>
+        连接服务器后引入页头
+
+
+        连接服务器后引入页头
+
+
+        连接服务器后引入页头
+    </header>
+    <div class="yetou-t">
+        <div class="left-t">
+            <span>小米9</span>
+        </div>
+        <div class="right-t">
+            <span>概述</span>
+            <span>参数</span>
+        </div>
+    </div>
+    <div class="box-d">
+
+        <div id="bigBox" class="box-left">
+            <div id="mirrorBox" class="box-l">
+            </div>
+            <div id="showBox" class="box-r">
+            </div>
+        </div>
+
+        <div class="box-right element">
+            <h2>小米9</h2>
+            <span>「6GB+128GB/8GB+256GB，限时赠价值149元无线充电宝，更享花呗3/6期免息」全曲面轻薄设计，全息幻彩玻璃机身 / 骁龙855旗舰处理器 / 20W无线闪充，标配27W有线快充 / 索尼4800万超广角微距三摄 / 极速屏下指纹解锁 / 多功能NFC</span>
+            <p>小米自营</p>
+            <p>2999元</p>
+            <hr>
+            <div>
+                <h4>赠品</h4>
+                <a>赠小米无线充电宝</a>
+            </div>
+            <div>
+                <h4>赠品</h4>
+                <a>赠米粉卡</a>
+            </div>
+            <hr>
+            <div class="leixing">
+                <p>选择版本</p>
+                <input type="button" value="6GB+128GB">              
+                <input type="button" value="6GB+128GB">              
+                <input type="button" value="6GB+128GB"> 
+            </div>
+            <div class="leixing">
+                <p>选择颜色</p>  
+                <input type="button" value="全息幻彩紫">              
+                <input type="button" value="全息幻彩蓝">              
+                <input type="button" value="深空灰">              
+            </div>
+            <div class="heji">
+                <span>
+                    小米9 全网通版 6GB+128GB 全息幻彩紫
+                </span>
+                <p>总计 ：2999元</p>
+            </div>
+            <div class="inp">
+                <input id="go-shopp" type="submit" value="点击添加购物车">
+                <input type="button" value="喜欢">
+            </div>
+        </div>
+
+    </div>
+    <div class="tip">
+        <div class="tip-1">
+            <h3>价格说明</h3>
+            <div class="tip-2">
+                <span><b>划线价：</b>商品展示的划横线价格为参考价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在小米商城/小米有品/天猫小米官方旗舰店曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。</span>
+            </div>
+        </div>
+    </div>
+    <footer>
+        连接服务器后引入页脚
+
+
+        连接服务器后引入页脚
+
+        
+        连接服务器后引入页脚
+    </footer>
+</body>
+</html>
+   
+<script src="../js/jquery.js"></script>
+<script src="../js/header.js"></script>
+<script src="../js/details.js"></script>
+
+<script>
+    $(function(){
+        $("header").load("header.html",function(){
+            $("header").click(function(){
+                alert($(this).html());
+            });
+        });
+        console.log("123123");
+    });
+</script>
+<script>
+    $(function(){
+        $("footer").load("footer.html",function(){
+            $("footer").click(function(){
+                alert($(this).html());
+            });
+        });
+        console.log("123456");
+    });
+</script>
