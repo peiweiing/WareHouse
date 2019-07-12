@@ -24,7 +24,7 @@ Git基础命令
  git add *  将当前目录的所有文件全部添加到临时区
  git commit -m "提交声明"    将数据添加到本地仓库
  git remote add origin https://github.com/peiweiing/gittest.git  连接设置的仓库
- git push -u origin master 将本地数据提交到远程仓库
+ git push -u origin master 将本地数据提交到远程仓库  
 
 
   3. 第二次提交数据
