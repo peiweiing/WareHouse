@@ -65,4 +65,10 @@ git branch -m 分支名字{重命名分支}
 
 git merge dev {把dev分支的工作成果合并到master分支上，返回到master分支中（合并后可以删除dev分支，继续开发了 git branch -D dev）}
 
+esc	:wq 保存并退出
+
+esc	:q!强制退出不保存
+
 没有$符号的时候，输入大写Q解决问题
+
+git install 补全下载

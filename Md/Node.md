@@ -1,3 +1,65 @@
+Node本身是基于Commonjs模块规范设计的，所以模块是Node的组成；
+
+内置模块：Node天生提供给JS调取使用的
+
+第三方模块：别人写好的，我们可以基于npm安装使用
+
+自定义模块：自己创建一些模块
+
+CommonJS模块化设计的思想（AMD/CMD/ES6 MODULE都是模块设计思想）
+
+1. CommonJS规定，每个JS都是单独的模块（模块是私有的：里面涉及的值和变量以及函数等都是私有的，和其它JS文件中的内容是不冲突的）
+
+2. ComminJS中可以允许模块中的方法相互调用
+   B模块想要调取A模块中的方法（==>A导出，==>B导入）
+
+3. 导出
+   Commonjs给每个模块（每个js）中都设置了内置的变量/属性/方法
+   module：代表当前这个模块[object]
+   module.exports:模块的这个“属性”是用来到处当前模块的属性和方法的[object]
+   如：
+
+   ```
+   let sum=function sum(...arg){
+       return eval(arg.join("+"));
+   	//任意数求和
+   }；
+   let name=function(){
+       console.log('name');
+   }
+   //导出单个的
+   module.exports.sum=sum;
+   //导出多个的
+   module.exports={
+   	sum：sum,
+   	name:name
+   	}
+   ```
+
+   
+
+4. 导入
+   require：Commonjs提供的内置变量，用来导入模块的（其实导入的就是module，）
+   如：
+
+   ```
+   let a=require("./a.js");
+   a.sum()
+   
+   ```
+
+   
+
+**Node内置模块**，常用三个模块
+
+let fs=require("fs"),
+
+let http=require("http"),
+
+let url=require("url")
+
+
+
 ###1. nodejs特性 
  单线程
  非阻塞IO

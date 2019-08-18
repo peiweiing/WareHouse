@@ -1,9 +1,9 @@
 ## promise的作用
 
-有了 Promise 对象，就可以将异步操作以同步操作的流程表达出来，避免了层 层嵌套的回调函数。此外，Promise 对象提供统一的接口，使得控制异步操作更 加容易。 
+有了 Promise 对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise 对象提供统一的接口，使得控制异步操作更加容易。 
 
 Promise解决的问题：回调 
-	如：函数func1和func2，当我们需要在func1(func1函数里有异步操作)调用结 束后调用func2，一般的解决方案是func1（func2）。而promise的做法是 func1().then(func2);即Promise将回调模式的主从关系调换了一个位置，变成 了同等的只是顺序的关系
+	如：函数func1和func2，当我们需要在func1(func1函数里有异步操作)调用结束后调用func2，一般的解决方案是func1（func2）。而promise的做法是func1().then(func2);即Promise将回调模式的主从关系调换了一个位置，变成了同等的只是顺序的关系
 
 ## Promise的概念 
 

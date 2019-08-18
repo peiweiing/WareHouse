@@ -6,6 +6,7 @@ GIT常用命令
   $ git log
   $ git checkout .
   $ git reset --hard 版本号
+  $ git install 下载补全插件
 
 =====================
 团队协作开发
