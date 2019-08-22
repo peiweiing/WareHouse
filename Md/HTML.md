@@ -29,7 +29,11 @@
 
 * textarea 大的文本框，多行文本输入
 
-* <select><option>下拉选项菜单</option></select>
+* <select>
+      <option>下拉选项菜单</option>
+      <option>下拉选项菜单</option>
+      <option>下拉选项菜单</option>
+  </select>
 
 `<form action="提交到后台文件路径“>
     <label>

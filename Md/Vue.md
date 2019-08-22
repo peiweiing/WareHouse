@@ -360,6 +360,18 @@ new Vue({
 4. 第一次页面加载时会触发 beforeCreate, created, beforeMount, mounted 这几个钩子
 5. DOM 渲染在 mounted 中就已经完成了。
 
+
+
+## vue生命周期在真实场景下的业务应用
+
+`created`：进行ajax请求异步数据的获取、初始化数据
+ 	`mounted`：挂载元素内dom节点的获取
+ 	`nextTick`：针对单一事件更新数据后立即操作dom
+	 `updated`：任何数据的更新，如果要做统一的业务逻辑处理
+	 `watch`：监听具体数据变化，并做相应的处理
+
+
+
 ## Vue组件
 
 **什么是组件** （可重复使用的v层代码块）
