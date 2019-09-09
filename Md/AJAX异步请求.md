@@ -78,24 +78,24 @@ get: 速度快，传输的数据量小，安全性不好
 
 ## XMLHttpRequest的属性 
 
-​		**属性** 					**描述**
+​		**属性** 						**描述**
 
 onreadystatechange		每次状态改变所触发事件的事件处理程序 
 
-readyState 			对象状态值： 
-							0 = 未初始化（uninitialized）对象创建完毕就是0 
-							1 = 正在加载（loading） 1：对象设置完成后就是1.即调用open函数后
-							2 = 加载完毕（loaded）
-							3 = 交互（interactive）
-							4 = 完成（complete）
+readyState 				对象状态值： 
+								0 = 未初始化（uninitialized）对象创建完毕就是0 
+								1 = 正在加载（loading） 1：对象设置完成后就是1.即调用open函数后
+								2 = 加载完毕（loaded）
+								3 = 交互（interactive）
+								4 = 完成（complete）
 
-responseText		从服务器进程返回的数据的字符串形式 
+responseText			从服务器进程返回的数据的字符串形式 
 
-responseXML		从服务器进程返回的DOM兼容的文档数据对象 
+responseXML			从服务器进程返回的DOM兼容的文档数据对象 
 
-status			从服务器返回的数字代码，如404（未找到）或200（就绪） 
+status					从服务器返回的数字代码，如404（未找到）或200（就绪） 
 
-statusText		伴随状态码的字符串信息 
+statusText				伴随状态码的字符串信息 
 
 ## XMLHttpRequest的方法 
 

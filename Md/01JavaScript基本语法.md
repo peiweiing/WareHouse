@@ -8,8 +8,7 @@
 
 ## JS与H5的关系
 
-H5狭义上，指HTML的第五个版本；广义上指web前端的所有技术，由于web前端是在H5出现后开始火爆起来，所以，
-习惯上把web前端也叫H5。web前端开发也叫H5开发。
+H5狭义上，指HTML的第五个版本；广义上指web前端的所有技术，由于web前端是在H5出现后开始火爆起来，所以，习惯上把web前端也叫H5。web前端开发也叫H5开发。
  H5包括 HTML，CSS，JavaScript，等一切前端技术。
 
 ## Javascript组成部分：ECMAScript、BOM、DOM

@@ -5,14 +5,14 @@
 **Math对象的常用函数：**
 
 ​	Math.round(3.6) //四舍五入
-​		random() //返回0-1之间的随机数
-​		max(num1, num2) //返回较大的数
-​		min(num1, num2) //返回较小的数
-​		abs(num) //绝对值
-​		ceil(19.3) //向上取整“20”
-​		floor(11.8) //向下取整“11”
-​		pow(x,y) //x的y次方
-​		sqrt(num) //开平方
+​		Math.random() //返回0-1之间的随机数
+​		Math.max(num1, num2) //返回较大的数
+​		Math.min(num1, num2) //返回较小的数
+​		Math.abs(num) //绝对值
+​		Math.ceil(19.3) //向上取整“20”
+​		Math.floor(11.8) //向下取整“11”
+​		Math.pow(x,y) //x的y次方
+​		Math.sqrt(num) //开平方
 
 ## 随机数范围 
 

@@ -341,3 +341,38 @@ clip不显示省略号；ellipsis显示省略号；
 2. 元素在一行上显示，white-space：nowrap
 3. 溢出的元素要隐藏掉，overflow：hidden；
 4. 设置text-overflow：ellipsis；溢出的内容显示为省略号
+
+---
+
+**定位垂直居中：**
+
+```
+	p{
+		width: 200px;
+		height: 100px;
+		background-color: blue;
+		position: absolute;
+		top: 50%;
+		margin-top: -50px;
+	}
+```
+
+**定位水平居中：**
+
+```
+	p{
+		width: 200px;
+		height: 100px;
+		background-color: blue;
+		position: absolute;
+		left: 50%;
+		margin-left: -50px;
+	}
+	p{
+        width: 200px;
+		height: 100px;
+		background-color: blue;
+		margin:0 auto;	
+	}
+```
+

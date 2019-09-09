@@ -161,8 +161,16 @@ function test(){
 	split 根据分隔符、拆分成数组
 		var str=“aaa1bbb1cc1d1”;
 		var arr=str.split(“1”);
-	大小写转换：
-		toLowerCase、toUpperCase
+
+
+
+## 大小写转换：
+
+toLowerCase（转换为小写）
+
+toUpperCase（转换为大写）
+
+
 
 ## ==与===
 

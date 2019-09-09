@@ -64,10 +64,9 @@ DOM0级很浓的绑定味道，DOM2真正体会注册的概念。
 		 alert('this is a div');
 	}
 	var div1=document.getElementById("a");
-	div1.addEventListener("click",dianjia,false); 	//为click事件注册事件处理程序
-	div1.addEventListener("click",function(){alert("注册的匿名事件处理程序");},false);
-	//匿名方式为click事件注册第二个事件处理程序
-	div1.removeEventListener(“click”, dianjia, false);//移除事件处理程序，匿名添加的事件处理函数无法移除。
+	div1.addEventListener("click",dianjia,false);	//为click事件注册事件处理程序
+	div1.addEventListener("click",function(){alert("注册的匿名事件处理程序");},false);	//匿名方式为click事件注册第二个事件处理程序
+	div1.removeEventListener(“click”, dianjia, false);	//移除事件处理程序，匿名添加的事件处理函数无法移除。
 
 ## IE事件注册 
 
@@ -102,14 +101,19 @@ IE8及其以前的版本不支持DOM2级注册方式，自己提供了attachEven
 
 ## 几种事件绑定方式对比
 
-​		DOM0----------DOM2-----------IE
-事件名		事件名以“on”开头-----事件名前没有“on”-----事件名以“on”开头
-冒泡		支持-----支持，最后属性设为false-----支持
-捕获		不支持-----支持，最后属性设为true-----不支持
-阻止冒泡		event.stopPropagation()-----event.stopPropagation()-----event.cancelBubble=true
-多处理程序注册	不支持-----支持-----支持，执行顺序与注册顺序相反
-删除事件绑定		设置为空或null-----用处理程序名删除，匿名绑定不能删除-----用处理程序名删除，匿名绑定不能删除
-兼容性		全兼容-----非IE-----IE
+DOM0，DOM2，IE
+
+|                | DOM0                    | DOM2                               | IE                                 |
+| -------------- | ----------------------- | ---------------------------------- | ---------------------------------- |
+| 事件名         | 事件名以“on”开头        | 事件名前没有“on”                   | 事件名以“on”开头                   |
+| 冒泡           | 支持                    | 支持，最后属性设为false            | 支持                               |
+| 捕获           | 不支持                  | 支持，最后属性设为true             | 不支持                             |
+| 阻止冒泡       | event.stopPropagation() | event.stopPropagation()            | event.cancelBubble=true            |
+| 多处理程序注册 | 不支持                  | 支持                               | 支持，执行顺序与注册顺序相反       |
+| 删除事件绑定   | 设置为空或null          | 用处理程序名删除，匿名绑定不能删除 | 用处理程序名删除，匿名绑定不能删除 |
+| 兼容性         | 全兼容                  | 非IE                               | IE                                 |
+
+
 
 ## event对象 
 
@@ -118,18 +122,22 @@ event对象：
 	在W3C标准中，直接在函数中声明该参数即可
 		btn.onclick = function(event) { //event在调用和函数定义时，都写上也是考虑兼容问题};
 	兼容性写法，支持老版本的IE
-		var evt = event ? event : window.event;或者 var evt = event || window.event;
+		var evt = event ? event : window.event;
+	或者 var evt = event || window.event;
 
-**属性/方法	-----	类型	-----	读写	-----	说明**
-	bubbles	---	Boolean	---	只读	---	事件是否冒泡
-	cancelable	---	Boolean	---	只读	---	是否可以取消事件的默认行为
-	currentTarget	---	Element	---	只读	---	当前正在处理事件的那个元素（IE是srcElement）
-	detail	---	Integer	---	只读	---	与事件相关的细节信息
-	eventPhase	---	Integer	---	只读	---	阶段：1捕获，2处于目标，3冒泡
-	preventDefault()	---	Function	---	只读	---	取消事件的默认行为（例： keydown）
-	stopPropagation()	---	Function	---	只读	---	取消进一步的捕获或冒泡
-	target	---	Element	---	只读	---	事件的目标
-	type	---	String	---	只读	---	事件的类型
+| 属性/方法         | 类型     | 读写 | 说明                                         |
+| ----------------- | -------- | ---- | -------------------------------------------- |
+| bubbles           | Boolean  | 只读 | 事件是否冒泡                                 |
+| cancelable        | Boolean  | 只读 | 是否可以取消事件的默认行为                   |
+| currentTarget     | Element  | 只读 | 当前正在处理事件的那个元素（IE是srcElement） |
+| detail            | Integer  | 只读 | 与事件相关的细节信息                         |
+| eventPhase        | Integer  | 只读 | 阶段：1捕获，2处于目标，3冒泡                |
+| preventDefault()  | Function | 只读 | 取消事件的默认行为（例： keydown）           |
+| stopPropagation() | Function | 只读 | 取消进一步的捕获或冒泡                       |
+| target            | Element  | 只读 | 事件的目标                                   |
+| type              | String   | 只读 | 事件的类型                                   |
+
+
 
 ## event对象的键盘事件相关属性
 

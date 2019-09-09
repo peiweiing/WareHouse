@@ -89,7 +89,8 @@ alert(“”) 显示带有一段消息和一个确认按钮的警告框。
 
 confirm(“”) 显示带有一段消息以及确认按钮和取消按钮的对话框。
  		确认框，一般在删除时，会使用。
-	prompt(“”) 显示可提示用户输入的对话框。
+
+prompt(“”) 显示可提示用户输入的对话框。
 
 ## 打开窗口 
 
@@ -205,7 +206,7 @@ document.createElement(HTML标签名) 	//创建一个元素节点
 	node.removeChild(oldChild) 	//删除 oldChild子节点。
 	node.replaceChild(newChild, oldChild) 	//用newChild节点替换oldChild节点
 	注：子节点中包含文本节点、属性节点和元素节点。
-		通过nodeType属性来判断节点类型，1代表元素节点，2代表属性节点，3代表文本节点
+		通过nodeType属性来判断节点类型，1代表元素节点（标签元素），2代表属性节点（标签的属性），3代表文本节点（文本）
 
 ## 表格的增删改
 
@@ -253,15 +254,17 @@ window.onscroll页面滚动事件
 
 ## 操作节点的属性 
 
-node.属性名 的方式访问和操作节点的属性，仅限于常规属性
-		tagName ：表示元素节点的标签名
-		innerHTML ：获取元素节点里的内容
-		outerHTML: 包含元素自身的标签.(非 W3C DOM 规范)
-		 innerText ：获取元素内文本内容html标签被忽略（非 W3C DOM 规范）
-		id ：元素节点的 id 名称
-		title ：元素节点的 title 属性值（鼠标悬停时的提示）
-		style ： 获取CSS行内样式属性值
-		 className：CSS元素的类 (不可以使用class)		
+node.属性名 的方式访问和操作节点的属性，仅限于常规属性		
+
+​	tagName ：表示元素节点的标签名
+​		className：CSS元素的类名 (不可以使用class)
+​		id ：元素节点的 id 名称
+
+​	title ：元素节点的 title 属性值（鼠标悬停时的提示）
+​		style ： 获取CSS行内样式属性值
+​		innerHTML ：获取元素节点里的内容
+​		outerHTML: 包含元素自身的标签.(非 W3C DOM 规范)
+​		innerText ：获取元素内文本内容html标签被忽略（非 W3C DOM 规范）
 
 ​	node. setAttribute(“属性名”,”值”) 的方式访问常规属性和自定义属性
 ​		node. getAttribute(“属性名”) 的方式访问常规属性和自定义属性
@@ -272,7 +275,7 @@ node.属性名 的方式访问和操作节点的属性，仅限于常规属性
 对于样式获取尽量使用currentStyle和getComputedStyle
 	修改样式使用style
 
-样式获取的兼容性处理：
+**样式获取的兼容性处理**：
 	function getStyle(obj, attr){
 		if(obj.currentStyle) {
 			 return obj.currentStyle[attr];

@@ -2,20 +2,73 @@
 
 Node.js是一个基于Chrome V8引擎(编译成原生机器码)的让JavaScript运行在服务器端的运行环境，它让JavaScript的触角伸到了服务器端。
 
-**Node.js特性：1.单线程；2.非阻塞IO；3.事件驱动。**
+Node本身是基于Commonjs模块规范设计的，所以模块是Node的组成；
+
+内置模块：Node天生提供给JS调取使用的
+	第三方模块：别人写好的，我们可以基于npm安装使用
+	自定义模块：自己创建一些模块
+
+**CommonJS模块化设计的思想**（AMD/CMD/ES6 MODULE都是模块设计思想）
+
+1. CommonJS规定，每个JS都是单独的模块（模块是私有的：里面涉及的值和变量以及函数等都是私有的，和其它JS文件中的内容是不冲突的）
+
+2. ComminJS中可以允许模块中的方法相互调用
+   B模块想要调取A模块中的方法（==>A导出，==>B导入）
+
+3. 导出
+   Commonjs给每个模块（每个js）中都设置了内置的变量/属性/方法
+   module：代表当前这个模块[object]
+   module.exports:模块的这个“属性”是用来到处当前模块的属性和方法的[object]
+   如：
+
+   ```
+   let sum=function sum(...arg){
+       return eval(arg.join("+"));
+   	//任意数求和
+   }；
+   let name=function(){
+       console.log('name');
+   }
+   //导出单个的
+   module.exports.sum=sum;
+   //导出多个的
+   module.exports={
+   	sum：sum,
+   	name:name
+   	}
+   ```
+
+4. 导入
+   require：Commonjs提供的内置变量，用来导入模块的（其实导入的就是module，）
+   如：
+
+   ```
+   let a=require("./a.js");
+   a.sum()
+   ```
+
+   
+
+**Node内置模块**，常用三个模块
+		let fs=require("fs"),
+		let http=require("http"),
+		let url=require("url")
+
+**Node.js特性：**
+		**1.单线程；2.非阻塞IO；3.事件驱动。**
 		1.单线程 NodeJS不会为每个连接客户创造一个新的线程,仅用一个线程
 		2.单非阻塞式IO NodeJS在访问高IO操作后不会等待其完成，而是立即去执行其他代码，操作完成后会使用回调函数返回。保证高效的利用当前线程的cpu 不造成硬件浪费
 		3.事件驱动 通过事件来驱动整个程序的进行。由于是单线程，所以把高io的操作 就会移动到事件队列中等待完成，完成后通过回调函数的方式返回给线程来进行处理。这个循环处理的过程称之为：事件环
 
-**模块有优点：**
+**模块的优点：**
 		**减少代码重复，提高利用率**
 		**划分功能，方便管理**
 		**方便使用第三方模块**
 	**模块** node中以模块来划分功能，一个js是一个模块，多个模块相互引用形成一个模块化式项目
 	模块书写 js文件因为作用域的问题，变量和函数只能在当前文件中进行使用，如果在当前模块外引用，必须使用exports/module.exports(特定的类型使用)让这些内容进行暴漏，使用的时候使用require来进行引入。
 	**http模块** 是node重要的核心模块
-	webServer：方便的实现webServer服务器的创建
-	方法：createServer(function(req,res){})进行服务器创建  listen()来监听端口
+		webServer：方便的实现webServer服务器的创建
+		方法：createServer(function(req,res){})进行服务器创建  listen()来监听端口
 	**url模块** 对当前的url进行相关操作
 	**路由**：通过URL路径来区分不同的请求，从而找到
 不同的功能模块来进行执行。
@@ -166,7 +219,7 @@ res.render()就是将我们的数据填充到模板后展示出完整的页面�
     
     </body>
     </html>
-    
+
 
 注册页面
 
@@ -219,8 +272,9 @@ http.createServer(function(req,res){
         if(pathurl.pathname=="/favicon.ico"){
             return;
         }
-    
-    
+
+
+​    
     // 路由
         if(pathurl.pathname=="/login"){
             res.end("您执行了登陆的后台功能");

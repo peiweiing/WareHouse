@@ -302,7 +302,7 @@ new Vue({
 
 
 
-## Vue.js过滤器
+## Vue.js过滤器（filter）
 
 **过滤器作用**
 		在不改变数据的情况下，输出前端需要的格式数据
@@ -831,6 +831,7 @@ export const store=new Vuex.Store({
 	getters:{},//相当于Vue组件中学习的计算属性,getters属性主要是对于state中数据的一种过滤；组件使用，在vue组件计算属性中使用this.$store.gettters.xxxx
 	mutations:{},//里面装着一些改变数据方法的集合，就是把处理数据逻辑方法全部放在mutations里面（当触发事件的时候想改变state数据的时候使用mutations）；需要通过事件来触发mutations里面的方法。this.$store.commit(“调用的mutations的名字”)
 	actions:{}//类似于mutations都是对state的数据进行修改，actions不直接修改数据而是调用mutation来实现数据的修改（因为直接使用mutations来修改数据是同步的，如果想异步修改数据那么在这个时候就要使用actions）；
+	plugins:  插件，监听state的变化；
 ```
 
 ​	
