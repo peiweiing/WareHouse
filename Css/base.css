@@ -10,9 +10,6 @@ a{
 a:hover{
 	color:#cd0200;text-decoration:underline;
 }
-em{
-	font-style:normal;
-}
 ul,ol,li{
 	list-style:none;
 }
@@ -21,21 +18,6 @@ img{
 }
 table{
 	border-collapse:collapse;border-spacing:0;
-}
-p{
-	word-wrap:break-word;
-}
-.img{
-	max-width: 100%;
-}
-.url-img{
-	background-size:cover;
-}
-.ind{
-	text-indent:2em;
-}
-.ind10{
-	text-indent:10px;
 }
 .noborder{
 	border:0;
