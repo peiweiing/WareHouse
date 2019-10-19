@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式图片</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .container {
+            width: 100%;
+            margin:0 auto;
+            background-color: #ccc;
+        }
+
+        @media(min-width:768px) {
+            .container{
+                width:750px;
+            }
+        }
+
+        @media(min-width:992px){
+            .container{
+                width:970px;
+            }
+        }
+
+        @media(min-width:1200px) {
+            .container{
+                width:1170px;
+            }
+        }
+
+
+
+
+        .shocase1 img {
+            max-width: 100%;
+        }
+        
+        .showcase2 {
+            margin-top:20px;
+            padding-top:56%;
+            background:url("./images/banner01-small.jpg");
+            background-size: cover;
+        }
+        
+        @media (min-width:992px) {
+            .showcase2 {
+                background: url("./images/banner01_middle.jpg");
+            }
+        }
+        @media (min-width:1200px) {
+            .showcase2 {
+                background: url("./images/banner01.jpg");
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>图片响应式</h1>
+        <hr>
+
+        <div class="shocase1">
+            <img src="./images/banner01.jpg" alt="">
+        </div>
+
+
+        <div class="showcase2">
+
+        </div>
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>局部组件</title>
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <!-- npm install --save vue -->
+    <style>
+        /* #demo{
+            width: 200px;
+            height: 200px;
+            border:1px solid black;
+        } */
+    </style>
+</head>
+<body>
+
+    <!-- 创建视图 view -->
+    <div id="demo">
+        <!-- 局部组件定义，只能在当前定义组件的vue实例中进行使用 -->
+        <!-- 如果调用组件名有大写，则要所以大写转小写，并在每个大写前面加- -->
+        <myheader></myheader>
+    </div>
+
+    <!--组件外置模板，写在vue视图层外面-->
+    <template id="boxa">
+        <div>
+            <div @click="fun()" v-for="(v,i) in arr">
+                    {{v.txt}}
+            </div>
+        </div>
+    </template>
+
+    <script>
+        // 2.创建视图模型 vm层 等同于vue实例；Vue 首字母必须大写
+        new  Vue({//局部组件定义在vue实例中
+            // 3.el关联v（视图）
+            el:"#demo",
+            // 4.创建m模型（数据）
+            data:{//vue中实例的data写法
+            },
+            components:{//局部组件
+                // 组件的名字：对象（就是当前组件的一些属性）
+                "myheader":{
+                    template:"#boxa",
+                    data(){
+                        return{
+                            arr:[
+                                {txt:"首页",src:"/#"},
+                                {txt:"电影",src:"/#"},
+                                {txt:"影院",src:"/#"},
+                                {txt:"榜单",src:"/#"},
+                                {txt:"热点",src:"/#"},
+                                {txt:"商城",src:"/#"},
+                            ]
+                        }
+                    },
+                    methods: {
+                        fun(){
+                            alert(this.txt)
+                        }
+                    },
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

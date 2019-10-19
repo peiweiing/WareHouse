@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全局组件</title>
+    <script src="../node_modules/vue/dist/vue.min.js"></script>
+    <!-- npm install --save vue -->
+    <style>
+        /* #demo{
+            width: 200px;
+            height: 200px;
+            border:1px solid black;
+        } */
+    </style>
+</head>
+<body>
+        
+    <!-- 创建视图 view -->
+    <div id="demo">
+
+        <!-- 如果调用组件名有大写，则要所以大写转小写，并在每个大写前面加- -->
+        <myheader></myheader>
+    </div>
+
+    <!--全局组件外置模板，写在vue视图层外面-->
+    <template id="boxa">
+        <div>
+        <!-- 内容需外层容器包裹 -->
+            <div @click="fun()" v-for="(v,i) in arr">
+                    {{v.txt}}
+            </div>
+        </div>
+    </template>
+
+    <script>
+        // 创建基本的全局组件，全局组件就是在哪个vue实例中都可以使用的组件
+        // 第一个参数是组件的名字，
+        // 第二个参数是对象，里面包含组件的一些属性
+        Vue.component("myheader",{
+            // template:"<div><p>nihao全局内置组件</p><p>nihao全局内置组件</p></div>"//该写法为内置组件，组件的多个标签需要用一个容器包裹
+            template:"#boxa",//全局组件的外置模板写法
+            data(){//vue中组件的data写法
+                return{
+                    arr:[
+                        {txt:"首页",src:"/#"},
+                        {txt:"电影",src:"/#"},
+                        {txt:"影院",src:"/#"},
+                        {txt:"榜单",src:"/#"},
+                        {txt:"热点",src:"/#"},
+                        {txt:"商城",src:"/#"},
+                    ]
+                }
+            },
+            methods: {
+                fun(){
+                    alert("aaa");
+                }
+            },
+        })
+
+        // 2.创建视图模型 vm层 等同于vue实例；Vue 首字母必须大写
+        new  Vue({//局部组件定义在vue实例中
+            // 3.el关联v（视图）
+            el:"#demo",
+            // 4.创建m模型（数据）
+            data:{//vue中实例的data写法
+            }
+        })
+
+    </script>
+</body>
+</html>

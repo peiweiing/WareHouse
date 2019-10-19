@@ -1,3 +1,12 @@
+
+body{
+    font:12px "宋体","Arial Narrow",HELVETICA;
+    background:#fff;
+}
+
+/* 
+盒子类型
+ */
 .none{
     display: none!important;
 }
@@ -7,6 +16,10 @@
 .blocks{
     display: inline-block!important;
 }
+
+/* 
+弹性盒
+ */
 .flex{
     display:flex!important;
 }
@@ -15,6 +28,26 @@
     justify-content: center!important;
     align-items: center!important;
 }
+
+/* 
+弹性盒换行排序
+ */
+.F-wrap{
+    display: flex!important;
+    flex-flow: wrap!important;
+}
+
+/* 
+弹性盒垂直排序
+ */
+.F-column{
+    display: flex!important;
+    flex-flow: column!important;
+}
+
+/* 
+弹性盒X轴排列
+ */
 .FX-c{
     display: flex!important;
     justify-content: center!important;
@@ -27,6 +60,10 @@
     display: flex!important;
     justify-content: space-around!important;
 }
+
+/* 
+弹性盒Y轴排列
+ */
 .FY-c{
     display: flex!important;
     align-items: center!important;
@@ -39,37 +76,232 @@
     display: flex!important;
     align-items: flex-start!important;
 }
-.F-wrap{
-    display: flex!important;
-    flex-flow: wrap!important;
+
+
+.f1{
+    flex: 1;
 }
-.F-column{
-    display: flex!important;
-    flex-flow: column!important;
+.f2{
+    flex: 2;
 }
+.f3{
+    flex: 3;
+}
+.f4{
+    flex: 4;
+}
+.f5{
+    flex: 5;
+}
+
+.o1{
+    order: 1
+}
+.o2{
+    order: 2
+}
+.o3{
+    order: 3
+}
+.o4{
+    order: 4
+}
+.o5{
+    order: 5
+}
+
+
+/* 
+盒子外边距
+ */
 .m-1rem{
     margin: 1rem!important;
+}
+.m-2rem{
+    margin: 2rem!important;
+}
+.m-3rem{
+    margin: 3rem!important;
+}
+.m-4rem{
+    margin: 4rem!important;
+}
+.m-5rem{
+    margin: 5rem!important;
+}
+
+.ml-1rem{
+    margin-left: 1rem!important;
 }
 .ml-2rem{
     margin-left: 2rem!important;
 }
+.mr-1rem{
+    margin-right: 1rem!important;
+}
 .mr-2rem{
     margin-right: 2rem!important;
+}
+.mt-1rem{
+    margin-top: 1rem!important;
 }
 .mt-2rem{
     margin-top: 2rem!important;
 }
+.mb-1rem{
+    margin-bottom: 1rem!important;
+}
 .mb-2rem{
     margin-bottom: 2rem!important;
+}
+
+/* 
+盒子外边距X轴
+ */
+.mx-02rem{
+    margin-left: 0.2rem!important;
+    margin-right: 0.2rem!important;
+}
+.mx-04rem{
+    margin-left: 0.4rem!important;
+    margin-right: 0.4rem!important;
+}
+.mx-06rem{
+    margin-left: 0.6rem!important;
+    margin-right: 0.6rem!important;
+}
+.mx-08rem{
+    margin-left: 0.8rem!important;
+    margin-right: 0.8rem!important;
+}
+.mx-1rem{
+    margin-left: 1rem!important;
+    margin-right: 1rem!important;
+}
+.mx-102rem{
+    margin-left: 1.2rem!important;
+    margin-right: 1.2rem!important;
+}
+.mx-104rem{
+    margin-left: 1.4rem!important;
+    margin-right: 1.4rem!important;
+}
+.mx-106rem{
+    margin-left: 1.6rem!important;
+    margin-right: 1.6rem!important;
+}
+.mx-108rem{
+    margin-left: 1.8rem!important;
+    margin-right: 1.8rem!important;
 }
 .mx-2rem{
     margin-left: 2rem!important;
     margin-right: 2rem!important;
 }
+.mx-202rem{
+    margin-left: 2.2rem!important;
+    margin-right: 2.2rem!important;
+}
+.mx-204rem{
+    margin-left: 2.4rem!important;
+    margin-right: 2.4rem!important;
+}
+.mx-206rem{
+    margin-left: 2.6rem!important;
+    margin-right: 2.6rem!important;
+}
+.mx-208rem{
+    margin-left: 2.8rem!important;
+    margin-right: 2.8rem!important;
+}
+.mx-3rem{
+    margin-left: 3rem!important;
+    margin-right: 3rem!important;
+}
+.mx-4rem{
+    margin-left: 4rem!important;
+    margin-right: 4rem!important;
+}
+.mx-5rem{
+    margin-left: 5rem!important;
+    margin-right: 5rem!important;
+}
+
+/* 
+盒子外边距Y轴
+ */
+.my-02rem{
+    margin-top: 0.2rem!important;
+    margin-bottom: 0.2rem!important;
+}
+.my-04rem{
+    margin-top: 0.4rem!important;
+    margin-bottom: 0.4rem!important;
+}
+.my-06rem{
+    margin-top: 0.6rem!important;
+    margin-bottom: 0.6rem!important;
+}
+.my-08rem{
+    margin-top: 0.8rem!important;
+    margin-bottom: 0.8rem!important;
+}
+.my-1rem{
+    margin-top: 1rem!important;
+    margin-bottom: 1rem!important;
+}
+.my-102rem{
+    margin-top: 1.2rem!important;
+    margin-bottom: 1.2rem!important;
+}
+.my-104rem{
+    margin-top: 1.4rem!important;
+    margin-bottom: 1.4rem!important;
+}
+.my-106rem{
+    margin-top: 1.6rem!important;
+    margin-bottom: 1.6rem!important;
+}
+.my-108rem{
+    margin-top: 1.8rem!important;
+    margin-bottom: 1.8rem!important;
+}
 .my-2rem{
     margin-top: 2rem!important;
     margin-bottom: 2rem!important;
 }
+.my-202rem{
+    margin-top: 2.2rem!important;
+    margin-bottom: 2.2rem!important;
+}
+.my-204rem{
+    margin-top: 2.4rem!important;
+    margin-bottom: 2.4rem!important;
+}
+.my-206rem{
+    margin-top: 2.6rem!important;
+    margin-bottom: 2.6rem!important;
+}
+.my-208rem{
+    margin-top: 2.8rem!important;
+    margin-bottom: 2.8rem!important;
+}
+.my-3rem{
+    margin-top: 3rem!important;
+    margin-bottom: 3rem!important;
+}
+.my-4rem{
+    margin-top: 4rem!important;
+    margin-bottom: 4rem!important;
+}
+.my-5rem{
+    margin-top: 5rem!important;
+    margin-bottom: 5rem!important;
+}
+
+/* 
+盒子内边距
+ */
 .p-1rem{
     padding: 1rem!important;
 }
@@ -85,21 +317,173 @@
 .pb-2rem{
     padding-bottom: 2rem!important;
 }
+
+/* 
+盒子内边距X轴
+ */
+.px-02rem{
+    padding-left: 0.2rem!important;
+    padding-right: 0.2rem!important;
+}
+.px-04rem{
+    padding-left: 0.4rem!important;
+    padding-right: 0.4rem!important;
+}
+.px-06rem{
+    padding-left: 0.6rem!important;
+    padding-right: 0.6rem!important;
+}
+.px-08rem{
+    padding-left: 0.8rem!important;
+    padding-right: 0.8rem!important;
+}
+.px-1rem{
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
+}
+.px-102rem{
+    padding-left: 1.2rem!important;
+    padding-right: 1.2rem!important;
+}
+.px-104rem{
+    padding-left: 1.4rem!important;
+    padding-right: 1.4rem!important;
+}
+.px-106rem{
+    padding-left: 1.6rem!important;
+    padding-right: 1.6rem!important;
+}
+.px-108rem{
+    padding-left: 1.8rem!important;
+    padding-right: 1.8rem!important;
+}
 .px-2rem{
     padding-left: 2rem!important;
     padding-right: 2rem!important;
+}
+.px-202rem{
+    padding-left: 2.2rem!important;
+    padding-right: 2.2rem!important;
+}
+.px-204rem{
+    padding-left: 2.4rem!important;
+    padding-right: 2.4rem!important;
+}
+.px-206rem{
+    padding-left: 2.6rem!important;
+    padding-right: 2.6rem!important;
+}
+.px-208rem{
+    padding-left: 2.8rem!important;
+    padding-right: 2.8rem!important;
+}
+.px-3rem{
+    padding-left: 3rem!important;
+    padding-right: 3rem!important;
+}
+.px-4rem{
+    padding-left: 4rem!important;
+    padding-right: 4rem!important;
+}
+.px-5rem{
+    padding-left: 5rem!important;
+    padding-right: 5rem!important;
+}
+
+/* 
+盒子内边距Y轴
+ */
+.py-02rem{
+    padding-top: 0.2rem!important;
+    padding-bottom: 0.2rem!important;
+}
+.py-04rem{
+    padding-top: 0.4rem!important;
+    padding-bottom: 0.4rem!important;
+}
+.py-06rem{
+    padding-top: 0.6rem!important;
+    padding-bottom: 0.6rem!important;
+}
+.py-08rem{
+    padding-top: 0.8rem!important;
+    padding-bottom: 0.8rem!important;
+}
+.py-1rem{
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.py-102rem{
+    padding-top: 1.2rem!important;
+    padding-bottom: 1.2rem!important;
+}
+.py-104rem{
+    padding-top: 1.4rem!important;
+    padding-bottom: 1.4rem!important;
+}
+.py-106rem{
+    padding-top: 1.6rem!important;
+    padding-bottom: 1.6rem!important;
+}
+.py-108rem{
+    padding-top: 1.8rem!important;
+    padding-bottom: 1.8rem!important;
 }
 .py-2rem{
     padding-top: 2rem!important;
     padding-bottom: 2rem!important;
 }
-.f-0.6rem{
+.py-202rem{
+    padding-top: 2.2rem!important;
+    padding-bottom: 2.2rem!important;
+}
+.py-204rem{
+    padding-top: 2.4rem!important;
+    padding-bottom: 2.4rem!important;
+}
+.py-206rem{
+    padding-top: 2.6rem!important;
+    padding-bottom: 2.6rem!important;
+}
+.py-208rem{
+    padding-top: 2.8rem!important;
+    padding-bottom: 2.8rem!important;
+}
+.py-3rem{
+    padding-top: 3rem!important;
+    padding-bottom: 3rem!important;
+}
+.py-4rem{
+    padding-top: 4rem!important;
+    padding-bottom: 4rem!important;
+}
+.py-5rem{
+    padding-top: 5rem!important;
+    padding-bottom: 5rem!important;
+}
+
+/* 
+字体大小
+ */
+.f-04rem{
+    font-size: 0.4rem!important;
+}
+.f-06rem{
     font-size: 0.6rem!important;
 }
-.f-1.2rem{
+.f-08rem{
+    font-size: 0.8rem!important;
+}
+.f-1rem{
+    font-size: 1rem!important;
+}
+.f-102rem{
     font-size: 1.2rem!important;
 }
-.f-1.8rem{
+.f-106rem{
+    font-size: 1.6rem!important;
+}
+.f-108rem{
     font-size: 1.8rem!important;
 }
 
