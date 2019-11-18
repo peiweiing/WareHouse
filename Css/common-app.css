@@ -1,4 +1,4 @@
-
+﻿
 /*
 公共样式
  */
@@ -11,13 +11,18 @@ img{border:0;vertical-align:middle;}
 table{border-collapse:collapse;border-spacing:0;}
 
 /*
-水平居中 
+水平对齐 
 */
-t-center{text-align: center;}
+.t-left{text-align: left;}
+.t-center{text-align: center;}
+.t-right{text-align:right;}
+
 /* 
-垂直居中 
+垂直对齐 
 */
- v-middle{vertical-align: middle;}
+.v-top{vertical-align: top;}
+.v-middle{vertical-align: middle;}
+.v-bottom{vertical-align: bottom;}
  
 /* 
 盒子类型 
@@ -67,23 +72,35 @@ t-center{text-align: center;}
 /* 字体不换行 */
 .f-nowrap{white-space: nowrap;}
 
- /* 
- 元素占比
-  */
+
+/* 
+元素占比
+*/
 .f1{flex: 1;}
 .f2{flex: 2;}
 .f3{flex: 3;}
 .f4{flex: 4;}
 .f5{flex: 5;}
 
+/* 
+元素排列顺序
+*/
 .o1{order: 1}
 .o2{order: 2}
 .o3{order: 3}
 .o4{order: 4}
 .o5{order: 5}
-
-.w1{width: 100%;}
-.w2{width: 49%;}
-.w3{width: 33%;}
-.w4{width: 24%;}
-.w5{width: 19%;}
+     
+/*
+百分比
+*/
+.w1{width: 10%;}
+.w2{width: 20%;}
+.w3{width: 30%;}
+.w4{width: 40%;}
+.w5{width: 50%;}
+.w6{width: 60%;}
+.w7{width: 70%;}
+.w8{width: 80%;}
+.w9{width: 90%;}
+.w10{width: 100%;}

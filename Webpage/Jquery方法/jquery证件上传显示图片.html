@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>证件上传</title>
+    <link rel="stylesheet" type="text/css" href="__TMPL__/public/assets/css/index.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <style>
+    /*
+    公共样式
+    */
+    html{font-size: 26.67vw;}
+    body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;}
+    a{color:#172c45;text-decoration:none;}
+    a:hover{color:#cd0200;text-decoration:underline;}
+    ul,ol,li{list-style:none;}
+    img{border:0;vertical-align:middle;}
+    table{border-collapse:collapse;border-spacing:0;}
+
+    /*
+    水平对齐 
+    */
+    .t-left{text-align: left;}
+    .t-center{text-align: center;}
+    .t-right{text-align:right;}
+    /* 
+    垂直对齐 
+    */
+    .v-top{vertical-align: top;}
+    .v-middle{vertical-align: middle;}
+    .v-bottom{vertical-align: bottom;}
+    
+    /* 
+    盒子类型 
+    */
+    .none{display: none!important;}
+    .block{display: block!important;}
+    .blocks{display: inline-block!important;}
+    .float-l{float: left;}
+    .float-r{float: right;}
+
+    /* 
+    弹性盒 
+    */
+    .flex{display:flex!important;}
+    
+    /* 
+    弹性盒XY轴居中
+     */
+    .F-xy{display: flex!important;justify-content: center!important;align-items: center!important;}
+    
+    /* 
+    弹性盒换行排序 
+    */
+    .F-wrap{display: flex!important;flex-flow: wrap!important;}
+    
+    /* 
+    弹性盒垂直排序 
+    */
+    .F-column{display: flex!important;flex-flow: column!important;}
+    
+    /* 
+    弹性盒X轴排列 
+    */
+    .FX-c{display: flex!important;justify-content: center!important;}
+    .FX-sb{display: flex!important;justify-content: space-between!important;}
+    .FX-sa{display: flex!important;justify-content: space-around!important;}
+    .FX-fe{display: flex!important;justify-content: flex-end!important;}
+
+    /* 
+    弹性盒Y轴排列 
+    */
+    .FY-c{display: flex!important;align-items: center!important;}
+    .FY-fe{display: flex!important;align-items: flex-end!important;}
+    .FY-fs{display: flex!important;align-items: flex-start!important;}
+    
+    /* 
+    字体样式 
+    */
+    /* 字体加粗 */
+    .f-bold{font-weight: bold;}
+    /* 字体不换行 */
+    .f-nowrap{white-space: nowrap;}
+
+    /* 
+    元素占比
+    */
+    .f1{flex: 1;}
+    .f2{flex: 2;}
+    .f3{flex: 3;}
+    .f4{flex: 4;}
+    .f5{flex: 5;}
+
+     /* 
+     元素排列顺序
+     */
+    .o1{order: 1}
+    .o2{order: 2}
+    .o3{order: 3}
+    .o4{order: 4}
+    .o5{order: 5}
+     
+     /*
+     百分比
+     */
+    .w1{width: 10%;}
+    .w2{width: 20%;}
+    .w3{width: 30%;}
+    .w4{width: 40%;}
+    .w5{width: 50%;}
+    .w6{width: 60%;}
+    .w7{width: 70%;}
+    .w8{width: 80%;}
+    .w9{width: 90%;}
+    .w10{width: 100%;}
+    </style>
+    <style>
+        .box{
+            font-size: 0.15rem;
+        }
+        .w3{
+            text-align: right;
+        }
+        .w7 img{
+            width: 80px;
+            height: 80px;
+            border: 1px solid purple;
+        }
+        .w7 .w4 div{
+            width: 30px;
+            height: 30px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid orange;
+        }
+        .w7 .w4 img{
+            width: 30px;
+            height: 30px;
+            display: none;
+        }
+        .spancs{
+            padding: 5%;
+            margin-right: 10%   ;
+            border: 1px solid palegoldenrod;
+        }
+        .spancs :first-child{
+            align-items: flex-start;
+        }
+        .spancs .w7{
+            height: 30px;
+            align-items: flex-start;
+        }
+        .FY-fs{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form class="box" role="form" method="post" action="{:cmf_plugin_url('HzMsgBorad://Do/addmsgsss');}" enctype="multipart/form-data">
+        <div class="">
+            <div>
+                <!-- <p>招商说明<span>INVESTMENT DESCRIPTION：</span></p> -->
+                <!-- <img src="__TMPL__/public/assets/images/zssm.png" style="width:70%;height:35px;"> -->
+            </div>
+            <div class="">
+                <span>适合公司/企业入驻，提供营业执照等资料即可入驻</span>
+            </div>
+
+            <div class="F-column">
+                <div class="FY-fs">
+                    <div class="w3 FX-fe">
+                        <span class="">法定代表人身份证正面：</span>
+                    </div>
+                    <div class="w7">
+                        <input id="x1" class="none" type="file" required name="faimage" placeholder=""/>
+                        <img id="s1">
+                    </div>
+                </div>
+                <div class="FY-fs">
+                    <div class="w3 FX-fe">
+                        <span>法定代表人身份证反面：</span>
+                    </div>
+                    <div class="w7">
+                        <input id="x2" class="none" type="file" required name="faimage" placeholder=""/>
+                        <img id="s2">
+                    </div>
+                </div>
+                <div class="FY-fs">
+                    <div class="w3 FX-fe">
+                        <span class="">营业执照：</span>
+                    </div>
+                    <div class="w7">
+                        <input id="x3" class="none" type="file" required name="faimage" placeholder=""/>
+                        <img id="s3">
+                    </div>
+                </div>
+                <div class="FY-fs">
+                    <div class="w3 FX-fe">
+                        <span>开户许可证：</span>
+                    </div>
+                    <div class="w7">
+                        <input id="x4" class="none" type="file" required name="faimage" placeholder=""/>
+                        <img id="s4">
+                    </div>
+                </div>
+                <div class="FY-fs">
+                    <div class="w3 FX-fe">
+                        <span>品牌授权：</span>
+                    </div>
+                    <div class="F-column w5 spancs">
+                        <div class="FY-fs">
+                            <span class="w3 FX-fe">品牌名称：</span>
+                            <input class="w7" type="text" required name="pinname" placeholder=""/>
+                        </div>
+                        <div class="FY-fs">
+                            <span class="w3 FX-fe">授权截止日期：</span>
+                            <input class="w7" type="text" required name="end_time" placeholder=""/>
+                        </div>
+                        <div class="FY-fs">
+                            <span class="w3 FX-fe">授权证明：</span>
+                            <div class="FX-sb w7">
+                                <div class="w4">
+                                    <input id="x5" class="none" type="file" required name="start_time" placeholder=""/>
+                                    <div id="lshang">
+                                        <span>+</span>
+                                        <span>上传</span>
+                                    </div>
+                                    <img id="s5">
+                                </div>
+                                <div class="w4">
+                                    <input id="x6" class="none" type="file" required name="end_time" placeholder=""/>
+                                    <div id="rshang">
+                                        <span>+</span>
+                                        <span>上传</span>
+                                    </div>
+                                    <img id="s6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden"  name="status" value="1" />
+                <div class="FX-sa FY-c">
+                    <button data-wait="1500">
+                        <span class=""><a href="{:url('portal/list/news71')}">上一步</a></span>
+                    </button>
+                    <button type="mit" class="" data-wait="1500">
+                        <!-- <img src="__TMPL__/public/assets/images/button.png" style="width:100%;"> -->
+                        <span class="">下一步</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#s1").click(function(){
+            $("#x1").click();
+        });
+        $("#s2").click(function(){
+            $("#x2").click();
+        });
+        $("#s3").click(function(){
+            $("#x3").click();
+        });
+        $("#s4").click(function(){
+            $("#x4").click();
+        });
+        $("#s5").click(function(){
+            $("#x5").click();
+        });
+        $("#s6").click(function(){
+            $("#x6").click();
+        });
+        $("#lshang").click(function(){
+            $("#x5").click();
+            $("#lshang").hide();
+            $("#s5").show();
+
+        });
+        $("#rshang").click(function(){
+            $("#x6").click();
+            $("#rshang").hide();
+            $("#s6").show();
+        });
+    }); 
+    $(function () {
+        $("#x1").change(function () {
+            var $file = $(this);
+            var fileObj = $file[0];
+            var windowURL = window.URL || window.webkitURL;
+            var dataURL;
+            var $img = $("#s1");
+
+            if (fileObj && fileObj.files && fileObj.files[0]) {
+                dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                $img.attr('src', dataURL);
+            } else {
+                dataURL = $file.val();
+                var imgObj = document.getElementById("s1");
+                // 两个坑:
+                // 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+                // 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+                imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+
+            }
+        });
+        $("#x2").change(function () {
+            var $file = $(this);
+            var fileObj = $file[0];
+            var windowURL = window.URL || window.webkitURL;
+            var dataURL;
+            var $img = $("#s2");
+
+            if (fileObj && fileObj.files && fileObj.files[0]) {
+                dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                $img.attr('src', dataURL);
+            } else {
+                dataURL = $file.val();
+                var imgObj = document.getElementById("s2");
+                // 两个坑:
+                // 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+                // 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+                imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+
+            }
+        });
+        $("#x3").change(function () {
+            var $file = $(this);
+            var fileObj = $file[0];
+            var windowURL = window.URL || window.webkitURL;
+            var dataURL;
+            var $img = $("#s3");
+
+            if (fileObj && fileObj.files && fileObj.files[0]) {
+                dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                $img.attr('src', dataURL);
+            } else {
+                dataURL = $file.val();
+                var imgObj = document.getElementById("s3");
+                // 两个坑:
+                // 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+                // 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+                imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+
+            }
+        });
+        $("#x4").change(function () {
+            var $file = $(this);
+            var fileObj = $file[0];
+            var windowURL = window.URL || window.webkitURL;
+            var dataURL;
+            var $img = $("#s4");
+
+            if (fileObj && fileObj.files && fileObj.files[0]) {
+                dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                $img.attr('src', dataURL);
+            } else {
+                dataURL = $file.val();
+                var imgObj = document.getElementById("s4");
+                // 两个坑:
+                // 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+                // 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+                imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+
+            }
+        });
+        $("#x5").change(function () {
+            var $file = $(this);
+            var fileObj = $file[0];
+            var windowURL = window.URL || window.webkitURL;
+            var dataURL;
+            var $img = $("#s5");
+
+            if (fileObj && fileObj.files && fileObj.files[0]) {
+                dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                $img.attr('src', dataURL);
+            } else {
+                dataURL = $file.val();
+                var imgObj = document.getElementById("s5");
+                // 两个坑:
+                // 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+                // 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+                imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+
+            }
+        });
+        $("#x6").change(function () {
+            var $file = $(this);
+            var fileObj = $file[0];
+            var windowURL = window.URL || window.webkitURL;
+            var dataURL;
+            var $img = $("#s6");
+
+            if (fileObj && fileObj.files && fileObj.files[0]) {
+                dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                $img.attr('src', dataURL);
+            } else {
+                dataURL = $file.val();
+                var imgObj = document.getElementById("s6");
+                // 两个坑:
+                // 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+                // 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+                imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+
+            }
+        });
+    });
+</script>
+</html>
