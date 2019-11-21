@@ -113,24 +113,7 @@
 .w9{width: 90%;}
 .w10{width: 100%;}
  
-/* 
-字体样式 
-*/
 
- /* 字体大小 */
- .f-04rem{font-size: 0.4rem!important;}
- .f-06rem{font-size: 0.6rem!important;}
- .f-08rem{font-size: 0.8rem!important;}
- .f-1rem{font-size: 1rem!important;}
- .f-102rem{font-size: 1.2rem!important;}
- .f-106rem{font-size: 1.6rem!important;}
- .f-108rem{font-size: 1.8rem!important;}
- .f-2rem{font-size: 2rem!important;}
- /* 字体加粗 */
- .f-bold{font-weight: bold;}
- /* 字体不换行 */
- .f-nowrap{white-space: nowrap;}
- 
 /* 
 盒子外边距 
 */
