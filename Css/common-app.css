@@ -1,14 +1,46 @@
-﻿
 /*
 公共样式
- */
+*/
 html{font-size: 26.67vw;}
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;}
+body{font-size:0.1rem;background:#fff;}
 a{color:#172c45;text-decoration:none;}
 a:hover{color:#cd0200;text-decoration:underline;}
 ul,ol,li{list-style:none;}
 img{border:0;vertical-align:middle;}
 table{border-collapse:collapse;border-spacing:0;}
+
+/* 
+浮动、定位、隐藏
+*/
+/* 浮动 */
+.float-l{float: left!important;}
+.float-r{float: right!important;}
+/* 定位 */
+.pon{position:static!important;}
+.por{position: relative!important;}
+.poa{position: absolute!important;}
+.pof{position: fixed!important;}
+.pos{position: sticky!important;}
+/* 隐藏 */
+.none{display: none;}
+.hidden{visibility: hidden;}
+.opacity{opacity: 0;}
+.overflow{overflow: hidden;}
+.overflow-x{overflow-x: hidden;}
+.overflow-y{overflow-y: hidden;}
+
+/* 
+字体样式 
+*/
+/* 字体加粗 */
+.f-bold{font-weight: bold;}
+/* 字体不换行 */
+.f-nowrap{white-space: nowrap;}
+/* 首行缩进 */
+.f-indent{text-indent: 2em;}
+/* 字符间距 */
+.f-spacing{letter-spacing: 1em;}
 
 /*
 水平对齐 
@@ -18,39 +50,52 @@ table{border-collapse:collapse;border-spacing:0;}
 .t-right{text-align:right;}
 
 /* 
-垂直对齐 
+垂直对齐
 */
 .v-top{vertical-align: top;}
 .v-middle{vertical-align: middle;}
 .v-bottom{vertical-align: bottom;}
- 
+
+/* 
+元素占比
+*/
+.f1{flex: 1;}.f2{flex: 2;}.f3{flex: 3;}.f4{flex: 4;}.f5{flex: 5;}
+
+/* 
+元素排列顺序
+*/
+.o1{order: 1}.o2{order: 2}.o3{order: 3}.o4{order: 4}.o5{order: 5}
+
+/*
+百分比
+*/
+.w1{width: 10%;}.w2{width: 20%;}.w3{width: 30%;}.w4{width: 40%;}.w5{width: 50%;}
+.w6{width: 60%;}.w7{width: 70%;}.w8{width: 80%;}.w9{width: 90%;}.w10{width: 100%;} 
+
 /* 
 盒子类型 
 */
-.none{display: none!important;}
 .block{display: block!important;}
 .blocks{display: inline-block!important;}
-.float-l{float: left;}
-.float-r{float: right;}
 
 /* 
-弹性盒 
+弹性盒
 */
 .flex{display:flex!important;}
 .F-xy{display: flex!important;justify-content: center!important;align-items: center!important;}
- 
+
 /* 
-弹性盒换行排序 
+弹性盒换行排序
 */
 .F-wrap{display: flex!important;flex-flow: wrap!important;}
- 
+
 /* 
-弹性盒垂直排序 
+弹性盒垂直排序
 */
- .F-column{display: flex!important;flex-flow: column!important;}
- 
+.F-column{display: flex!important;flex-flow: column!important;}
+
 /* 
-弹性盒X轴排列 
+弹性盒X轴排列
 */
 .FX-c{display: flex!important;justify-content: center!important;}
 .FX-sb{display: flex!important;justify-content: space-between!important;}
@@ -58,49 +103,8 @@ table{border-collapse:collapse;border-spacing:0;}
 .FX-fe{display: flex!important;justify-content: flex-end!important;}
 
 /* 
-弹性盒Y轴排列 
+弹性盒Y轴排列
 */
 .FY-c{display: flex!important;align-items: center!important;}
 .FY-fe{display: flex!important;align-items: flex-end!important;}
 .FY-fs{display: flex!important;align-items: flex-start!important;}
- 
-/* 
-字体样式 
-*/
-/* 字体加粗 */
-.f-bold{font-weight: bold;}
-/* 字体不换行 */
-.f-nowrap{white-space: nowrap;}
-
-
-/* 
-元素占比
-*/
-.f1{flex: 1;}
-.f2{flex: 2;}
-.f3{flex: 3;}
-.f4{flex: 4;}
-.f5{flex: 5;}
-
-/* 
-元素排列顺序
-*/
-.o1{order: 1}
-.o2{order: 2}
-.o3{order: 3}
-.o4{order: 4}
-.o5{order: 5}
-     
-/*
-百分比
-*/
-.w1{width: 10%;}
-.w2{width: 20%;}
-.w3{width: 30%;}
-.w4{width: 40%;}
-.w5{width: 50%;}
-.w6{width: 60%;}
-.w7{width: 70%;}
-.w8{width: 80%;}
-.w9{width: 90%;}
-.w10{width: 100%;}
