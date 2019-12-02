@@ -9,19 +9,20 @@ a:hover{color:#cd0200;text-decoration:underline;}
 ul,ol,li{list-style:none;}
 img{border:0;vertical-align:middle;}
 table{border-collapse:collapse;border-spacing:0;}
+.height{height:calc(100vh)}.width{width: calc(100vh);}
 
 /* 
-浮动、定位、隐藏
+定位、浮动、隐藏
 */
-/* 浮动 */
-.float-l{float: left!important;}
-.float-r{float: right!important;}
 /* 定位 */
 .pon{position:static!important;}
 .por{position: relative!important;}
 .poa{position: absolute!important;}
 .pof{position: fixed!important;}
 .pos{position: sticky!important;}
+/* 浮动 */
+.float-l{float: left!important;}
+.float-r{float: right!important;}
 /* 隐藏 */
 .none{display: none;}
 .hidden{visibility: hidden;}
