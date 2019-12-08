@@ -63,42 +63,37 @@ E:only-of-type 同级的情况下选择唯一的元素
 
 
 
+**3 状态伪类选择器**
+
 :root  ；:not ；:empty；:target；
 
-
 :root 大概等价与html，但是还有一定区别:
-1. 优先级不同
-    root的优先级高于html
-    2.范围不同
-    html 只适用于html，root在其他的一些语言里也可以用到。
 
+1. 优先级不同
+   root的优先级高于html
+   2.范围不同
+   html 只适用于html，root在其他的一些语言里也可以用到。
 
 :not 取相反的操作
 例如: ul li:not(.a) 选择的是类名不是a的li元素
 
-:empty  选取为空的元素
-:target  选取目标元素
-
-**3 状态伪类选择器**
-:focus 
-:checked
-::selection
 :first-letter    选取第一个字符
 :first-line      选取第一行
 
+:empty 选择为空的元素
+:target 选区目标元素
 :focus  元素获得焦点
 :checked  元素被选中
+:selection 表示被光标选取中
 
-::selection 表示被光标选取中
-
-
-
-:enabled
-:disabled 
-:read-write
-:read-only 
-:before
-:after  
+`:not() `    伪类可以将一个或多个以逗号分隔的选择器列表作为其参数，设置处参数以外元素的样式。选择器中不得包含另一个否定选择符或[伪元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Pseudo-elements)。
+:hover   光标（鼠标指针）悬停在元素上时提供关联的样式。
+:enabled    [伪类](https://developer.mozilla.org/zh-CN/CSS/Pseudo-classes) `:enabled` 表示任何启用的（enabled）元素。
+:disabled    [伪类](https://developer.mozilla.org/zh-CN/CSS/Pseudo-classes)表示任何被禁用的元素。
+:read-write  代表一个元素（例如可输入文本的 input元素）可以被用户编辑。
+:read-only  表示元素不可被用户编辑的状态（如锁定的文本输入框）。
+:before  将内容添加在所有该标签前面，并设置插入内容的样式。
+:after  将内容追加在所有该标签后面，并设置插入内容的样式。
 
 
 :enabled 选择的是可用状态的标签
@@ -131,6 +126,19 @@ css3中定义，一个冒号表示伪类，两个冒号表示伪元素。
 伪类和伪元素有什么区别?
 伪类:当标签进行css样式操作的时候，使用伪类选择操作的样式相当于作用到了元素的“本身”。
 伪元素:当标签进行样式操作的时候，相当于将样式作用到了一个"虚拟的标签"的身上。
+
+
+
+## 日常使用html标签
+
+header	页面头部
+nav	导航内容
+banner	轮播图
+main	主要内容
+main-left	
+main-right	
+content	文本正中
+footer	页面脚注
 
 #  column-count 属性
 
@@ -366,7 +374,6 @@ background-clip 背景裁切
 		border-image-repeat  图片重复  
 
 
-​	
 ​	border-image-slice：图像切片
 ​		值：number  | 百分比  {1,4}
 ​		Tip：
@@ -374,14 +381,17 @@ background-clip 背景裁切
 ​		指定边框图像顶部，右侧，底部，左侧内偏移量。没有具体的单位值，px em rem都不可以。
 ​		只可以用数字或者百分比。
 
-
-​	
 ​	border-image-width  图片宽度  
 ​		值：lenghth | number | 百分比 {1,4}
 ​		
 ​	border-image-outset  图片外凸
 ​	
 ​	border-image-repeat  图片重复 
+
+​	border-color	边框颜色（上、右、下、左）
+
+​	transparent	颜色透明
+
 ***
 
 ### 盒子阴影
