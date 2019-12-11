@@ -1,7 +1,20 @@
-/*
-公共样式
-*/
-html{font-size: 26.67vw;}
+html{font-size: 100px;}/* 需要把得到的像素值/100px,转换为rem单位*/
+
+    @media only screen and (min-width: 320px) and (max-width: 767px) {
+       .div{
+           font-size: 0.12rem;
+       }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1023px){
+        .div{
+            font-size: 0.14rem;
+        }
+    }
+    @media only screen and (min-width:1024px) and (max-width:1300px){
+        .div{
+            font-size: 0.16rem;
+        }
+    }
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;}
 body{font-size:0.1rem;background:#fff;}
 a{color:#172c45;text-decoration:none;}
@@ -10,7 +23,6 @@ ul,ol,li{list-style:none;}
 img{border:0;vertical-align:middle;}
 table{border-collapse:collapse;border-spacing:0;}
 .height{height:calc(100vh)}.width{width: calc(100vh);}
-
 /* 
 定位、浮动、隐藏
 */
@@ -109,3 +121,4 @@ table{border-collapse:collapse;border-spacing:0;}
 .FY-c{display: flex!important;align-items: center!important;}
 .FY-fe{display: flex!important;align-items: flex-end!important;}
 .FY-fs{display: flex!important;align-items: flex-start!important;}
+
