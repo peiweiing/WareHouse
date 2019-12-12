@@ -19,12 +19,6 @@ img{
 table{
 	border-collapse:collapse;border-spacing:0;
 }
-.noborder{
-	border:0;
-}
-/* 清除浮动*/
-.clear:after{
-	content:"";
-	display:block;
-	clear:both
-}
+
+
+.red{color: red;background-color: red;border:2px solid red;}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS轮播</title>
+    <style>
+      #container {
+        width: 400px;
+        height: 300px;
+        overflow: hidden;
+      }
+      #photo {
+        width: 1200px;
+        animation: switch 5s ease-out infinite;
+      }
+      #photo > div {
+        float: left;
+        width: 400px;
+        height: 300px;
+      }
+      @keyframes switch {
+        0%, 25% {
+          margin-left: 0;
+        }
+        35%, 60% {
+          margin-left: -400px;
+        }
+        70%, 100% {
+          margin-left: -800px;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div id="container">
+    <div id="photo">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+</div>
+  
+</body>
+</html>
