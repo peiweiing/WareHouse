@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+    <style>
+        html{font-size: 26.67vw;}
+        /* html{font-size: 625%;} */
+        body{font-size: 0.16rem;}
+        .myheader{
+            display: flex;
+        }
+        .mymain{
+            width: 100%;
+            display: flex;
+            flex-flow: wrap;
+        }
+        .arrcs{
+            margin: 10px;
+        }
+        .brrcs{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+        }
+        .jisuan{display: flex;}
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>首页</li>
+            <li>电影</li>
+            <li>影院</li>
+            <li>榜单</li>
+            <li>热点</li>
+        </ul>
+    </div>
+
+    <!-- 创建视图 view -->
+    <div id="vue">
+        <!-- 局部组件定义，只能在当前定义组件的vue实例中进行使用 -->
+        <!-- 如果调用组件名有大写，则要所以大写转小写，并在每个大写前面加- -->
+        <myheader class="myheader"></myheader>
+        <mymain class="mymain"></mymain>
+        <jisuan class="jisuan"></jisuan>
+    </div>
+
+    <!--组件外置模板，写在vue视图层外面-->
+    <template id="myheader">
+        <page>
+            <div class="arrcs" @click="fun()" v-for="(v,i) in arr">
+                    {{v.txt}}
+            </div>
+        </page>
+    </template>
+    <template id="mymain">
+        <page>
+            <div class="brrcs" @click="fun()" v-for="(v,i) in brr">
+                <img width="40px" height="40px" :src="v.src" alt="">
+                <span>{{v.txt}}</span>
+            </div>
+        </page>
+    </template>
+    <template id="jisuan">
+        <page>
+            <div @click="if(counter>1){counter -= 1}">
+                -
+            </div>
+            <div>
+                {{counter}}
+            </div>
+            <div @click="counter += 1">
+                +
+            </div>
+        </page>
+    </template>
+
+
+    <script>
+        // 2.创建视图模型 vm层 等同于vue实例；Vue 首字母必须大写
+        new  Vue({//局部组件定义在vue实例中
+            // 3.el关联v（视图）
+            el:"#vue",
+            // 4.创建m模型（数据）
+            data:{//vue中实例的data写法
+            },
+            components:{//局部组件
+                // 组件的名字：对象（就是当前组件的一些属性）
+                "myheader":{
+                    template:"#myheader",
+                    props:'',
+                    data(){
+                        return{
+                            counter:1,
+                            arr:[
+                                {txt:"首页",src:"/#"},
+                                {txt:"电影",src:"/#"},
+                                {txt:"影院",src:"/#"},
+                                {txt:"榜单",src:"/#"},
+                                {txt:"热点",src:"/#"},
+                                {txt:"商城",src:"/#"},
+                            ],
+                        }
+                    },
+                    methods: {
+                        fun(){
+                            alert(this.txt)
+                            alert('aaa')
+                        }
+                    },
+                },
+                "mymain":{
+                    template:'#mymain',
+                    props:'',
+                    data(){
+                        return{
+                            title:'henhao',
+                            brr:[
+                                {src:"img/sh3.png",txt:'全部'},
+                                {src:"img/sh4.png",txt:'订单'},
+                                {src:"img/sh6.png",txt:'已收货'},
+                                {src:"img/sh7.png",txt:'未收货'},
+                                {src:"img/sh9.png",txt:'退款'}
+                            ]
+                        }
+                    },
+                    methods:{
+                        fun(){
+                            alert("bbb")
+                            alert(this.title)
+                        }
+                    }
+                },
+                "jisuan":{
+                    template:'#jisuan',
+                    props:'',
+                    data(){
+                        return{
+                            counter:1,
+                        }
+                    },
+                    methods:{
+                        
+                    }
+                },
+            }
+
+        })
+    </script>
+</body>
+</html>

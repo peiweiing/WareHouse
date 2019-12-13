@@ -29,7 +29,7 @@ a:hover{color:#cd0200;text-decoration:underline;}
 ul,ol,li{list-style:none;}
 img{border:0;vertical-align:middle;}
 table{border-collapse:collapse;border-spacing:0;}
-.height{height:calc(100vh)}.width{width: calc(100vw);}
+.height{height:calc(100vh);}.width{width: calc(100vw);}
 
 /* 
 定位、浮动、隐藏
@@ -85,25 +85,35 @@ table{border-collapse:collapse;border-spacing:0;}
 */
 .w1{width: 10%;}.w2{width: 20%;}.w3{width: 30%;}.w4{width: 40%;}.w5{width: 50%;}
 .w6{width: 60%;}.w7{width: 70%;}.w8{width: 80%;}.w9{width: 90%;}.w10{width: 100%;} 
+.w16{width: 16%;}.w26{width: 26%;}.w36{width: 36%;}
+.w46{width: 46%;}.w56{width: 56%;}.w66{width: 66%;}
+.w76{width: 76%;}.w86{width: 86%;}.w96{width: 96%;}
 
 
+
+/*
+变形：旋转、缩放、扭曲、移动及矩阵变形
+*/
+.transform{transform: rotate | scale | skew | translate |matrix;}
+.rotate{transform:rotate(30deg);}.scale{transform:scale(2,2);}
+.skew{transform:skew(30deg,10deg);}.translate{transform:translate(100px,20px);}
+.matrix{transform:matrix(<number>,<number>,<number>,<number>,<number>,<number>);}
+/* 改变元素基点 */
+.origin{transform-origin: x-axis y-axis z-axis;}
+/* 过渡用时 */
+.ttion{
+    -moz-transition: all .2s;-webkit-transition: all .2s;
+    -o-transition: all .2s;transition: all .2s!important;
+}
 
 /* 
 元素占比
 */
+/* flex{flex-grow flex-shrink flex-basis}元素：放大比例 缩小比例 分配多余空间 */
 .f1{flex: 1;}.f2{flex: 2;}.f3{flex: 3;}.f4{flex: 4;}.f5{flex: 5;}
-.f6{flex: 6;}.f7{flex: 7;}.f8{flex: 8;}.f9{flex: 9;}.f10{flex: 10;}
-/* .f10{flex: 0 0 10%;}.f20{flex: 0 0 20%;}.f25{flex: 0 0 25%;}
-.f33{flex: 0 0 33.3%;}.f46{flex: 0 0 46%;}.f96{flex: 0 0 96%;} */
-
-/* 旋转rotate、缩放scale、扭曲skew、移动translate及矩阵变形matrix。 */
-/* transform: rotate | scale | skew | translate |matrix; */
-
-
-/* 
-元素排列顺序
-*/
-.o1{order: 1}.o2{order: 2}.o3{order: 3}.o4{order: 4}.o5{order: 5}
+.f6{flex: 6;}.f7{flex: 7;}.f8{flex: 8;}.f9{flex: 9;}
+.f10{flex:0 0 10%}.f20{flex: 0 0 20%;}.f25{flex: 0 0 25%;}
+.f33{flex: 0 0 33.3%;}.f50{flex: 0 0 50%;}.f100{flex: 0 0 100%;}
 
 /* 
 盒子类型 
