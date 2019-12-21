@@ -74,12 +74,12 @@ table{border-collapse:collapse;border-spacing:0;}
 
 
 /*
-变形：旋转、缩放、扭曲、移动及矩阵变形
+css3变形：旋转、缩放、扭曲、移动及矩阵变形
 */
-.transform{transform: rotate | scale | skew | translate |matrix;}
+/* .transform{transform: rotate | scale | skew | translate |matrix;} */
 .rotate{transform:rotate(30deg);}.scale{transform:scale(2,2);}
 .skew{transform:skew(30deg,10deg);}.translate{transform:translate(100px,20px);}
-.matrix{transform:matrix(<number>,<number>,<number>,<number>,<number>,<number>);}
+/* .matrix{transform:matrix(<number>,<number>,<number>,<number>,<number>,<number>);} */
 /* 改变元素基点 */
 .origin{transform-origin: x-axis y-axis z-axis;}
 /* 过渡用时 */
