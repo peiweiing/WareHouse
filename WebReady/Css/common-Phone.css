@@ -1,6 +1,6 @@
 
 html {font-size: 625%; /*100 ÷ 16 × 100% = 625%*/}
-/* 设计稿px换算直接/100即可得到rem值。*/ 
+/* 设计稿px换算直接/100即可得到rem值。移动平台*/ 
     @media all and (min-width:360px) and (max-width:374px) and (orientation:portrait) {
         html { font-size: 703%; }
     }

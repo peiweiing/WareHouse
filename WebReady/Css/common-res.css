@@ -1,6 +1,6 @@
 
 html{font-size: 100px;}
-/* 需要把得到的像素值/100px,转换为rem单位*/
+/* 需要把得到的像素值/100px,转换为rem单位。多终端响应式*/
     @media only screen and (min-width: 320px) and (max-width: 767px) {
        .div{
            font-size: 0.12rem;

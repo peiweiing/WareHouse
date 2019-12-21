@@ -1,7 +1,7 @@
 /*
 公共样式
 */
-/* 设计稿px换算直接/200即可得到rem值。*/
+/* 设计稿px换算直接/200即可得到rem值。Vue-Cli*/
 html{font-size: 26.67vw;}
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;}
 body{font-size:0.1rem;background:#fff;}
