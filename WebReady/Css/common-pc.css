@@ -1,7 +1,7 @@
 /*
 公共样式
 */
-html{font-size:10px;}/*1rem等于10px。固定尺寸用px，自适应用rem*/
+html{font-size:10px;}/*1rem等于10px。固定尺寸用px，自适应用rem和%百分比*/
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;}
 body{min-width:1280px;max-width:100%;background:#fff;}
 a{color:#172c45;text-decoration:none;}
