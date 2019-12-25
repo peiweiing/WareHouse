@@ -105,39 +105,64 @@ css3变形：旋转、缩放、扭曲、移动及矩阵变形
 /* 
 盒子类型 
 */
-.block{display: block!important;}
-.blocks{display: inline-block!important;}
+.block{display: block!important;}/*块级元素*/
+.blocks{display: inline-block!important;}/*内联元素*/
 .boxing{box-sizing: border-box!important;}
-
-/* 
-弹性盒
-*/
 .flex{display: box;display: -webkit-box;
     display: -moz-box;display: -ms-flexbox;
-    display: -webkit-flex;display:flex!important;}
-.F-xy{display: flex!important;justify-content: center!important;align-items: center!important;}
+    display: -webkit-flex;display:flex!important;
+}/*块级弹性盒*/
+.flexs{display: box;display: -webkit-box;
+    display: -moz-box;display: -ms-flexbox;
+    display: -webkit-flex;display:inline-flex!important;
+}/*内联弹性盒*/
 
-/* 
-弹性盒换行排序
-*/
-.F-wrap{display: flex!important;flex-flow: wrap!important;}
 
-/* 
-弹性盒垂直排序
+/* 
+纵横居中
 */
-.F-column{display: flex!important;flex-flow: column!important;}
+.F-xy{display: flex!important;justify-content: center!important;align-items: center!important;}
 
-/* 
-弹性盒X轴排列
+/* 
+自上至下换行排序
 */
-.FX-c{display: flex!important;justify-content: center!important;}
-.FX-sb{display: flex!important;justify-content: space-between!important;}
-.FX-sa{display: flex!important;justify-content: space-around!important;}
-.FX-fe{display: flex!important;justify-content: flex-end!important;}
+.F-wrap{display: flex!important;flex-wrap: wrap!important;}
+/* 
+自底向上换行排序
+*/
+.F-wrapr{display: flex!important;flex-wrap: wrap-reverse!important;}
 
-/* 
-弹性盒Y轴排列
+/* 
+X轴排序
 */
-.FY-c{display: flex!important;align-items: center!important;}
-.FY-fe{display: flex!important;align-items: flex-end!important;}
-.FY-fs{display: flex!important;align-items: flex-start!important;}
+.FX{display:flex!important;flex-direction: row!important;}
+/* 
+X轴反向排序
+*/
+.FX-r{display:flex!important;flex-direction: row-reverse!important;}
+
+/* 
+Y轴排序
+*/
+.FY{display: flex!important;flex-direction: column!important;}
+/* 
+Y轴反向排序
+*/
+.FY-r{display: flex!important;flex-direction: column-reverse!important;}
+
+/* 
+X轴排列
+*/
+.FX-c{display: flex!important;justify-content: center!important;}
+.FX-sb{display: flex!important;justify-content: space-between!important;}
+.FX-sa{display: flex!important;justify-content: space-around!important;}
+.FX-fs{display: flex!important;justify-content: flex-start!important;}
+.FX-fe{display: flex!important;justify-content: flex-end!important;}
+
+/* 
+Y轴排列
+*/
+.FY-c{display: flex!important;align-items: center!important;}
+.FY-b{display: flex!important;align-items: baseline!important;}/*以首行基线对齐*/
+.FY-fe{display: flex!important;align-items: flex-end!important;}
+.FY-fs{display: flex!important;align-items: flex-start!important;}
