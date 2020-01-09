@@ -95,12 +95,13 @@
 
     var t;
     var index = 0;
+    var num = $("#lunboimg .lunbo").length+1
     //自动播放
     t = setInterval(play, 3000)
 
     function play() {
         index++;
-        if (index > 2) {
+        if (index > num) {
             index = 0
         }
         // console.log(index)
@@ -137,7 +138,7 @@ $("#toleft").click(function() {
     index--;
     if (index < 0) //判断index<0的情况为：开始点击#toright  index=0时  再点击 #toleft 为负数了 会出错
     {
-        index = 2
+        index = num
     }
     console.log(index);
     $("#lunboimg ul li").eq(index).css({
@@ -152,7 +153,7 @@ $("#toleft").click(function() {
 
 $("#toright").click(function() {
     index++;
-    if (index > 2) {
+    if (index > num) {
         index = 0
     }
     console.log(index);
@@ -196,7 +197,7 @@ $("#lunboimg ul li,.lunbo a img,#toright,#toleft ").hover(
 
         function play() {
             index++;
-            if (index > 2) {
+            if (index > num) {
                 index = 0
             }
             $("#lunboimg ul li").eq(index).css({
