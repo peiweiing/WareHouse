@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <style>
+        .router-link-active{
+           color: red;
+        }
+        .item{
+            width: 50%;
+            height: 100px;
+            border:1px solid red;
+            float: left;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="demodiv">
+         
+        <p> 我是导航条</p>
+
+        <router-link to="/index">index</router-link>
+        <router-link to="/home">home</router-link>
+
+        <router-view></router-view>
+   
+         
+    </div>
+
+    <template id="tema">
+        <div>
+               <div class="item" v-for='(v,i) in arr' @click="fun(v.id)">
+                   <p>{{v.title}}</p>
+                   <p>{{v.jia|rmb}}</p>
+               </div>
+        </div>
+    </template>
+    <template id="temb">
+            <div>
+                    <p>home---{{allnum}}</p>
+                    <p>{{newarr[0].all}}</p>
+            </div>
+        </template>
+ 
+    <script>
+
+        var tema={
+            template:"#tema",
+            data(){
+                return{
+                    arr:[
+                        {id:1,title:"maje2019新款女装衬衫领百褶裙摆腰部镂空连衣裙E19RIVERS",jia:"1180",all:"产品参数：品牌: MAJE适用年龄: 25-29周岁尺码: 1 2 3颜色分类: 蓝色货号: E19RIVERS-1年份季节: 2019年春季裙长: 中长裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"},
+                        {id:2,title:"H＆M CONSCIOUS EXCLUSIVE 2019春夏新款莱赛尔连衣裙",jia:"80",all:"H＆M CONSCIOUS EXCLUSIVE 2019春夏新款莱赛尔连衣裙: 1 2 3颜色分类: 蓝色货号: E19RIVERS-1年份季节: 2019年春季裙长: 中长裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"},
+                        {id:3,title:"H＆MDIVIDED女装2019新款流行气质收腰洋气显瘦连衣裙夏HM0721744",jia:"9.9",all:"H＆MDIVIDED女装2019新款流行气质收腰洋气显瘦连衣裙夏HM0721744: 1 2 3颜色分类: 蓝色货号: E19RIVERS-1年份季节: 2019年春季裙长: 中长裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"},
+                        {id:4,title:"SongofSong歌中歌2019新款夏白色黑色钉珠西装法式连衣裙",jia:"99",all:"产品参数：SongofSong歌中歌2019新款夏白色黑色钉珠西装法式连衣裙裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"},
+                        {id:5,title:"【门店发货】森马2019夏季新款连衣裙女竖条纹显瘦撞色茶歇裙潮",jia:"78",all:"产品参数：【门店发货】森马2019夏季新款连衣裙女竖条纹显瘦撞色茶歇裙潮9RIVERS-1年份季节: 2019年春季裙长: 中长裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"}
+                    ]
+                    
+                }
+            },
+            filters:{
+                rmb(val){
+                    return "￥"+val
+                }
+            },
+            methods:{
+                fun(num){
+                    this.$router.push("/home/"+num)
+                }
+            }
+            
+            };
+            
+        var temb={
+            template:"#temb",
+            data(){
+                return{
+                    arr:[
+                        {id:1,title:"maje2019新款女装衬衫领百褶裙摆腰部镂空连衣裙E19RIVERS",jia:"1180",all:"产品参数：品牌: MAJE适用年龄: 25-29周岁尺码: 1 2 3颜色分类: 蓝色货号: E19RIVERS-1年份季节: 2019年春季裙长: 中长裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"},
+                        {id:2,title:"H＆M CONSCIOUS EXCLUSIVE 2019春夏新款莱赛尔连衣裙",jia:"80",all:"H＆M CONSCIOUS EXCLUSIVE 2019春夏新款莱赛尔连衣裙: 1 2 3颜色分类: 蓝色货号: E19RIVERS-1年份季节: 2019年春季裙长: 中长裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"},
+                        {id:3,title:"H＆MDIVIDED女装2019新款流行气质收腰洋气显瘦连衣裙夏HM0721744",jia:"9.9",all:"H＆MDIVIDED女装2019新款流行气质收腰洋气显瘦连衣裙夏HM0721744: 1 2 3颜色分类: 蓝色货号: E19RIVERS-1年份季节: 2019年春季裙长: 中长裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"},
+                        {id:4,title:"SongofSong歌中歌2019新款夏白色黑色钉珠西装法式连衣裙",jia:"99",all:"产品参数：SongofSong歌中歌2019新款夏白色黑色钉珠西装法式连衣裙裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"},
+                        {id:5,title:"【门店发货】森马2019夏季新款连衣裙女竖条纹显瘦撞色茶歇裙潮",jia:"78",all:"产品参数：【门店发货】森马2019夏季新款连衣裙女竖条纹显瘦撞色茶歇裙潮9RIVERS-1年份季节: 2019年春季裙长: 中长裙销售渠道类型: 商场同款(线上线下都销售)材质成分: 聚酯纤维66% 棉34%"}
+                    ],
+                    allnum:0
+                }
+            },
+            created(){
+               this.allnum=this.$route.params.id
+               console.log(this.allnum);
+            },
+            computed:{
+                    newarr(){
+                           var demoarr=this.arr.filter((v,i)=>{
+                                if(v.id==this.allnum){
+                                    return v;
+                                }
+                            })
+
+                        return demoarr
+                    }
+            }
+            };
+
+
+        var routes=[
+            {name:"tema",path:"/index",component:tema},
+            {name:"temb",path:"/home/:id",component:temb}
+
+        ]
+        const router = new VueRouter({
+           routes
+        })
+
+
+
+    
+        new Vue({
+            el:"#demodiv",
+            router
+        })
+    </script>
+</body>
+</html>

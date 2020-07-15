@@ -13,10 +13,8 @@ H5狭义上，指HTML的第五个版本；广义上指web前端的所有技术�
 
 ## Javascript组成部分：ECMAScript、BOM、DOM
 
-ECMAScript：是一种由Ecma国际(前身为欧洲计算机制造商协会),定立ECMA-262标准化的脚本程序设计语言。规定了
-JavaScript 脚本的核心语法，如 数据类型、关键字、保留字、运算符、对象和语句等。
-BOM： 定义了 JavaScript 操作浏览器的接口，提供了访问某些功能（如浏览器窗口大小、版本信息、浏览历史记录等）
-的途径以及操作方法。
+ECMAScript：是一种由Ecma国际(前身为欧洲计算机制造商协会),定立ECMA-262标准化的脚本程序设计语言。规定了JavaScript 脚本的核心语法，如 数据类型、关键字、保留字、运算符、对象和语句等。
+BOM： 定义了 JavaScript 操作浏览器的接口，提供了访问某些功能（如浏览器窗口大小、版本信息、浏览历史记录等）的途径以及操作方法。
 DOM： 定义了 JavaScript 操作 HTML 文档的接口，提供了访问 HTML 文档（如body、form、div、textarea等）的途径以及操作方法。
 
 ## 编写及运行JS；

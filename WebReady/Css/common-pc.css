@@ -1,6 +1,7 @@
 /*
 公共样式
 */
+*{margin:0;padding:0;box-sizing: border-box;}
 html{font-size:10px;}/*1rem等于10px。固定尺寸用px，自适应用rem和%百分比*/
 body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0;}
 body{min-width:1280px;max-width:100%;background:#fff;}
@@ -16,59 +17,59 @@ table{border-collapse:collapse;border-spacing:0;}
 */
 /* 定位 */
 .pon{position:static!important;}
-.por{position: relative!important;}
-.poa{position: absolute!important;}
-.pof{position: fixed!important;}
-.pos{position: sticky!important;}
+.por{position:relative!important;}
+.poa{position:absolute!important;}
+.pof{position:fixed!important;}
+.pos{position:sticky!important;}
 /* 浮动 */
-.float-l{float: left!important;}
-.float-r{float: right!important;}
+.float-l{float:left!important;}
+.float-r{float:right!important;}
 /* 清除浮动*/
 .clear:after{content:"";display:block;clear:both}
 /* 隐藏 */
 .none{display: none;}
-.hidden{visibility: hidden;}
+.hidden{visibility:hidden;}
 .opacity{opacity: 0;}
-.overflow{overflow: hidden;}
-.overflow-x{overflow-x: hidden;}
-.overflow-y{overflow-y: hidden;}
+.overflow{overflow:hidden;}
+.overflow-x{overflow-x:hidden;}
+.overflow-y{overflow-y:hidden;}
 .noborder{border:none;}
 
 /* 
 字体样式
 */
-.f-1rem{font-size: 1rem!important;}
-.f-102rem{font-size: 1.2rem!important;}
-.f-104rem{font-size: 1.4rem!important;}
-.f-106rem{font-size: 1.6rem!important;}
-.f-108rem{font-size: 1.8rem!important;}
-.f-2rem{font-size: 2rem!important;}
-.f-202rem{font-size: 2.2rem!important;}
-.f-204rem{font-size: 2.4rem!important;}
-.f-206rem{font-size: 2.6rem!important;}
-.f-208rem{font-size: 2.8rem!important;}
-.f-3rem{font-size: 3rem!important;}
-.f-302rem{font-size: 3.2rem!important;}
-.f-304rem{font-size: 3.4rem!important;}
-.f-306rem{font-size: 3.6rem!important;}
-.f-308rem{font-size: 3.8rem!important;}
-.f-4rem{font-size: 4rem!important;}
-.f-5rem{font-size: 5rem!important;}
-.f-6rem{font-size: 6rem!important;}
+.f-1rem{font-size:1rem!important;}
+.f-102rem{font-size:1.2rem!important;}
+.f-104rem{font-size:1.4rem!important;}
+.f-106rem{font-size:1.6rem!important;}
+.f-108rem{font-size:1.8rem!important;}
+.f-2rem{font-size:2rem!important;}
+.f-202rem{font-size:2.2rem!important;}
+.f-204rem{font-size:2.4rem!important;}
+.f-206rem{font-size:2.6rem!important;}
+.f-208rem{font-size:2.8rem!important;}
+.f-3rem{font-size:3rem!important;}
+.f-302rem{font-size:3.2rem!important;}
+.f-304rem{font-size:3.4rem!important;}
+.f-306rem{font-size:3.6rem!important;}
+.f-308rem{font-size:3.8rem!important;}
+.f-4rem{font-size:4rem!important;}
+.f-5rem{font-size:5rem!important;}
+.f-6rem{font-size:6rem!important;}
 /* 字体加粗 */
-.f-bold{font-weight: bold;}
+.f-bold{font-weight:bold;}
 /* 字体不换行 */
-.f-nowrap{white-space: nowrap;}
+.f-nowrap{white-space:nowrap;}
 /* 首行缩进 */
-.f-indent{text-indent: 2em;}
+.f-indent{text-indent:2em;}
 /* 字符间距 */
-.f-spacing{letter-spacing: 1em;}
+.f-spacing{letter-spacing:1em;}
 /* 单词及字母换行 */
-.f-all{word-wrap:break-word;word-break: break-all;}
+.f-all{word-wrap:break-word;word-break:break-all;}
 /* 将长串字母或长单词自动换行 */
 .f-wrap{word-wrap:break-word;}
 /* 将完整的单词拆分自动换行 */
-.f-break{word-break: break-all;}
+.f-break{word-break:break-all;}
 /* 文本溢出隐藏 */
 .f-hidden3{
     overflow:hidden;/*溢出隐藏*/
@@ -88,24 +89,24 @@ table{border-collapse:collapse;border-spacing:0;}
 /*
 水平对齐
 */
-.t-left{text-align: left;}
-.t-center{text-align: center;}
+.t-left{text-align:left;}
+.t-center{text-align:center;}
 .t-right{text-align:right;}
 
 /* 
 垂直对齐
 */
-.v-top{vertical-align: top;}
-.v-middle{vertical-align: middle;}
-.v-bottom{vertical-align: bottom;}
+.v-top{vertical-align:top;}
+.v-middle{vertical-align:middle;}
+.v-bottom{vertical-align:bottom;}
 
 /*
 百分比
 */
-.w10{width: 10%;}.w20{width: 20%;}.w30{width: 30%;}.w40{width: 40%;}.w50{width: 50%;}
-.w60{width: 60%;}.w70{width: 70%;}.w80{width: 80%;}.w90{width: 90%;}.w100{width: 100%;} 
-.w2{width: 50%;}.w3{width: 33.333%;}.w4{width: 25%;}.w5{width: 20%;}
-.w6{width: 16.666%;}.w7{width: 14.285%;}.w8{width: 12.5%;}.w9{width: 11.111%;}
+.w10{width:10%;}.w20{width:20%;}.w30{width:30%;}.w40{width:40%;}.w50{width:50%;}
+.w60{width:60%;}.w70{width:70%;}.w80{width:80%;}.w90{width:90%;}.w100{width:100%;} 
+.w2{width:50%;}.w3{width:33.333%;}.w4{width:25%;}.w5{width:20%;}
+.w6{width:16.666%;}.w7{width:14.285%;}.w8{width:12.5%;}.w9{width:11.111%;}
 
 /*
 变形：旋转、缩放、扭曲、移动及矩阵变形
@@ -128,22 +129,22 @@ table{border-collapse:collapse;border-spacing:0;}
 元素占比
 */
 /* flex{flex-grow flex-shrink flex-basis}元素：放大比例 缩小比例 分配多余空间 */
-.f1{flex: 1;}.f2{flex: 2;}.f3{flex: 3;}.f4{flex: 4;}.f5{flex: 5;}
-.f6{flex: 6;}.f7{flex: 7;}.f8{flex: 8;}.f9{flex: 9;}
-.f10{flex:0 0 10%}.f16{flex: 0 0 16.666%;}.f20{flex: 0 0 20%;}.f25{flex: 0 0 25%;}
-.f33{flex: 0 0 33.333%;}.f50{flex: 0 0 50%;}.f100{flex: 0 0 100%;}
+.f1{flex:1;}.f2{flex:2;}.f3{flex:3;}.f4{flex:4;}.f5{flex:5;}
+.f6{flex:6;}.f7{flex:7;}.f8{flex:8;}.f9{flex:9;}
+.f10{flex:0 0 10%}.f16{flex:0 0 16.666%;}.f20{flex:0 0 20%;}.f25{flex:0 0 25%;}
+.f33{flex:0 0 33.333%;}.f50{flex:0 0 50%;}.f100{flex:0 0 100%;}
 
 /* 
 元素排列顺序
 */
-.o1{order: 1}.o2{order: 2}.o3{order: 3}.o4{order: 4}.o5{order: 5}
+.o1{order:1}.o2{order:2}.o3{order:3}.o4{order:4}.o5{order:5}
 
 
 /*
 盒子类型
 */
-.block{display: block!important;}/*块级元素*/
-.blocks{display: inline-block!important;}/*内联元素*/
+.block{display:block!important;}/*块级元素*/
+.blocks{display:inline-block!important;}/*内联元素*/
 .boxing{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box!important;}
 .flex{display: box;display: -webkit-box;
     display: -moz-box;display: -ms-flexbox;
@@ -208,199 +209,199 @@ Y轴排列
 /* 
 盒子外边距
 */
-.m-02rem{margin: 0.2rem!important;}
-.m-04rem{margin: 0.4rem!important;}
-.m-06rem{margin: 0.6rem!important;}
-.m-08rem{margin: 0.8rem!important;}
-.m-1rem{margin: 1rem!important;}
-.m-2rem{margin: 2rem!important;}
-.m-3rem{margin: 3rem!important;}
-.m-4rem{margin: 4rem!important;}
-.m-5rem{margin: 5rem!important;}
+.m-02rem{margin:0.2rem!important;}
+.m-04rem{margin:0.4rem!important;}
+.m-06rem{margin:0.6rem!important;}
+.m-08rem{margin:0.8rem!important;}
+.m-1rem{margin:1rem!important;}
+.m-2rem{margin:2rem!important;}
+.m-3rem{margin:3rem!important;}
+.m-4rem{margin:4rem!important;}
+.m-5rem{margin:5rem!important;}
 
 /* 
 盒子外边距X轴
 */
-.mx-02rem{margin-left: 0.2rem!important;margin-right: 0.2rem!important;}
-.mx-04rem{margin-left: 0.4rem!important;margin-right: 0.4rem!important;}
-.mx-06rem{margin-left: 0.6rem!important;margin-right: 0.6rem!important;}
-.mx-08rem{margin-left: 0.8rem!important;margin-right: 0.8rem!important;}
-.mx-1rem{margin-left: 1rem!important;margin-right: 1rem!important;}
-.mx-102rem{margin-left: 1.2rem!important;margin-right: 1.2rem!important;}
-.mx-104rem{margin-left: 1.4rem!important;margin-right: 1.4rem!important;}
-.mx-106rem{margin-left: 1.6rem!important;margin-right: 1.6rem!important;}
-.mx-108rem{margin-left: 1.8rem!important;margin-right: 1.8rem!important;}
-.mx-2rem{margin-left: 2rem!important;margin-right: 2rem!important;}
-.mx-202rem{margin-left: 2.2rem!important;margin-right: 2.2rem!important;}
-.mx-204rem{margin-left: 2.4rem!important;margin-right: 2.4rem!important;}
-.mx-206rem{margin-left: 2.6rem!important;margin-right: 2.6rem!important;}
-.mx-208rem{margin-left: 2.8rem!important;margin-right: 2.8rem!important;}
-.mx-3rem{margin-left: 3rem!important;margin-right: 3rem!important;}
-.mx-4rem{margin-left: 4rem!important;margin-right: 4rem!important;}
-.mx-5rem{margin-left: 5rem!important;margin-right: 5rem!important;}
+.mx-02rem{margin-left:0.2rem!important;margin-right:0.2rem!important;}
+.mx-04rem{margin-left:0.4rem!important;margin-right:0.4rem!important;}
+.mx-06rem{margin-left:0.6rem!important;margin-right:0.6rem!important;}
+.mx-08rem{margin-left:0.8rem!important;margin-right:0.8rem!important;}
+.mx-1rem{margin-left:1rem!important;margin-right:1rem!important;}
+.mx-102rem{margin-left:1.2rem!important;margin-right:1.2rem!important;}
+.mx-104rem{margin-left:1.4rem!important;margin-right:1.4rem!important;}
+.mx-106rem{margin-left:1.6rem!important;margin-right:1.6rem!important;}
+.mx-108rem{margin-left:1.8rem!important;margin-right:1.8rem!important;}
+.mx-2rem{margin-left:2rem!important;margin-right:2rem!important;}
+.mx-202rem{margin-left:2.2rem!important;margin-right:2.2rem!important;}
+.mx-204rem{margin-left:2.4rem!important;margin-right:2.4rem!important;}
+.mx-206rem{margin-left:2.6rem!important;margin-right:2.6rem!important;}
+.mx-208rem{margin-left:2.8rem!important;margin-right:2.8rem!important;}
+.mx-3rem{margin-left:3rem!important;margin-right:3rem!important;}
+.mx-4rem{margin-left:4rem!important;margin-right:4rem!important;}
+.mx-5rem{margin-left:5rem!important;margin-right:5rem!important;}
 
 /* 
 盒子外边距Y轴
 */
-.my-02rem{margin-top: 0.2rem!important;margin-bottom: 0.2rem!important;}
-.my-04rem{margin-top: 0.4rem!important;margin-bottom: 0.4rem!important;}
-.my-06rem{margin-top: 0.6rem!important;margin-bottom: 0.6rem!important;}
-.my-08rem{margin-top: 0.8rem!important;margin-bottom: 0.8rem!important;}
-.my-1rem{margin-top: 1rem!important;margin-bottom: 1rem!important;}
-.my-102rem{margin-top: 1.2rem!important;margin-bottom: 1.2rem!important;}
-.my-104rem{margin-top: 1.4rem!important;margin-bottom: 1.4rem!important;}
-.my-106rem{margin-top: 1.6rem!important;margin-bottom: 1.6rem!important;}
-.my-108rem{margin-top: 1.8rem!important;margin-bottom: 1.8rem!important;}
-.my-2rem{margin-top: 2rem!important;margin-bottom: 2rem!important;}
-.my-202rem{margin-top: 2.2rem!important;margin-bottom: 2.2rem!important;}
-.my-204rem{margin-top: 2.4rem!important;margin-bottom: 2.4rem!important;}
-.my-206rem{margin-top: 2.6rem!important;margin-bottom: 2.6rem!important;}
-.my-208rem{margin-top: 2.8rem!important;margin-bottom: 2.8rem!important;}
-.my-3rem{margin-top: 3rem!important;margin-bottom: 3rem!important;}
-.my-4rem{margin-top: 4rem!important;margin-bottom: 4rem!important;}
-.my-5rem{margin-top: 5rem!important;margin-bottom: 5rem!important;}
+.my-02rem{margin-top:0.2rem!important;margin-bottom:0.2rem!important;}
+.my-04rem{margin-top:0.4rem!important;margin-bottom:0.4rem!important;}
+.my-06rem{margin-top:0.6rem!important;margin-bottom:0.6rem!important;}
+.my-08rem{margin-top:0.8rem!important;margin-bottom:0.8rem!important;}
+.my-1rem{margin-top:1rem!important;margin-bottom:1rem!important;}
+.my-102rem{margin-top:1.2rem!important;margin-bottom:1.2rem!important;}
+.my-104rem{margin-top:1.4rem!important;margin-bottom:1.4rem!important;}
+.my-106rem{margin-top:1.6rem!important;margin-bottom:1.6rem!important;}
+.my-108rem{margin-top:1.8rem!important;margin-bottom:1.8rem!important;}
+.my-2rem{margin-top:2rem!important;margin-bottom:2rem!important;}
+.my-202rem{margin-top:2.2rem!important;margin-bottom:2.2rem!important;}
+.my-204rem{margin-top:2.4rem!important;margin-bottom:2.4rem!important;}
+.my-206rem{margin-top:2.6rem!important;margin-bottom:2.6rem!important;}
+.my-208rem{margin-top:2.8rem!important;margin-bottom:2.8rem!important;}
+.my-3rem{margin-top:3rem!important;margin-bottom:3rem!important;}
+.my-4rem{margin-top:4rem!important;margin-bottom:4rem!important;}
+.my-5rem{margin-top:5rem!important;margin-bottom:5rem!important;}
 
 /* 
 盒子外边距左右上下
 */
-.ml-02rem{margin-left: 0.2rem!important;}
-.ml-04rem{margin-left: 0.4rem!important;}
-.ml-06rem{margin-left: 0.6rem!important;}
-.ml-08rem{margin-left: 0.8rem!important;}
-.ml-1rem{margin-left: 1rem!important;}
-.ml-2rem{margin-left: 2rem!important;}
-.ml-3rem{margin-left: 3rem!important;}
-.ml-4rem{margin-left: 4rem!important;}
-.ml-5rem{margin-left: 5rem!important;}
-.ml-6rem{margin-left: 6rem!important;}
-.mr-02rem{margin-right: 0.2rem!important;}
-.mr-04rem{margin-right: 0.4rem!important;}
-.mr-06rem{margin-right: 0.6rem!important;}
-.mr-08rem{margin-right: 0.8rem!important;}
-.mr-1rem{margin-right: 1rem!important;}
-.mr-2rem{margin-right: 2rem!important;}
-.mr-3rem{margin-right: 3rem!important;}
-.mr-4rem{margin-right: 4rem!important;}
-.mr-5rem{margin-right: 5rem!important;}
-.mr-6rem{margin-right: 6rem!important;}
-.mt-02rem{margin-top: 0.2rem!important;}
-.mt-04rem{margin-top: 0.4rem!important;}
-.mt-06rem{margin-top: 0.6rem!important;}
-.mt-08rem{margin-top: 0.8rem!important;}
-.mt-1rem{margin-top: 1rem!important;}
-.mt-2rem{margin-top: 2rem!important;}
-.mt-3rem{margin-top: 3rem!important;}
-.mt-4rem{margin-top: 4rem!important;}
-.mt-5rem{margin-top: 5rem!important;}
-.mt-6rem{margin-top: 6rem!important;}
-.mb-02rem{margin-bottom: 0.2rem!important;}
-.mb-04rem{margin-bottom: 0.4rem!important;}
-.mb-06rem{margin-bottom: 0.6rem!important;}
-.mb-08rem{margin-bottom: 0.8rem!important;}
-.mb-1rem{margin-bottom: 1rem!important;}
-.mb-2rem{margin-bottom: 2rem!important;}
-.mb-3rem{margin-bottom: 3rem!important;}
-.mb-4rem{margin-bottom: 4rem!important;}
-.mb-5rem{margin-bottom: 5rem!important;}
-.mb-6rem{margin-bottom: 6rem!important;}
+.ml-02rem{margin-left:0.2rem!important;}
+.ml-04rem{margin-left:0.4rem!important;}
+.ml-06rem{margin-left:0.6rem!important;}
+.ml-08rem{margin-left:0.8rem!important;}
+.ml-1rem{margin-left:1rem!important;}
+.ml-2rem{margin-left:2rem!important;}
+.ml-3rem{margin-left:3rem!important;}
+.ml-4rem{margin-left:4rem!important;}
+.ml-5rem{margin-left:5rem!important;}
+.ml-6rem{margin-left:6rem!important;}
+.mr-02rem{margin-right:0.2rem!important;}
+.mr-04rem{margin-right:0.4rem!important;}
+.mr-06rem{margin-right:0.6rem!important;}
+.mr-08rem{margin-right:0.8rem!important;}
+.mr-1rem{margin-right:1rem!important;}
+.mr-2rem{margin-right:2rem!important;}
+.mr-3rem{margin-right:3rem!important;}
+.mr-4rem{margin-right:4rem!important;}
+.mr-5rem{margin-right:5rem!important;}
+.mr-6rem{margin-right:6rem!important;}
+.mt-02rem{margin-top:0.2rem!important;}
+.mt-04rem{margin-top:0.4rem!important;}
+.mt-06rem{margin-top:0.6rem!important;}
+.mt-08rem{margin-top:0.8rem!important;}
+.mt-1rem{margin-top:1rem!important;}
+.mt-2rem{margin-top:2rem!important;}
+.mt-3rem{margin-top:3rem!important;}
+.mt-4rem{margin-top:4rem!important;}
+.mt-5rem{margin-top:5rem!important;}
+.mt-6rem{margin-top:6rem!important;}
+.mb-02rem{margin-bottom:0.2rem!important;}
+.mb-04rem{margin-bottom:0.4rem!important;}
+.mb-06rem{margin-bottom:0.6rem!important;}
+.mb-08rem{margin-bottom:0.8rem!important;}
+.mb-1rem{margin-bottom:1rem!important;}
+.mb-2rem{margin-bottom:2rem!important;}
+.mb-3rem{margin-bottom:3rem!important;}
+.mb-4rem{margin-bottom:4rem!important;}
+.mb-5rem{margin-bottom:5rem!important;}
+.mb-6rem{margin-bottom:6rem!important;}
 
 
 /* 
 盒子内边距
 */
-.p-02rem{padding: 0.2rem!important;}
-.p-04rem{padding: 0.4rem!important;}
-.p-06rem{padding: 0.6rem!important;}
-.p-08rem{padding: 0.8rem!important;}
-.p-1rem{padding: 1rem!important;}
-.p-2rem{padding: 2rem!important;}
-.p-3rem{padding: 3rem!important;}
-.p-4rem{padding: 4rem!important;}
-.p-5rem{padding: 5rem!important;}
+.p-02rem{padding:0.2rem!important;}
+.p-04rem{padding:0.4rem!important;}
+.p-06rem{padding:0.6rem!important;}
+.p-08rem{padding:0.8rem!important;}
+.p-1rem{padding:1rem!important;}
+.p-2rem{padding:2rem!important;}
+.p-3rem{padding:3rem!important;}
+.p-4rem{padding:4rem!important;}
+.p-5rem{padding:5rem!important;}
 
 /* 
 盒子内边距X轴
 */
-.px-02rem{padding-left: 0.2rem!important;padding-right: 0.2rem!important;}
-.px-04rem{padding-left: 0.4rem!important;padding-right: 0.4rem!important;}
-.px-06rem{padding-left: 0.6rem!important;padding-right: 0.6rem!important;}
-.px-08rem{padding-left: 0.8rem!important;padding-right: 0.8rem!important;}
-.px-1rem{padding-left: 1rem!important;padding-right: 1rem!important;}
-.px-102rem{padding-left: 1.2rem!important;padding-right: 1.2rem!important;}
-.px-104rem{padding-left: 1.4rem!important;padding-right: 1.4rem!important;}
-.px-106rem{padding-left: 1.6rem!important;padding-right: 1.6rem!important;}
-.px-108rem{padding-left: 1.8rem!important;padding-right: 1.8rem!important;}
-.px-2rem{padding-left: 2rem!important;padding-right: 2rem!important;}
-.px-202rem{padding-left: 2.2rem!important;padding-right: 2.2rem!important;}
-.px-204rem{padding-left: 2.4rem!important;padding-right: 2.4rem!important;}
-.px-206rem{padding-left: 2.6rem!important;padding-right: 2.6rem!important;}
-.px-208rem{padding-left: 2.8rem!important;padding-right: 2.8rem!important;}
-.px-3rem{padding-left: 3rem!important;padding-right: 3rem!important;}
-.px-4rem{padding-left: 4rem!important;padding-right: 4rem!important;}
-.px-5rem{padding-left: 5rem!important;padding-right: 5rem!important;}
+.px-02rem{padding-left:0.2rem!important;padding-right:0.2rem!important;}
+.px-04rem{padding-left:0.4rem!important;padding-right:0.4rem!important;}
+.px-06rem{padding-left:0.6rem!important;padding-right:0.6rem!important;}
+.px-08rem{padding-left:0.8rem!important;padding-right:0.8rem!important;}
+.px-1rem{padding-left:1rem!important;padding-right:1rem!important;}
+.px-102rem{padding-left:1.2rem!important;padding-right:1.2rem!important;}
+.px-104rem{padding-left:1.4rem!important;padding-right:1.4rem!important;}
+.px-106rem{padding-left:1.6rem!important;padding-right:1.6rem!important;}
+.px-108rem{padding-left:1.8rem!important;padding-right:1.8rem!important;}
+.px-2rem{padding-left:2rem!important;padding-right:2rem!important;}
+.px-202rem{padding-left:2.2rem!important;padding-right:2.2rem!important;}
+.px-204rem{padding-left:2.4rem!important;padding-right:2.4rem!important;}
+.px-206rem{padding-left:2.6rem!important;padding-right:2.6rem!important;}
+.px-208rem{padding-left:2.8rem!important;padding-right:2.8rem!important;}
+.px-3rem{padding-left:3rem!important;padding-right:3rem!important;}
+.px-4rem{padding-left:4rem!important;padding-right:4rem!important;}
+.px-5rem{padding-left:5rem!important;padding-right:5rem!important;}
 
 /* 
 盒子内边距Y轴
 */
-.py-02rem{padding-top: 0.2rem!important;padding-bottom: 0.2rem!important;}
-.py-04rem{padding-top: 0.4rem!important;padding-bottom: 0.4rem!important;}
-.py-06rem{padding-top: 0.6rem!important;padding-bottom: 0.6rem!important;}
-.py-08rem{padding-top: 0.8rem!important;padding-bottom: 0.8rem!important;}
-.py-1rem{padding-top: 1rem!important;padding-bottom: 1rem!important;}
-.py-102rem{padding-top: 1.2rem!important;padding-bottom: 1.2rem!important;}
-.py-104rem{padding-top: 1.4rem!important;padding-bottom: 1.4rem!important;}
-.py-106rem{padding-top: 1.6rem!important;padding-bottom: 1.6rem!important;}
-.py-108rem{padding-top: 1.8rem!important;padding-bottom: 1.8rem!important;}
-.py-2rem{padding-top: 2rem!important;padding-bottom: 2rem!important;}
-.py-202rem{padding-top: 2.2rem!important;padding-bottom: 2.2rem!important;}
-.py-204rem{padding-top: 2.4rem!important;padding-bottom: 2.4rem!important;}
-.py-206rem{padding-top: 2.6rem!important;padding-bottom: 2.6rem!important;}
-.py-208rem{padding-top: 2.8rem!important;padding-bottom: 2.8rem!important;}
-.py-3rem{padding-top: 3rem!important;padding-bottom: 3rem!important;}
-.py-4rem{padding-top: 4rem!important;padding-bottom: 4rem!important;}
-.py-5rem{padding-top: 5rem!important;padding-bottom: 5rem!important;}
+.py-02rem{padding-top:0.2rem!important;padding-bottom:0.2rem!important;}
+.py-04rem{padding-top:0.4rem!important;padding-bottom:0.4rem!important;}
+.py-06rem{padding-top:0.6rem!important;padding-bottom:0.6rem!important;}
+.py-08rem{padding-top:0.8rem!important;padding-bottom:0.8rem!important;}
+.py-1rem{padding-top:1rem!important;padding-bottom:1rem!important;}
+.py-102rem{padding-top:1.2rem!important;padding-bottom:1.2rem!important;}
+.py-104rem{padding-top:1.4rem!important;padding-bottom:1.4rem!important;}
+.py-106rem{padding-top:1.6rem!important;padding-bottom:1.6rem!important;}
+.py-108rem{padding-top:1.8rem!important;padding-bottom:1.8rem!important;}
+.py-2rem{padding-top:2rem!important;padding-bottom:2rem!important;}
+.py-202rem{padding-top:2.2rem!important;padding-bottom:2.2rem!important;}
+.py-204rem{padding-top:2.4rem!important;padding-bottom:2.4rem!important;}
+.py-206rem{padding-top:2.6rem!important;padding-bottom:2.6rem!important;}
+.py-208rem{padding-top:2.8rem!important;padding-bottom:2.8rem!important;}
+.py-3rem{padding-top:3rem!important;padding-bottom:3rem!important;}
+.py-4rem{padding-top:4rem!important;padding-bottom:4rem!important;}
+.py-5rem{padding-top:5rem!important;padding-bottom:5rem!important;}
 
 /* 
 盒子内边距左右上下
 */
-.pl-02rem{padding-left: 0.2rem!important;}
-.pl-04rem{padding-left: 0.4rem!important;}
-.pl-06rem{padding-left: 0.6rem!important;}
-.pl-08rem{padding-left: 0.8rem!important;}
-.pl-1rem{padding-left: 1rem!important;}
-.pl-2rem{padding-left: 2rem!important;}
-.pl-3rem{padding-left: 3rem!important;}
-.pl-4rem{padding-left: 4rem!important;}
-.pl-5rem{padding-left: 5rem!important;}
-.pl-6rem{padding-left: 6rem!important;}
-.pr-02rem{padding-right: 0.2rem!important;}
-.pr-04rem{padding-right: 0.4rem!important;}
-.pr-06rem{padding-right: 0.6rem!important;}
-.pr-08rem{padding-right: 0.8rem!important;}
-.pr-1rem{padding-right: 1rem!important;}
-.pr-2rem{padding-right: 2rem!important;}
-.pr-3rem{padding-right: 3rem!important;}
-.pr-4rem{padding-right: 4rem!important;}
-.pr-5rem{padding-right: 5rem!important;}
-.pr-6rem{padding-right: 6rem!important;}
-.pt-02rem{padding-top: 0.2rem!important;}
-.pt-04rem{padding-top: 0.4rem!important;}
-.pt-06rem{padding-top: 0.6rem!important;}
-.pt-08rem{padding-top: 0.8rem!important;}
-.pt-1rem{padding-top: 1rem!important;}
-.pt-2rem{padding-top: 2rem!important;}
-.pt-3rem{padding-top: 3rem!important;}
-.pt-4rem{padding-top: 4rem!important;}
-.pt-5rem{padding-top: 5rem!important;}
-.pt-6rem{padding-top: 6rem!important;}
-.pb-02rem{padding-bottom: 0.2rem!important;}
-.pb-04rem{padding-bottom: 0.4rem!important;}
-.pb-06rem{padding-bottom: 0.6rem!important;}
-.pb-08rem{padding-bottom: 0.8rem!important;}
-.pb-1rem{padding-bottom: 1rem!important;}
-.pb-2rem{padding-bottom: 2rem!important;}
-.pb-3rem{padding-bottom: 3rem!important;}
-.pb-4rem{padding-bottom: 4rem!important;}
-.pb-5rem{padding-bottom: 5rem!important;}
-.pb-6rem{padding-bottom: 6rem!important;}
+.pl-02rem{padding-left:0.2rem!important;}
+.pl-04rem{padding-left:0.4rem!important;}
+.pl-06rem{padding-left:0.6rem!important;}
+.pl-08rem{padding-left:0.8rem!important;}
+.pl-1rem{padding-left:1rem!important;}
+.pl-2rem{padding-left:2rem!important;}
+.pl-3rem{padding-left:3rem!important;}
+.pl-4rem{padding-left:4rem!important;}
+.pl-5rem{padding-left:5rem!important;}
+.pl-6rem{padding-left:6rem!important;}
+.pr-02rem{padding-right:0.2rem!important;}
+.pr-04rem{padding-right:0.4rem!important;}
+.pr-06rem{padding-right:0.6rem!important;}
+.pr-08rem{padding-right:0.8rem!important;}
+.pr-1rem{padding-right:1rem!important;}
+.pr-2rem{padding-right:2rem!important;}
+.pr-3rem{padding-right:3rem!important;}
+.pr-4rem{padding-right:4rem!important;}
+.pr-5rem{padding-right:5rem!important;}
+.pr-6rem{padding-right:6rem!important;}
+.pt-02rem{padding-top:0.2rem!important;}
+.pt-04rem{padding-top:0.4rem!important;}
+.pt-06rem{padding-top:0.6rem!important;}
+.pt-08rem{padding-top:0.8rem!important;}
+.pt-1rem{padding-top:1rem!important;}
+.pt-2rem{padding-top:2rem!important;}
+.pt-3rem{padding-top:3rem!important;}
+.pt-4rem{padding-top:4rem!important;}
+.pt-5rem{padding-top:5rem!important;}
+.pt-6rem{padding-top:6rem!important;}
+.pb-02rem{padding-bottom:0.2rem!important;}
+.pb-04rem{padding-bottom:0.4rem!important;}
+.pb-06rem{padding-bottom:0.6rem!important;}
+.pb-08rem{padding-bottom:0.8rem!important;}
+.pb-1rem{padding-bottom:1rem!important;}
+.pb-2rem{padding-bottom:2rem!important;}
+.pb-3rem{padding-bottom:3rem!important;}
+.pb-4rem{padding-bottom:4rem!important;}
+.pb-5rem{padding-bottom:5rem!important;}
+.pb-6rem{padding-bottom:6rem!important;}
 

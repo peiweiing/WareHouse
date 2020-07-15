@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/swiper.min.css"> 
+    <title>Swiper</title>
+    <style>
+    .swiper1 {
+        width: 100%;
+        height: 300px;
+    }  
+    .swiper2 {
+        width: 600px;
+        height: 300px;
+    } 
+    </style>
+</head>
+<body>
+    <div class="swiper-container swiper1">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide1 1</div>
+            <div class="swiper-slide">Slide1 2</div>
+            <div class="swiper-slide">Slide1 3</div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination pag1"></div>
+        
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev prev1"></div>
+        <div class="swiper-button-next next1"></div>
+        
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar scr1"></div>
+    </div>
+    
+    <div class="swiper-container swiper2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Slide2 1</div>
+            <div class="swiper-slide">Slide2 2</div>
+            <div class="swiper-slide">Slide2 3</div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination pag2"></div>
+        
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev prev2"></div>
+        <div class="swiper-button-next next2"></div>
+        
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar scr2"></div>
+    </div>
+</body>
+<script src="js/swiper.min.js"> </script>
+<script>
+var Swiper1 = new Swiper ('.swiper1', {
+    direction: 'vertical', // 垂直切换选项
+    loop: true, // 循环模式选项
+    
+    autoplay:{
+        stopOnLastSlide:true,  //自动播放
+    },
+
+    // 如果需要分页器
+    pagination: {
+      el: '.pag1',
+    },
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.next1',
+      prevEl: '.prev1',
+    },
+    
+    // 如果需要滚动条
+    scrollbar: {
+      el: '.scr1',
+    },
+  })        
+</script>
+<script>
+var Swiper2 = new Swiper ('.swiper2', {
+    direction: 'vertical', // 垂直切换选项
+    loop: true, // 循环模式选项
+
+    // 如果需要分页器
+    pagination: {
+      el: '.pag2',
+    },
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.next2',
+      prevEl: '.prev2',
+    },
+    
+    // 如果需要滚动条
+    scrollbar: {
+      el: '.scr2',
+    },
+  })        
+</script>
+</html>

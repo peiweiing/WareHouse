@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <style>
+        .router-link-active{
+           color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="demodiv">
+         
+        <p> query路由传参/动态路由设置</p>
+        <!-- 1.使用query来传递参数的时候不需要在路由规则的path中进行配置 -->
+        <!-- 2.传递参数  声明式3中  编程式3种 -->
+        <!-- 3.取值 -->
+   
+        <router-link to="/index">index</router-link>
+        <!-- 第一种绑定参数的方式 -->
+        <!-- <router-link to="/home?num=321&text=xixi">home</router-link> -->
+        <!-- 第二种发送数据的方式 -->
+         <!-- <router-link :to="{name:'temb',query:{num:987,text:'haha'}}">home</router-link> -->
+         <!-- 第三中方式 -->
+         <router-link :to="{path:'/home',query:{num:9527,text:'caicai'}}">home</router-link>
+         
+         <!-- 编程式也有三种 -->
+         <button @click="fun()">home</button>
+        <router-link to="/user">user</router-link>
+        <router-link to="/phone">phone</router-link>
+ 
+     
+        <router-view></router-view>
+   
+         
+    </div>
+
+    <template id="tema">
+        <div>
+                <p>index</p>
+        </div>
+    </template>
+    <template id="temb">
+            <div>
+                    <p>home---{{this.$route.query.num}}-----{{this.$route.query.text}}</p>
+            </div>
+        </template>
+   <template id="temc">
+                <div>
+                        <p>user</p>
+                </div>
+      </template>  
+      <template id="temd">
+            <div>
+                    <p>phone</p>
+            </div>
+        </template>   
+    <script>
+
+        var tema={template:"#tema"};
+        var temb={template:"#temb"};
+        var temc={template:"#temc"};
+        var temd={template:"#temd"};
+
+      
+        var routes=[
+            {name:"tema",path:"/index",component:tema},
+            {name:"temb",path:"/home",component:temb},
+            {name:"temc",path:"/user",component:temc},
+            {name:"temd",path:"/phone",component:temd},
+        ]
+    
+        const router = new VueRouter({
+           routes
+        })
+
+
+
+    
+        new Vue({
+            el:"#demodiv",
+            router,
+            methods:{
+                fun(){
+                    // this.$router.push("/home?num=13579&text=aaa")
+                    // this.$router.push({name:'temb',query:{num:987,text:'haha'}})
+                    this.$router.push({path:'/home',query:{num:987,text:'haha1'}})
+                }
+            }
+        })
+    </script>
+</body>
+</html>

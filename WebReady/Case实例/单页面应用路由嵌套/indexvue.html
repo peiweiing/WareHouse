@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>校园跑腿</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <style>
+        #container {width:100%; height: 180px; }
+        
+        .appcs{
+            display: flex;
+            justify-content: space-around;
+        }
+        .appcs a{
+            color:#324357;text-decoration:none;
+        }
+        .router-link-active{
+            color:#000!important;
+            border-bottom: 2px solid green;
+        }
+
+
+        .tema,.temb,.temc{
+            margin: 1%;
+            box-sizing: border-box;
+        }
+
+        .tema .div{
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 1%;
+            box-sizing: border-box;
+        }
+        .tema .div img,
+        .tema .divsp img{
+            width: 10%;
+        }
+        .tema .div input{
+            width: 80%;
+            padding: 10px 0;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+        .tema .divsp{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1%;
+            margin-top: 1%;
+        }
+
+        
+        .temc .txtcs textarea{
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 2%;
+            box-sizing: border-box;
+        }
+        .temc .bar{
+            width: 100%;
+            padding: 2% 0;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div>
+            <img src="" alt="">
+        </div>
+    </div>
+
+    <div id="container"></div>
+
+    <div id="app">
+        <div class="appcs">
+            <router-link to="/get">帮我取</router-link>
+            <router-link to="/serve">帮我送</router-link>
+            <router-link to="/buy">帮我买</router-link>
+        </div>
+        <router-view></router-view>
+    </div>
+
+
+    <template id="tema">
+        <div class="tema">
+            <div class="div">
+                <img src="img/发货.png" alt="">
+                <input type="text" placeholder="从哪里发出" @click="funa()">
+            </div>
+            <div class="div">
+                <img src="img/收货.png" alt="">
+                <input type="text" placeholder="送到哪里去" @click="funa()">
+            </div>
+            <div class="divsp" @click="funb()">
+                <img src="img/购物.png" alt="">
+                <span>要配送的物品类型、重量</span>
+                <span>></span>
+            </div>
+        </div>
+    </template>
+
+    <template id="temb">
+        <div class="temb">
+            <p>phone</p>
+        </div>
+    </template>
+
+    <template id="temc">
+        <div class="temc">
+            <div class="txtcs" @click="func()">
+                <textarea name="text" id="" cols="30" rows="10" placeholder="输入想买的商品，如：1杯星巴克拿铁"></textarea>
+            </div>
+            <div class="divcs">
+                <div class="bar">
+                    <router-link to="/buy/one">
+                        <img src="" alt="">
+                        <span>小吃</span>
+                    </router-link>
+                    <router-link to="/buy/two">
+                        <img src="" alt="">
+                        <span>咖啡</span>
+                    </router-link>
+                    <router-link to="/buy/three">
+                        <img src="" alt="">
+                        <span>酒水</span>
+                    </router-link>
+                    <router-link to="/buy/four">
+                        <img src="" alt="">
+                        <span>药品</span>
+                    </router-link>
+                    <router-link to="/buy/five">
+                        <img src="" alt="">
+                        <span>日用</span>
+                    </router-link>
+                </div>
+                <router-view class="end"></router-view>
+            </div>
+        </div>
+    </template>
+    <!-- <template id="tmp1">
+        <div>
+            <h1>Account组件</h1>
+            为了使路由URL合理，前面还要加上上级路由的路径
+            <router-link to="/account/login">登陆</router-link>
+            子路由path前面带了斜线，直接以此进行请求，没有拼上上级路由路径，这种不推荐   
+            <router-link to="/register">注册</router-link>
+            <router-view></router-view>
+        </div>
+    </template> -->
+</body>
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=23fee9e57ce7519cc605b71fec527128"></script>
+<script src="https://webapi.amap.com/loader.js"></script>
+<script>
+
+    var tema={template:"#tema"};
+    var temb={template:"#temb"};
+    var temc={template:"#temc"};
+    var one={
+        template:'<div><span>冰糖葫芦1</span></div>'
+    };
+    var two={
+        template:'<div><span>冰糖葫芦2</span></div>'
+    };
+    var three={
+        template:'<div><span>冰糖葫芦3</span></div>'
+    };
+    var four={
+        template:'<div><span>冰糖葫芦4</span></div>'
+    };
+    var five={
+        template:'<div><span>冰糖葫芦5</span></div>'
+    };
+
+    var routes=[
+            {name:"get",path:"/get",component:tema},
+            {name:"serve",path:"/serve",component:temb},
+            {name:"buy",path:"/buy",component:temc,children:[
+                {path:"one",component:one},
+                {path:"two",component:two},
+                {path:"three",component:three},
+                {path:"four",component:four},
+                {path:"five",component:five},
+            ]},
+        ]
+
+    const router = new VueRouter({
+        routes
+    })
+
+    new Vue({
+            el:"#app",
+            router,
+            methods:{
+                funa(){
+                    this.$router.push({path: './address.html'}) 
+                },
+                funb(){
+                    this.$router.push({path: './addtype.html'}) 
+                }
+            }
+        })
+
+    // var account = {
+    //     template:'#tmp1',
+    // }
+    // var login = {
+    //     template:'<h1>登陆组件</h1>'
+    // }
+    // var register = {
+    //     template:'<h1>注册组件</h1>'
+    // }
+
+    // var router = new VueRouter({
+    //     routes : [   
+    //         {
+    //             path:'/account',   
+    //             component:account,
+    //             children:[   //子路由规则，这样才能使路由有上下级关系，展示不冲突
+    //                 {
+    //                         //注意，子路由path前面不需要加斜线，表示路径会拼上上级路由的路径
+    //                     path:'login',component:login  
+    //                 },{
+    //                     //如果path带上带上斜线，永远以根路径开始请求，哪怕属于上级路由也不拼上他的路径，这样不方便用户理解url地址（路由其那套）
+    //                     path:'/register',component:register   
+    //                 }
+    //             ]   
+    //         },
+
+            //login应该属于account的，这样写即为平级，会展示在同一个<router-view></router-view>中而不会嵌套
+            // {   
+            //  path:'/account/login',
+            //  component:login
+            // }
+
+    //     ]
+    // });
+
+    // var vm = new Vue({
+    //     el: "#app",
+    //     data: {
+            
+    //     },
+    //     router   
+    // });
+</script>
+<script type="text/javascript" >
+    AMapLoader.load({
+        key:'23fee9e57ce7519cc605b71fec527128', //首次调用load必须填写key
+        version:'2.0',     //JSAPI 版本号
+        plugins:['AMap.Scale']  //同步加载的插件列表
+    }).then((AMap)=>{
+        var map = new AMap.Map('container');
+        map.addControl(new AMap.Scale())
+    }).catch((e)=>{
+        console.error(e);  //加载错误提示
+    });   
+</script>
+ <!-- <script type="text/javascript">
+        var map1 = new AMap.Map('container', {
+            resizeEnable: true
+        });
+        AMap.plugin('AMap.Geolocation', function () {
+            var geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true,//是否使用高精度定位，默认:true
+                timeout: 10000,          //超过10秒后停止定位，默认：5s
+                buttonPosition: 'RB',    //定位按钮的停靠位置
+                buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                zoomToAccuracy: true,   //定位成功后是否自动调整地图视野到定位点
+            });
+            map1.addControl(geolocation);
+            geolocation.getCurrentPosition(function (status, result) {
+                if (status == 'complete') {
+                    onComplete(result)
+                } else {
+                    onError(result)
+                }
+            });
+        });
+        //解析定位结果
+        function onComplete(data) {
+            $("#PoLng").val(data.position.getLng());
+            $("#PoLat").val(data.position.getLat());
+        }
+        //解析定位错误信息
+        function onError(data) {
+            console.info(data);
+        }
+    </script> -->
+<script type="text/javascript" >
+    // 地图初始化应该在地图容器div已经添加到DOM树之后
+    // var map = new AMap.Map('container', {
+    //     zoom:12,
+    //     center: [116.397428, 39.90923],//中心点坐标
+    //     viewMode:'3D'//使用3D视图
+    // });
+    mapObj = new AMap.Map('container');
+    mapObj.plugin('AMap.Geolocation', function () {
+        geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+            maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+            convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+            showButton: true,        //显示定位按钮，默认：true
+            buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+            buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+            showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
+            showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
+            panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+            zoomToAccuracy:true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+        });
+        mapObj.addControl(geolocation);
+        geolocation.getCurrentPosition();
+        AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+        AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+    });
+</script>
+</html>

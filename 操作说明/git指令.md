@@ -45,6 +45,8 @@ git checkout -- "文件名"{拉取暂存区的文件将其替换工作区的文�
 
 git checkout -- . {拉取暂存区的文件将其替换工作区的全部修改}
 
+git reflog {查看各分支的提交记录}
+
 git reset "commitid" {从版本库的历史提交信息中拉取“commit”的id值，来恢复到该历史信息}
 
 mv "旧文件名" "新文件名"{修改文件名}
@@ -63,7 +65,7 @@ git branch -D 分支名字{删除分支，（不能删除分支自己，需要�
 
 git branch -m 分支名字{重命名分支}
 
-git merge dev {把dev分支的工作成果合并到master分支上，返回到master分支中（合并后可以删除dev分支，继续开发了 git branch -D dev）}
+git merge dev {把dev分支的工作成果合并到master分支上，返回到master分支中（合并后可以删除dev分支【 git branch -D dev】，继续开发了）}
 
 esc	:wq 保存并退出
 
