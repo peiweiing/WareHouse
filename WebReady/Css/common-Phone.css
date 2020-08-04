@@ -54,6 +54,11 @@ table{border-collapse:collapse;border-spacing:0;}
 .overflow-x{overflow-x:hidden;}
 .overflow-y{overflow-y:hidden;}
 .noborder{border:none;}
+/* 层级 */
+.z9{z-index: 9;}
+.z99{z-index: 99;}
+.z999{z-index: 999;}
+.z9999{z-index: 9999;}
 
 /* 
 字体样式 

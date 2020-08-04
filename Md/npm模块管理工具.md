@@ -1,5 +1,7 @@
 npm模块管理工具
 
+npm init	生成当前配置文件
+
 npm install	安装环境依赖
 
 npm install xxx	安装模块到当前目录

@@ -2,7 +2,7 @@ npm 配置安装
 
 在NodeJs文件目录下建立”**node_global**“及”**node_cache**“两个文件夹；
 
-启动cmd，依次输入下面内容已更改下载和缓存位置：
+启动cmd，依次输入下面内容来更改下载和缓存位置：
 
 npm config set prefix "F:\Program Files\node-v8.11.1-win-x64\node_global"
 
