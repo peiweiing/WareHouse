@@ -103,20 +103,76 @@ ES6中的class是个语法糖，即在ES3的构造函数的基础上，增加了
 
  **JSON.parse**:用于从一个字符串中解析出json对象.如:
 
-`var str = '{"name":"huangxiaojian","age":"23"}'
+```javascript
+var str = '{"age":"23","name":"huangxiaojian"}'
 	结果：
 	JSON.parse(str)`
 
-`Object`
-		`age: "23"
+Object
+	age: "23"
 	name: "huangxiaojian"
-	__proto__: Object`
+	__proto__: Object
+```
 
  **JSON.stringify**:用于从一个对象解析出字符串.如:
 
-`var a = {a:1,b:2}
+```javascript
+var a = {a:1,b:2}
 	结果：
-	JSON.stringify(a)`
+	JSON.stringify(a)
 
-``"{"a":1,"b":2}"`
+"{"a":1,"b":2}"
+```
+
+
+
+## JSON字符串与JS对象的区别
+
+**JS对象：**
+
+```js
+   var obj2={};//这只是JS对象
+
+​    var obj3={width:100,height:200};/*这跟JSON就更不沾边了,只是JS的对象 */
+
+​    var obj4={'width':100,'height':200};/*这跟JSON就更不沾边了,只是JS的对象 */
+
+​    var obj5={"width":100,"height":200,"name":"rose"}; /*我们可以把这个称做：JSON格式的JavaScript对象 */
+```
+
+ 
+
+   **JSON字符串：**
+
+```javascript
+ 	var str1='{"width":100,"height":200,"name":"rose"}';/*我们可以把这个称做：JSON格式的字符串 */
+
+​    var a=[
+
+​        {"width":100,"height":200,"name":"rose"},
+
+​        {"width":100,"height":200,"name":"rose"},
+
+​        {"width":100,"height":200,"name":"rose"},
+
+​    ];/*这个叫JSON格式的数组，是JSON的稍复杂一点的形式 */
+
+​    var str2='['+
+
+​        '{"width":100,"height":200,"name":"rose"},'+
+
+​        '{"width":100,"height":200,"name":"rose"},'+
+
+​        '{"width":100,"height":200,"name":"rose"},'+
+
+​    ']' ;/*  这个叫稍复杂一点的JSON格式的字符串  */
+
+tip：json和数组一样，都可以存数据。
+
+tip：json与数组的下标区别：json的下标是字符串，数组的下标是数字。
+```
+
+## JSONP
+
+foo({"name":"B","age":23});//所谓的jsonp，就是一句函数调用，数据都被包裹传递到参数中了
 

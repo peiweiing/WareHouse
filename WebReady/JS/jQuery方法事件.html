@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery方法事件</title>
+    <style>
+        main{display: flex;}
+        .divcs{}
+        .div{}
+    </style>
+</head>
+<body>
+    <main>
+        <div class="divcs">
+            <div class="div one">
+                <img src="" alt="img头像img">
+                <span>标签一</span>
+            </div>
+            <div class="div two">
+                <span>标题标题标题二</span>
+            </div>
+            
+            <div class="div three">
+                <span>发布时间三</span>
+            </div>
+
+            <div class="div four">
+                <span>工作地点四</span>
+                <span>结算方式</span>
+                <span>每日工资</span>
+            </div>
+        </div>
+        <div class="module">
+            <span>新的标题标题</span>
+            <span>内容有多少写多少内容有多少写多少内容有多少写多少内容有多少写多少内容有多少写多少内容有多少写多少</span>
+        </div>
+    </main>
+</body>
+<script src="js/jquery.js"></script>
+<script>
+// JQuery方法事件
+
+// JSONP
+    foo({"name":"B","age":23});//所谓的jsonp，就是一句函数调用，数据都被包裹传递到参数中了
+
+// JSON字符串转化为JS对象
+    JSON.parse(jsonstring)//将json数据转化为js对象(不兼容ie7)
+    Jsobj=eval('("+jsonstring+")')//将json数据转化为js对象(兼容所有浏览器，但不安全，会执行json里面的表达式？)
+
+// JS对象转化为JSON字符串
+    JSON.stringify(jsobj)//将js对象转化为json数据(不兼容ie7)
+
+// JSON字符串与JS对象的区别
+    // JS对象
+    var obj2={};//这只是JS对象
+    var obj3={width:100,height:200};/*这跟JSON就更不沾边了,只是JS的对象 */
+    var obj4={'width':100,'height':200};/*这跟JSON就更不沾边了,只是JS的对象 */
+    var obj5={"width":100,"height":200,"name":"rose"}; /*我们可以把这个称做：JSON格式的JavaScript对象 */
+    // JSON字符串
+    var str1='{"width":100,"height":200,"name":"rose"}';/*我们可以把这个称做：JSON格式的字符串 */
+    var a=[
+        {"width":100,"height":200,"name":"rose"},
+        {"width":100,"height":200,"name":"rose"},
+        {"width":100,"height":200,"name":"rose"},
+    ];/*这个叫JSON格式的数组，是JSON的稍复杂一点的形式 */
+    var str2='['+
+        '{"width":100,"height":200,"name":"rose"},'+
+        '{"width":100,"height":200,"name":"rose"},'+
+        '{"width":100,"height":200,"name":"rose"},'+
+    ']' ;/*  这个叫稍复杂一点的JSON格式的字符串  */
+// tip：json和数组一样，都可以存数据。
+// tip：json与数组的下标区别：json的下标是字符串，数组的下标是数字。
+
+// 在标签内部插入节点
+    $('.divcs').append('hao');//将类名divcs的标签中末尾追加内容
+    $('.div img').appendTo('.divcs');//将类名div的img元素移动到类名divcs中的末尾
+    $('.divcs').prepend('haoaa');//将类名divcs的元素中首处添加内容
+    $('.divcs img').prependTo('.divcs');//将类名div的img元素移动到类名divcs中的首位
+// 在标签外插入节点
+    $('.divcs').after('henhao');//将类名div的标签后面添加内容
+    $('<p>haod</p>').insertAfter('.div');//将内容插入到类名为divcs的元素后面
+    $('.divcs').before('henhao');//将类名div的标签前面添加内容
+    $('<p>haod</p>').insertBefore('.divcs');//将内容插入到类名为divcs的元素后面
+// 删除、复制、替换节点
+    // 删除节点
+    $('.four').empty();//删除类名four中的所有子节点
+    $('.three').remove();//删除类名three标签元素
+    // 复制节点
+    $('img').bind('click',function(){//为img标签添加绑定单击事件
+        $(this).clone().insertAfter(this)//复制自己但不复制事件处理
+    })
+    $('img').bind('click',function(){//为img标签添加绑定单击事件
+        $(this).clone(true).insertAfter(this)//clone中参数为true时复制自己并且复制事件处理
+    })
+    // 替换节点
+    $('.one').replaceWith("replaceWith替换结果")//将类名one的内容替换为replaceWith方法中的内容
+    $('<p>replaceAll替换结果</p>').replaceAll(".two")//将类名two的内容替换为replaceAll方法中的内容
+
+// 元素属性操作
+    $('img').attr('src')//获取img标签的src属性值
+    $('img').attr('data-id','img1')//为img标签添加属性，属可以时自定义标签
+    $('img').attr('value',function(){
+        return this.src//为img标签设置函数返回值的属性值，src的内容作为其value属性值
+    })
+    $('img').attr({alt:'图片',title:'图片标题'})//为img标签添加多个属性
+    $('img').removeAttr('title')//将img标签的title属性删除。
+// 元素css样式操作
+    $('div').addClass('blue bgcr');//为类名div元素添加blue和bgcr类名
+    $('div').removeClass('blue');//将类名为div元素的blue类名删除
+    $('div').toggleClass('bgcyellow')//如果类名为div的元素中存在bgcyellow类，则删除该类，负责添加该类，切换操作
+    $('div').toggleClass('show',true)//在类名为div的元素中，第二个参数为真，则添加第一个参数为show的类名
+    $('div').toggleClass('show',false)//在类名为div的元素中，第二个参数为假，则删除第一个参数为show的类名
+// 修改css属性
+    $('div').css('color');//获取类名为div标签的color属性值
+    $('div').css('color','#fff');//为类名为div的标签添加css颜色属性
+    $('div').css({'color':'#fff','background-color':'#ccc','font-size':'1rem'});//为类名为div的标签添加多个css属性
+
+//事件函数
+    // 页面加载响应事件
+    $(document).ready(function(){
+        // 这里写页面加载完要执行的代码
+    })
+    $().ready(function(){//简写，$()不带参数是，默认就是document。
+        //这里写页面加载完要执行的代码
+    })
+    
+    // 事件
+    blur()//触发元素的blur事件
+    blur(fn)//元素的blur事件中绑定一个处理函数，在元素失去焦点时触发
+    change()//触发元素的change事件
+    change(fn)//元素的change事件中绑定一个处理函数，在元素的值改变并且失去焦点时触发
+    click()//触发元素的click事件
+    click(fn)//元素的click事件中绑定一个处理函数，在元素上单击时触发
+    dbclick()//触发元素的dbclick事件
+    dbclick(fn)//元素的dbclick事件中绑定一个处理函数，在元素上双击时触发
+    error()//触发元素的error事件
+    error(fn)//元素的error事件中绑定一个处理函数，在JavaScript发生错误时触发
+    focus()//触发元素的focus事件
+    focus(fn)//元素的focus事件中绑定一个处理函数，当元素获得焦点时触发
+    keydown()//触发元素的keydown事件
+    keydown(fn)//元素的keydown事件中绑定一个处理函数，当键盘按下时触发
+    keyup()//触发元素的keyup事件
+    keyup(fn)//元素的keyup事件中绑定一个处理函数，在按键释放时触发
+    keypress()//触发元素的keypress事件
+    keypress(fn)//元素的keypress事件中绑定一个处理函数，在按下并抬起按键时触发
+    select()//触发元素的select事件
+    select(fn)//元素的select事件中绑定一个处理函数，在元素选中某段文本时触发
+    submit()//触发元素的submit事件
+    submit(fn)//元素的submit事件中绑定一个处理函数，在表单提交时触发
+
+    load(fn)//load() 方法从服务器加载数据，并把返回的数据放置到指定的元素中。
+    mousedown(fn)//元素的mousedown事件中绑定一个处理函数，在元素上按下鼠标按键时触发
+    mousemove(fn)//元素的mousemove事件中绑定一个处理函数，鼠标指针在元素上移动时触发
+    mouseout(fn)//元素的mouseout事件中绑定一个处理函数，鼠标指针在元素上离开时触发
+    mouseover(fn)//元素的mouseover事件中绑定一个处理函数，鼠标指针移入元素时触发
+    mouseup(fn)//元素的mouseup事件中绑定一个处理函数，鼠标按键在元素上按下并松开时触发
+    resize(fn)//元素的resize事件中绑定一个处理函数，当文档窗口改变大小时触发
+    scroll(fn)//元素的scroll事件中绑定一个处理函数，当滚动条发生变化时触发
+    unload(fn)//unload() 方法当用户离开页面，卸载元素时，触发unload 事件。
+
+    // 事件绑定
+    bind("click")//为元素绑定单击事件
+    unbind("click")//移除元素的单击事件 
+    one("click")//为元素绑定一次性事件，当用户第一次单击元素时触发  
+</script>
+</html>

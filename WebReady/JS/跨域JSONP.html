@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>跨域jsonp</title>
+</head>
+<body>
+
+<script>
+	function fn(res){//res就是服务器返回的数据
+		console.log(res);
+	}
+</script>
+<script src="http://127.0.0.1:6000/queryInfo?callback=fn"></script>
+
+</body>
+</html>
