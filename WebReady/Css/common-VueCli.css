@@ -42,6 +42,11 @@ table{border-collapse:collapse;border-spacing:0;}
 .z999{z-index: 999;}
 .z9999{z-index: 9999;}
 
+/* 主色调 */
+.bgcColor{background-color: orangered;}
+.bgcImg{background-image: url() no-repeat;}
+
+
 /* 
 字体样式 
 */
@@ -126,6 +131,23 @@ css3变形：旋转、缩放、扭曲、移动及矩阵变形
 元素排列顺序
 */
 .o1{order:1}.o2{order:2}.o3{order:3}.o4{order:4}.o5{order:5}
+
+/*
+线性渐变色
+*/
+.linear{/*向右线性渐变：*/
+    background-image: linear-gradient(to right,#e66465, #9198e5);
+}
+.radial{/*颜色节点均匀分布的径向渐变：*/
+    background-image: radial-gradient(red, yellow, green);
+}
+.radial-circle{/*形状为圆形的径向渐变：*/
+    background-image: radial-gradient(circle, red, yellow, green);
+}
+.radial-ellipse{/*形状为椭圆形的径向渐变：*/
+    background-image: radial-gradient(ellipse, red, yellow, green);
+}
+
 
 /* 
 盒子类型 

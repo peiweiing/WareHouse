@@ -57,9 +57,32 @@ table{border-collapse:collapse;border-spacing:0;}
 .z999{z-index: 999;}
 .z9999{z-index: 9999;}
 
+/* 主色调 */
+.bgcColor{background-color: orangered;}
+.bgcImg{background-image: url() no-repeat;}
+
+
 /* 
 字体样式 
 */
+.f1rem{font-size:1rem!important;}
+.f102rem{font-size:1.2rem!important;}
+.f104rem{font-size:1.4rem!important;}
+.f106rem{font-size:1.6rem!important;}
+.f108rem{font-size:1.8rem!important;}
+.f2rem{font-size:2rem!important;}
+.f202rem{font-size:2.2rem!important;}
+.f204rem{font-size:2.4rem!important;}
+.f206rem{font-size:2.6rem!important;}
+.f208rem{font-size:2.8rem!important;}
+.f3rem{font-size:3rem!important;}
+.f302rem{font-size:3.2rem!important;}
+.f304rem{font-size:3.4rem!important;}
+.f306rem{font-size:3.6rem!important;}
+.f308rem{font-size:3.8rem!important;}
+.f4rem{font-size:4rem!important;}
+.f5rem{font-size:5rem!important;}
+.f6rem{font-size:6rem!important;}
 /* 字体加粗 */
 .f-bold{font-weight:bold;}
 /* 字体不换行 */
@@ -141,6 +164,23 @@ table{border-collapse:collapse;border-spacing:0;}
 元素排列顺序
 */
 .o1{order:1}.o2{order:2}.o3{order:3}.o4{order:4}.o5{order:5}
+
+/*
+线性渐变色
+*/
+.linear{/*向右线性渐变：*/
+    background-image: linear-gradient(to right,#e66465, #9198e5);
+}
+.radial{/*颜色节点均匀分布的径向渐变：*/
+    background-image: radial-gradient(red, yellow, green);
+}
+.radial-circle{/*形状为圆形的径向渐变：*/
+    background-image: radial-gradient(circle, red, yellow, green);
+}
+.radial-ellipse{/*形状为椭圆形的径向渐变：*/
+    background-image: radial-gradient(ellipse, red, yellow, green);
+}
+
 
 /*
 盒子类型
