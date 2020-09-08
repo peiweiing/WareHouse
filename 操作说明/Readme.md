@@ -23,11 +23,12 @@ Git基础命令
  然后执行下面的命令
  git add *  将当前目录的所有文件全部添加到临时区
  git commit -m "提交声明"    将数据添加到本地仓库
- git remote add origin https://github.com/peiweiing/gittest.git  连接设置的仓库
+ git remote add origin https://github.com/peiweiing/WareHouse.git  连接设置的仓库{}（该`https://`克隆网址，可在所有存储库，公共和私人。即使您位于防火墙或代理之后，这些URL也可以使用。）
+ git remote add origin git@github.com:peiweiing/WareHouse.git  连接设置的仓库（SSH URL通过SSH（一种安全协议）提供对Git存储库的访问。要使用这些网址，您需要生成您的计算机上的SSH密钥对和增加**公共**关键是你的GitHub帐户。）
  git push -u origin master 将本地数据提交到远程仓库  
 
 
-  3. 第二次提交数据
+    3. 第二次提交数据
      git add * 
       git commit -m "提交数据的备注"
       git push origin master 

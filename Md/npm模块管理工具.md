@@ -14,6 +14,12 @@ npm install xxx@2.0	安装指定的2.0版本号的模块
 
 npm view xxx > xxx.version.txt	生成模块的历史版本信息
 
+全局切换镜像源：`npm config set registry http://registry.npm.taobao.org`
+
+全局切换官方镜像源：`npm config set registry http://www.npmjs.org`
+
+查看镜像源使用状态：`npm get registry`
+
 
 
 cnpm模块管理工具

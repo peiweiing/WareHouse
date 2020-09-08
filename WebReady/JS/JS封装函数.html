@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 获取元素宽高及偏移位置
+    element.offsetHeight;//获取某个元素的高（元素必须出现在页面上）
+    element.offsetWidth;//获取某个元素的宽（元素必须出现在页面上）
+    element.offsetLeft;//返回元素的水平偏移位置（基于最近的定位父元素，没有则为body）
+    element.offsetTop;//返回元素的垂直偏移位置（基于最近的定位父元素，没有则为body）
+    element.offsetParent;//返回元素的偏移容器（基于最近的定位父元素）
+    
+// 获取元素属性的方法
+    function getStyle(domObj,attr){//传入元素及其属性的参数
+        if(domObj.currentStyle){//如果该如元素属性在ie存在
+            return domObj.currentStyle[attr];//返回该元素的属性
+        }else{
+            var obj = window.getComputedStyle(domObj);//返回该元素的属性
+            return obj[attr];
+        }
+    }
+</script>
+</html>

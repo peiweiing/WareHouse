@@ -61,8 +61,12 @@ table{border-collapse:collapse;border-spacing:0;}
 .z9999{z-index: 9999;}
 
 /* 主色调 */
-.bgcColor{background-color: orangered;}
-.bgcImg{background-image: url() no-repeat;}
+.fcolor{color: #9E2036;}
+.bgccolor{background-color: #9E2036;}
+.loginimg{background: url(./static/img/loginimg.png) no-repeat 100% 100%;background-size: 100% 100%;}
+.bgcimg{background: url(./static/img/bgcimg.png) no-repeat 100% 100%;background-size: 100% 100%;}
+.bgclinear{background-image: linear-gradient(#9E2036, #EE405E);}
+.boxcolor{box-shadow: 0 0 10 #FD5757;}
 
 
 /* 
