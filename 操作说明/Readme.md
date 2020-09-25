@@ -55,9 +55,12 @@ Git基础命令
 
 tip：查看连接状态：git remote -v
 
-.拉数据
+.建立连接状态
    git remote add origin 'https://github.com/peiweiing/TeamWork.git'
  	
+.拉数据
+   git pull origin master
+   git pull 'https://github.com/peiweiing/TeamWork.git'
 
 .推新数据
    echo "222" > xxxx.txt
