@@ -65,3 +65,14 @@ tip：查看连接状态：git remote -v
    git add .
    git commit -m'xxxxaaa'
    git push origin masterm
+
+
+
+
+
+    在本地已经码了add和commit之后，想要把文件push到GitHub时
+	git push -u origin master
+	开始报错:本地版本和主干上的有差异,让你先pull远端的版本,解决了冲突才能push。
+	这时就要使用 git pull origin master --allow-unrelated-histories //把远程仓库和本地同步，消除差异
+	然后在重新add 和 commit 相应文件
+	再使用git push -u origin master就能上传成功了。
