@@ -63,7 +63,7 @@ tip：查看连接状态：git remote -v
 	
 .拉数据
    git pull origin master
-   git pull 'https://github.com/peiweiing/TeamWork.git'
+   git pull 'https://github.com/peiweiing/xxxxx.git'
 
 .推新数据
    echo "222" > xxxx.txt
