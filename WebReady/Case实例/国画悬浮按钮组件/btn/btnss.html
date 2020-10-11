@@ -1,0 +1,344 @@
+{php $task_mode =intval(m('cache')->getString('task_mode', 'global'))}
+{if $task_mode==0}
+
+<style>
+.hide{
+    display: none;
+}
+.show{
+    display: flex;
+}
+  
+  .btn1{
+    position: fixed;
+    /*right: 4%;*/
+    /*top: 45%;*/
+    border: none;
+    z-index: 1000;
+  }
+  .btncs{
+    width: 40px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 1);
+    border-radius: 100px;
+    padding: 10px 0;
+    
+  }
+  .btncs img{
+    width: 30px;
+    height: 30px;
+    margin: 5px 0;
+  }
+  .btncss{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 1);
+    border-radius: 100px;
+    margin-top: 5px;
+    /*transition: 3s;*/
+  }
+  .btncss img{
+    width: 30px;
+    height: 30px;
+  }
+  .btnimg{
+    animation: btnimg 3s linear infinite;
+  }
+  @keyframes btnimg {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0.25;
+    }
+    25% {
+      transform: rotate(90deg);
+      opacity: 0.5;
+    }
+    50% {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+    75% {
+      transform: rotate(270deg);
+      opacity: 0.5;
+    }
+    100% {
+      transform: rotate(360deg);
+      opacity: 0.25;
+    }
+  }  
+</style>
+
+<div class="btn1 " id="btn1">
+    <div id="btncs" class="btncs" style="opacity:1 ;">
+        <div>
+            <a  href="./index.php?i=1&c=entry&m=ewei_shopv2&do=mobile&r=goods" style="color:#000;">
+              <img src="https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/list.png" alt="">
+            </a>
+        </div>
+        <div>
+          <a  href="./index.php?i=1&c=entry&m=ewei_shopv2&do=mobile&r=commission&mid=20&v=159540" >
+            <img src="https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/integral.png" alt="">
+          </a>
+        </div>
+        <div>
+            <a  href="./index.php?i=1&c=entry&m=ewei_shopv2&do=mobile&r=member&mid=20" >
+                <img src="https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/wode.png" alt="">
+            </a>
+        </div>
+    </div>
+
+  <div id="btncss" class="btncss"  data-id="1">
+      <img id="btnimg" class="btnimg" src="https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo.png" alt="">
+  </div>
+</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+
+<script type="text/javascript">
+    var btncs =document.getElementById("btncs");
+    var btncss =document.getElementById("btncss");
+    var imgsrc =document.getElementById("btnimg");
+    var data = sessionStorage.getItem("data");
+    // btncs.style.display = "flex";
+    console.log(data);
+    if(data==1){
+        btncs.style.display = "flex";
+        imgsrc.setAttribute('src','https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo1.png');
+    }else if(data==2){
+        btncs.style.display = "none";
+        imgsrc.setAttribute('src','https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo.png');
+    }
+    
+
+    $("#btncss").click(function(){
+        var f2 = $(this).attr('data-id');
+        // console.log(f2);
+        if(f2==1){
+            $(this).attr("data-id","2");
+            sessionStorage.setItem("data", "2");
+            btncs.style.display = "none";
+            imgsrc.setAttribute('src','https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo1.png');
+        }else{
+            $(this).attr("data-id","1");
+            sessionStorage.setItem("data", "1");
+            btncs.style.display = "flex";
+            imgsrc.setAttribute('src','https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo1.png');
+        }
+    });
+    
+    
+    
+    
+    $(function(){
+        var cont=$("#btn1");
+        var contW=$("#btn1").width();
+        var contH=$("#btn1").height();
+
+        var startX,startY,sX,sY,moveX,moveY;
+        var winW=$(window).width();
+        var winH=$(window).height();
+        var left =  sessionStorage.getItem("left");
+        var top =  sessionStorage.getItem("top");
+        console.log(left);
+        console.log(top);
+        
+        if(left){
+            $("#btn1").css({
+                "left":left+"px",
+                "top":top+"px",
+            })
+        }else{
+            $("#btn1").css({
+                "right":"20px",
+                "top":"300px",
+            })
+        }
+            
+        
+        
+        
+        // alert(winW);
+        // alert(winH);
+        // console.log(contW);
+        // console.log(contH)
+        cont.on({ //绑定事件
+            touchstart:function(e){
+                startX = e.originalEvent.targetTouches[0].pageX;    //获取点击点的X坐标
+                startY = e.originalEvent.targetTouches[0].pageY;    //获取点击点的Y坐标
+                //console.log("startX="+startX+"************startY="+startY);
+                sX=$(this).offset().left;//相对于当前窗口X轴的偏移量
+                sY=$(this).offset().top;//相对于当前窗口Y轴的偏移量
+                //console.log("sX="+sX+"***************sY="+sY);
+                leftX=startX-sX;//鼠标所能移动的最左端是当前鼠标距div左边距的位置
+                rightX=winW-contW+leftX;//鼠标所能移动的最右端是当前窗口距离减去鼠标距div最右端位置
+                topY=startY-sY;//鼠标所能移动最上端是当前鼠标距div上边距的位置
+                bottomY=winH-contH+topY;//鼠标所能移动最下端是当前窗口距离减去鼠标距div最下端位置
+            },
+            touchmove:function(e){
+                e.preventDefault();
+                moveX=e.originalEvent.targetTouches[0].pageX;//移动过程中X轴的坐标
+                moveY=e.originalEvent.targetTouches[0].pageY;//移动过程中Y轴的坐标
+                //console.log("moveX="+moveX+"************moveY="+moveY);
+                if(moveX<leftX){moveX=leftX;}
+                if(moveX>rightX){moveX=rightX;}
+                if(moveY<topY){moveY=topY;}
+                if(moveY>bottomY){moveY=bottomY;}
+                // console.log(moveX+sX-startX);
+                // console.log(moveY+sY-startY);
+                
+                sessionStorage.setItem("left", moveX+sX-startX);
+        
+                sessionStorage.setItem("top", moveY+sY-startY);
+                
+                $(this).css({
+                    "left":moveX+sX-startX,
+                    "top":moveY+sY-startY,
+                })
+            }
+        })
+    })
+</script>
+<script>
+    // var btncs =document.getElementById("btncs");
+    // var btncss =document.getElementById("btncss");
+    // var imgsrc =document.getElementById("btnimg");
+    // btncs.style.display = "flex";
+    // btncss.onclick = function(){
+    //     if(btncs.style.display == "flex"){
+    //         btncs.style.display = "none";
+    //         imgsrc.setAttribute('src','https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo1.png');
+    //     } else{
+    //         btncs.style.display = "flex";
+    //         imgsrc.setAttribute('src','https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo.png');
+    //     }
+    // }
+    
+    
+    
+    // var toggle = true;
+    // $("#btncss").click(function() {
+    // 	if (toggle) {
+    //         $("#btncs").slideUp();
+    // 		$("#btnimg").attr("src", "https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo1.png")
+    // 		toggle = false;
+    // 	} else {
+    //         $("#btncs").slideDown();
+    // 		$("#btnimg").attr("src", "https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo.png")
+    // 		toggle = true;
+    // 	}
+    // });
+    
+    // $("#btncss").click(function(){
+    //   $("#btncs").slideToggle();
+    // }); 
+    
+</script>
+
+<script language='javascript'>
+	$(function(){
+		$.getJSON("{php echo mobileUrl('util/task')}");
+        {if p('task')}
+            {if p('task')->get_unread()}
+                {if p('task')->TasknewEntrance()}
+                    var navs = $('.fui-navbar').find('a');
+                    $.each(navs,function (i, v) {
+                        var href = $(v).attr('href');
+
+                        if (href.indexOf('&r=member')>0 && href.indexOf('&r=member.')<1){
+                            var hasClass = $(v).hasClass('active');
+                            if (!hasClass){
+                                $(v).append('<span class="task-red-mark" style="background-color: #ff5555;position: absolute;width: 6.9px;height: 6.9px;border-radius: 50%;display: block;right: 1rem;top: 0.3rem"></span>');
+                            }
+                        }
+                    });
+                {/if}
+                {if p('task')->TaskTopNotice()}
+                    var tophtml = '<div class="task-hint"><a href="{php echo mobileUrl('task.reward');}">您有一个新的任务奖励没有领取，点此去领取~~</a><span>忽略</span></div>';
+                    //加载顶部栏
+                    $('body').append(tophtml);
+                    $('.task-hint span').click(function () {
+                        $('.task-hint').css('display', 'none');
+                        $.ajax({
+                            url:'{php echo mobileUrl('task.set_read')}',
+                        });
+                    })
+                {/if}
+
+            {/if}
+        {/if}
+	})
+</script>
+{/if}
+
+<script language="javascript">
+	require(['init']);
+	setTimeout(function () {
+		if($(".danmu").length>0){
+			$(".danmu").remove();
+		}
+	}, 500);
+</script>
+
+{if is_weixin()}
+<script language='javascript'>
+	var width = window.screen.width *  window.devicePixelRatio;
+	var height = window.screen.height *  window.devicePixelRatio;
+	var h = document.body.offsetHeight *  window.devicePixelRatio;
+
+	if(height==2436 && width==1125){
+		$(".fui-navbar,.cart-list,.fui-footer,.fui-content.navbar").addClass('iphonex')
+	}
+	if(h == 1923){
+        $(".fui-navbar,.cart-list,.fui-footer,.fui-content.navbar").removeClass('iphonex');
+	}
+</script>
+{/if}
+{if is_h5app()}
+	{php $this->shopShare()}
+	<script language='javascript'>
+		require(['biz/h5app'], function (modal) {
+			modal.init({
+				share: {php echo json_encode($_W['shopshare'])},
+				backurl: "{$_GPC['backurl']}",
+				statusbar: "{php echo intval($_W['shopset']['wap']['statusbar'])}",
+				payinfo: {php echo json_encode($payinfo)}
+			});
+			{if $initWX}
+			modal.initWX();
+			{/if} 
+		});
+
+	</script>
+	{template 'headmenu'}
+{/if}
+
+{php $this->wapQrcode()}
+{template '_share'}
+
+{php $merchid = !empty($goods['merchid'])?$goods['merchid']:$_GPC['merchid']}
+
+{if !$hideLayer}
+	{php $this->diyLayer(true, $diypage, $merchid?$merchid:false,$goods,$order)}
+{/if}
+
+{if !$hideGoTop}
+	{php $this->diyGotop(true, $diypage)}
+{/if}
+
+
+{if p('live')}
+	{php $this->backliving()}
+{/if}
+
+<span style="display:none">{$_W['shopset']['shop']['diycode']}</span>
+
+</body>
+</html>
+
+
+

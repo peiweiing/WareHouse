@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮</title>
+    <style>
+        
+.hide{
+    display: none;
+  }
+  .show{
+    display: flex;
+  }
+  
+  .btn{
+    position: fixed;
+    right: 1%;
+    top: 45%;
+  }
+  .btncs{
+    width: 30px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 20px;
+    padding: 10px 0;
+    /* transition: 3s; */
+  }
+  .btncs img{
+    width: 20px;
+    height: 20px;
+    margin: 3px 0;
+  }
+  .btncss{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 0, 0, 0.6);
+    border-radius: 20px;
+    margin-top: 5px;
+    transition: 3s;
+  }
+  .btncss img{
+    width: 20px;
+    height: 20px;
+  }
+  .btnimg{
+    animation: btnimg 3s linear infinite;
+  }
+  @keyframes btnimg {
+    0% {
+      transform: rotate(0deg);
+      opacity: 0.25;
+    }
+    25% {
+      transform: rotate(90deg);
+      opacity: 0.5;
+    }
+    50% {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+    75% {
+      transform: rotate(270deg);
+      opacity: 0.5;
+    }
+    100% {
+      transform: rotate(360deg);
+      opacity: 0.25;
+    }
+  } 
+    </style>
+</head>
+<body>
+    <div class="btn">
+      <div id="btncs" class="btncs">
+          <div>
+              <img src="../img/shouye.png" alt="">
+          </div>
+          <div>
+              <img src="../img/integral.png" alt="">
+          </div>
+          <div>
+              <img src="../img/我的.png" alt="">
+          </div>
+      </div>
+    
+      <div id="btncss" class="btncss">
+          <img id="btnimg" class="btnimg" src="../img/更多1.png" alt="">
+      </div>
+    </div>
+</body>
+<!-- <script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script> -->
+<script>
+// js方法
+    var btncs =document.getElementById("btncs");
+    var btncss =document.getElementById("btncss");
+    var imgsrc =document.getElementById("btnimg");
+    btncs.style.display = "flex";
+    btncss.onclick = function(){
+        if(btncs.style.display == "flex"){
+            btncs.style.display = "none";
+            imgsrc.setAttribute('src','https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo1.png');
+        } else{
+            btncs.style.display = "flex";
+            imgsrc.setAttribute('src','https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo.png');
+        }
+    }
+    
+// jquery效果方法
+    // var toggle = true;
+    // $("#btncss").click(function() {
+    // 	if (toggle) {
+    //         $("#btncs").slideUp();
+    // 		$("#btnimg").attr("src", "https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo1.png")
+    // 		toggle = false;
+    // 	} else {
+    //         $("#btncs").slideDown();
+    // 		$("#btnimg").attr("src", "https://zihua.lovehou.com/addons/ewei_shopv2/plugin/commission/template/mobile/default/img/gengduo.png")
+    // 		toggle = true;
+    // 	}
+    // });
+    
+    // $("#btncss").click(function(){
+    //   $("#btncs").slideToggle();
+    // }); 
+    
+</script>
+</html>
