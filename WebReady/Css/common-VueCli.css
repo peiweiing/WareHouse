@@ -204,16 +204,17 @@ Y轴反向排序
 /* 
 X轴排列
 */
+.FX-b{display:flex!important;justify-content: baseline!important;}
 .FX-c{display:flex!important;justify-content:center!important;}
-.FX-sb{display:flex!important;justify-content:space-between!important;}
 .FX-sa{display:flex!important;justify-content:space-around!important;}
+.FX-sb{display:flex!important;justify-content:space-between!important;}
 .FX-fs{display:flex!important;justify-content:flex-start!important;}
 .FX-fe{display:flex!important;justify-content:flex-end!important;}
 
 /* 
 Y轴排列
 */
-.FY-c{display:flex!important;align-items:center!important;}
 .FY-b{display:flex!important;align-items:baseline!important;}/*以首行基线对齐*/
-.FY-fe{display:flex!important;align-items:flex-end!important;}
+.FY-c{display:flex!important;align-items:center!important;}
 .FY-fs{display:flex!important;align-items:flex-start!important;}
+.FY-fe{display:flex!important;align-items:flex-end!important;}

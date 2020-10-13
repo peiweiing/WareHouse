@@ -220,18 +220,18 @@ Y轴反向排序
 /* 
 X轴排列
 */
-.FX-c{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: center!important;}
 .FX-b{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: baseline!important;}
-.FX-fs{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: flex-start!important;}
-.FX-fe{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: flex-end!important;}
+.FX-c{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: center!important;}
 .FX-sa{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: space-around!important;}
 .FX-sb{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: space-between!important;}
+.FX-fs{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: flex-start!important;}
+.FX-fe{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;justify-content: flex-end!important;}
 
 /* 
 Y轴排列
 */
-.FY-c{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;align-items: center!important;}
 .FY-b{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;align-items: baseline!important;}
+.FY-c{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;align-items: center!important;}
 .FY-fs{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;align-items: flex-start!important;}
 .FY-fe{display: box;display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex!important;align-items: flex-end!important;}
 
