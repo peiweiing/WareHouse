@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>七天免登录</title>
+</head>
+<body>
+    <div>
+        用户名：<input type="text" placeholder="请输入用户名" id="name">
+        密码：<input type="password" placeholder="请输入密码" id="pwd">
+    </div>
+    <label for="male"><input type="checkbox" id="male">七天免登录</label>
+    <input type="button" id="btn" value="登录">
+</body>
+<script src="./common.js"></script>
+<script>
+    //[设置cookie 要在服务器环境下]
+    
+    var aName = document.getElementById("name");
+    var aPwd = document.getElementById("pwd");
+    var aMale = document.getElementById("male");
+    var aBtn = document.getElementById("btn");
+    // 缓存是否存在
+    if(getCookie("username")){
+        aName.value = getCookie("username");
+        aPwd.value = getCookie("password");
+    }
+    //点击登录时执行
+    aBtn.onclick = function(){
+        console.log('111');
+        var username = aName.value;
+        var password = aPwd.value;
+        if(aMale.checked){//是否选中按钮
+            console.log('222');
+            setCookie("username",username,7);
+            setCookie("password",password,7);
+        }
+    }
+</script>
+</html>
