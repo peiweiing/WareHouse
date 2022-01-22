@@ -1,0 +1,21 @@
+【1】git安装：
+	安装后初始配置：执行【git init】输入下面的命令进行配置【git config --global user.email "you@example.com"】【git config --global user.name "Your Name"】 
+	绑定密钥方法：【 ssh-keygen -t rsa -C "注册的github的邮箱"】一路回车就好，最后在用户主目录：【C:\Users\用户名\.ssh】里面存在两个文件：【id_rsa】 【 id_rsa.pub】；打开github官网 -> settings -> SSH and GPG keys -> New SSH key -> title任意填写 、key里面填id_rsa.pub
+ 的内容。
+	查看连接状态：【git remote -v】
+	删除远程连接：【git remote rm origin】
+	建立连接状态：【git remote add origin 'https://github.com/peiweiing/xxxxx.git'】
+   	提交数据三步：(1)【git add * 】(2)【git commit -m "提交数据的备注"】(3)【git push origin master】
+
+【2】node.js环境：
+	安装完成后win+R打开运行，输入cmd进入命令行，输入node -v 和npm -v命令查看版本号
+	修改全局模块路径和缓存路径：在命令行输入修改全局模块路径【npm config set perfix "D:\Program Files\nodejs\node_global"】修改缓存路径【npm config set cache  "D:\Program Files\nodejs\node_cache"】
+	配置环境变量，在系统变量中新建【NODE_PATH】输入【H:\Work\NodeJS\node_modules】此处为以后安装模块的路径；在系统变量原有【Path】添加文件根路径【H:\Work\NodeJS\】及模块路径【H:\Work\NodeJS\node_global】；在更改用户变量【path】中默认的【C:\Users\用户名\AppData\Roaming\npm】为【H:\Work\NodeJS\node_global】
+
+【3】npm配置：
+	将npm镜像源链接切换到淘宝镜像【npm config set registry http://registry.npm.taobao.org】查看当前使用的镜像源【npm get registry】
+
+【4】java jdk环境：
+	安装完成后配置环境变量，在系统变量里面检查第一步：(1)新增【JAVA_HOME】，变量值是你的电脑JDK的安装路径，我的是【D:\project\tool\Java\jdk_9.0.1】
+	(2)原有【Path】，在原变量值的最后面加上两句，（如果写在一行用分号；分割）【%JAVA_HOME%\bin】【%JAVA_HOME%\jre\bin】
+	(3)新增【CLASSPATH】，变量值【.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar】
