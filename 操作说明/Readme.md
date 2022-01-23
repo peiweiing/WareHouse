@@ -35,6 +35,7 @@ Git基础命令
 
  
 
+
   4. 本地数据删除
      本地数据删除，但是远程仓库文件还在，如果想要把本地的修改提交到远程仓库，需要进行下面的操作
       git rm 删除的文件
@@ -57,7 +58,7 @@ tip：查看连接状态：git remote -v
 
 .删除远程连接
  git remote rm origin
- 
+
 .建立连接状态
    git remote add origin 'https://github.com/peiweiing/xxxxx.git'
 	
@@ -70,15 +71,15 @@ tip：查看连接状态：git remote -v
    git status
    git add .
    git commit -m'xxxxaaa'
-   git push origin masterm
+   git push origin master
 
 
 
 
 
     在本地已经码了add和commit之后，想要把文件push到GitHub时
-	git push -u origin master
-	开始报错:本地版本和主干上的有差异,让你先pull远端的版本,解决了冲突才能push。
-	这时就要使用 git pull origin master --allow-unrelated-histories //把远程仓库和本地同步，消除差异
-	然后在重新add 和 commit 相应文件
-	再使用git push -u origin master就能上传成功了。
+    git push -u origin master
+    开始报错:本地版本和主干上的有差异,让你先pull远端的版本,解决了冲突才能push。
+    这时就要使用 git pull origin master --allow-unrelated-histories //把远程仓库和本地同步，消除差异
+    然后在重新add 和 commit 相应文件
+    再使用git push -u origin master就能上传成功了。
