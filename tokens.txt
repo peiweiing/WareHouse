@@ -1,0 +1,3 @@
+GitHub，peiweiing，token
+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
+git remote set-url origin  https://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@github.com/peiweiing/uni-xiaoyilong.git

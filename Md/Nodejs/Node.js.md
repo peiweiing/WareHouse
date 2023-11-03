@@ -1,12 +1,17 @@
-## Node.js
+## Node.js：2009谷歌公司推出的
 
-Node.js是一个基于Chrome V8引擎(编译成原生机器码)的让JavaScript运行在服务器端的运行环境，它让JavaScript的触角伸到了服务器端。
+Node.js是一个基于Chrome V8引擎(编译成原生机器码)的让JavaScript运行在服务器端的运行环境，是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为与PHP、Python、Perl、Ruby 等服务端语言平起平坐的脚本语言。
+
+传统的js是运行在浏览器上的，因为浏览器内核分为两个部分:
+渲染引擎—渲染HTML和CSS；
+JavaScript引擎—负责运行JavaScript；
+如果要执行JavaScript代码，需要一个js引擎，你可以安装一个浏览器（内置js引擎），或nodejs环境（内置js引擎），如果你在js代码中调用了浏览器提供的API，则必须安装一个浏览器，若调用了nodejs API，则必须安装nodejs环境，然后以各自规定的方式加载、执行JavaScript代码。
 
 Node本身是基于Commonjs模块规范设计的，所以模块是Node的组成；
 
 内置模块：Node天生提供给JS调取使用的
-	第三方模块：别人写好的，我们可以基于npm安装使用
-	自定义模块：自己创建一些模块
+第三方模块：别人写好的，我们可以基于npm安装使用
+自定义模块：自己创建一些模块
 
 **CommonJS模块化设计的思想**（AMD/CMD/ES6 MODULE都是模块设计思想）
 
@@ -45,9 +50,27 @@ Node本身是基于Commonjs模块规范设计的，所以模块是Node的组成�
    ```
    let a=require("./a.js");
    a.sum()
+   
+   
+   		
    ```
 
-   
+
+**JavaScript**：
+		ECMAScript（语言基础，如：语法、数据类型结构以及一些内置对象）
+		DOM（一些操作页面元素的方法）
+		BOM（一些操作浏览器的方法）
+
+
+
+**Node.js**：
+		ECMAScript（语言基础，如：语法、数据类型结构以及一些内置对象）
+		OS（操作系统）
+		file（文件系统）
+		net（网络系统）
+		database（数据库）
+
+
 
 **Node内置模块**，常用三个模块
 		let fs=require("fs"),
@@ -64,14 +87,26 @@ Node本身是基于Commonjs模块规范设计的，所以模块是Node的组成�
 		**减少代码重复，提高利用率**
 		**划分功能，方便管理**
 		**方便使用第三方模块**
-	**模块** node中以模块来划分功能，一个js是一个模块，多个模块相互引用形成一个模块化式项目
-	模块书写 js文件因为作用域的问题，变量和函数只能在当前文件中进行使用，如果在当前模块外引用，必须使用exports/module.exports(特定的类型使用)让这些内容进行暴漏，使用的时候使用require来进行引入。
+	**模块** node中以模块来划分功能，一个js是一个模块，多个模块相互引用形成一个模块化式项目模块书写 js文件因为作用域的问题，变量和函数只能在当前文件中进行使用，如果在当前模块外引用，必须使exports/module.exports(特定的类型使用)让这些内容进行暴漏，使用的时候使用require来进行引入。
 	**http模块** 是node重要的核心模块
 		webServer：方便的实现webServer服务器的创建
 		方法：createServer(function(req,res){})进行服务器创建  listen()来监听端口
 	**url模块** 对当前的url进行相关操作
-	**路由**：通过URL路径来区分不同的请求，从而找到
-不同的功能模块来进行执行。
+	**路由**：通过URL路径来区分不同的请求，从而找到不同的功能模块来进行执行。
+
+
+
+nodejs不是一个js框架，千万不要认为是类似jquery的框架，
+nodejs是js运行时，运行环境，类比java中jvm，
+java的开端是什么，无疑是jvm，自从有了jvm，java才能做到“一次编写处处运行”，
+不管你是windows还是linux，只要安装了对应版本的jvm都可以运行.class文件。
+同样，nodejs的作用和JVM是一样的，也是js的运行环境，不管是你是什么操作系统，
+只要安装对应版本的nodejs，那你就可以用js来开发后台程序。
+这具有划时代的意义，意味着一直以来只能在浏览器上玩来玩去的JS，可以做后端开发了，
+自从有了nodejs后就催生出一大批用js做后台开发的前端人员，这部分人员就是偏前端的“全栈程序员”。
+记住，nodejs是和jvm同等地位的js运行环境，打开了前端人员走向后端的道路。
+
+
 
 
 
@@ -275,13 +310,13 @@ http.createServer(function(req,res){
 
 
 ​    
-    // 路由
-        if(pathurl.pathname=="/login"){
-            res.end("您执行了登陆的后台功能");
-        }else if(pathurl.pathname=="/zhuce"){
-            res.end("您执行了注册的后台功能");
-        }else{
-            res.end("您的请求有误  请核实后在进行请求");
-        }
-    }).listen(3001)
+​    // 路由
+​        if(pathurl.pathname=="/login"){
+​            res.end("您执行了登陆的后台功能");
+​        }else if(pathurl.pathname=="/zhuce"){
+​            res.end("您执行了注册的后台功能");
+​        }else{
+​            res.end("您的请求有误  请核实后在进行请求");
+​        }
+​    }).listen(3001)
 

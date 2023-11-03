@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+<input type="file" id="file">
+<button onclick="doUpload()">按钮</button>
+<img src="" alt="">
+<script>
+    function doUpload(){
+        let file=$('#file').get(0).files[0];
+
+        console.log(file)
+        let formdata=new FormData();//创建空的formData对象
+        // hehe前端上传图片的Key 值 与后端设置的要一样
+        formdata.append('hehe',file);
+        $.ajax({
+                url:'http://192.168.3.20:3000/upload',
+                type:'POST',
+                cache:false,//不必须
+                data:formdata,
+                processData:false,//必须
+				contentType:false,
+				success:function(data){
+                    console.log(data)
+                if(data.err==0){
+                    console.log('上传成功');
+                    //渲染图片
+                    $('img').attr('src',`http://192.168.3.20:3000/${data.img}`);
+                }else{
+                    alert('上传是失败,请重试')
+                }
+            }
+            }
+
+        )
+    }
+</script>
+</body>
+</html>
+

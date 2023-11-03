@@ -14,3 +14,11 @@ npm config set cache "F:\Program Files\node-v8.11.1-win-x64\node_cache"
 2.复制**nodejs**目录路径(F:\xxxxxx\nodejs安装目录)然后选中**用户变量**中的**Path**,单击’编辑’- ->’新建’- ->输入刚复制的地址 - ->确认完成。
 3.复制**node_global**目录路径(F:\xxxxxx\nodejs安装目录\node_global)后选中**用户变量**中的**Path**，单击’编辑’- ->’新建’- ->输入刚复制的地址 - ->确认完成。
 
+
+
+查看npm的registry配置地址：	npm config get registry
+
+更改npm的registry配置地址为淘宝镜像地址指令：	npm config set registry https://registry.npm.taobao.org/
+
+更改npm的registry配置地址为官方地址指令：	npm config set registry https://registry.npmjs.org/
+

@@ -1,0 +1,63 @@
+1.创建uniapp项目，打开并运行到浏览器 http://localhost:8080/
+在创建好的项目路径下打开命令窗口执行以下node.js操作
+2.安装node相关依赖
+npm install express --save -g  //express依赖
+npm install express-generator --save -g  //express应用生成器
+3.创建node项目
+express nodeDemo  //node项目名字
+cd nodeDemo //进入node项目
+npm install //安装依赖
+npm start //启动node项目
+4.地址栏打开localhost:3000 显示下面信息，则运行成功
+Express
+Welcome to Express
+
+一：写一个自定义接口
+打开uniapp项目下nodeDemo/routes/index.js文件 添加下面两段代码，记得重启！！！
+var express = require('express');
+var router = express.Router();
+
+// 1.解决跨域问题
+router.all("*", function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OP0TIONS");
+    res.header("X-Powered-By", "Express");
+    res.header("Content-Type", "text/html; charset=UTF-8");
+    next();
+});
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+
+// 2.自定义接口
+router.get('/list', function(req, res, next) {
+  res.send({
+        "code":1,
+        data:[
+            {id:1,name:'html'},
+            {id:2,name:'css'},
+            {id:3,name:'javascript'},
+        ]
+    })
+});
+
+module.exports = router;
+
+重新运行node，地址栏输入 localhost:3000/list 可查看到写的数值
+{"code":1,"data":[{"id":1,"name":"html"},{"id":2,"name":"css"},{"id":3,"name":"javascript"},]}
+
+二：项目接入node接口
+uniapp项目下pages/index/index.vue文件夹下，请求接口。
+	uni.request({
+		//localhost也可以换成本地局域网ip地址,192.168.xxxx
+                url:'http://localhost:3000/list',
+                success: (res) => {
+                	console.log(res.data);
+                }
+	})
+F12控制台，即可查看返回内容。
+{code:1,data:Array(3)}

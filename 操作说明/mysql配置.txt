@@ -1,0 +1,36 @@
+当你在命令行输入 mysql -V 后，如果提示“不是内部或外部命令”，可能是因为 MySQL 的安装路径没有加入到系统的环境变量中。
+
+具体来说，MySQL 安装时会在安装目录下建立一个 bin 目录，该目录存放着 MySQL 的命令行工具。如果你想在命令行使用 MySQL 的命令，就需要在系统的环境变量中加入 bin 目录的路径。
+
+例如，如果你的 MySQL 安装在 C:\mysql 目录下，那么你可以在系统的PATH环境变量中加入 C:\mysql\bin 路径。这样，就可以在命令行中直接使用 MySQL 的命令了。
+
+
+tip总结：
+
+打开环境变量--在系统变量中：
+编辑变量【Path】增加变量值【C:\Program Files\MySQL\MySQL Server 8.0\bin】
+
+
+此处增加一个报错解决方案
+报错：Client does not support authentication protocol requested by server; consider upgrading MySQL client
+文意思就是：客户端不支持服务器请求的身份验证协议，考虑升级mysql客户端
+这里的根本原因是你安装了8.0版本以上的MySQL，密码加密方式发生了变化所以低版本的navicat不能进行不能自动适配，所以简单的方法就是升级navicat客户端，或者是去手动修改密码规则。
+
+解决方法：
+方法一：
+下载新版本的navicat for mysql即可
+
+方法二：
+1. 找到你的MySQL安装路径，进入bin目录下
+2. 在地址栏输入cmd进行命令行
+3. 输入命令mysql -u root -p ，回车
+4. 输入你的密码，回车 
+5.接着依次输入下面这两条命令
+# 这里最后的root就是你修改后的密码，根据自己的需求更改
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; 
+# 刷新权限
+FLUSH PRIVILEGES;
+6.重新连接即可
+
+提示：如果你的不是默认的3306端口号。那么方法二其它步骤不变，只需将第3步命令更换为mysql -u root -P 3307 -h 127.0.0.1 -p   回车；填3307的地方就是你的端口号；如果你的端口号是默认的3306则忽略此提示。
+

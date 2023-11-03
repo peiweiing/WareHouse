@@ -1,0 +1,21 @@
+提供一个专门引用地址的网址： 
+ https://cdnjs.com/————里面有你想要的基本上很多地址
+
+jquery
+https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
+
+bootstrap
+https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js
+
+vue.js
+https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.cjs.js
+
+react
+https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js
+
+AngularJS
+https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js
+
+axios
+https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js
+

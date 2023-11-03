@@ -1,3 +1,4 @@
+```
 <pre>保持代码里的格式显示</pre>
 <embed>引入flash</embed>
 <marquee>字幕滚动</marquee>
@@ -27,3 +28,5 @@ max-height:...px;/*固定页面最大高度*/
 transition:1s/*秒*/
 box-sizing:border-box;/*转换为怪异盒子*/
 box-sizing:conten-box;/*转换为标准盒子*/
+```
+

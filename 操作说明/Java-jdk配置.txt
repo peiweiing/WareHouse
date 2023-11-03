@@ -1,0 +1,45 @@
+安装完成后配置系统环境
+
+
+（一、）JAVA_HOME环境变量。
+作用：它指向jdk的安装目录，Eclipse/NetBeans/Tomcat等软件就是通过搜索JAVA_HOME变量来找到并使用安装好的jdk。
+配置方法：在系统变量里点击新建，变量名填写JAVA_HOME，变量值填写JDK的安装路径。（根据自己的安装路径填写）
+
+JAVA_HOME：【D:\Java\jdk1.8.0_25】
+
+
+（二、）CLASSPATH环境变量。
+
+作用：是指定类搜索路径，要使用已经编写好的类，前提当然是能够找到它们了，JVM就是通过CLASSPTH来寻找类的。我们需要把jdk安装目录下的lib子目录中的dt.jar和tools.jar设置到CLASSPATH中，当然，当前目录“.”也必须加入到该变量中。
+配置方法：
+新建CLASSPATH变量，变量值为：【.;%JAVA_HOME%\lib】和【%JAVA_HOME%\lib\tools.jar】。CLASSPATH变量名字，可以大写也可以小写。注意不要忘记前面的点和中间的分号。且要在英文输入的状态下的分号和逗号。
+
+CLASSPATH  ：【.;%JAVA_HOME%\lib】和【%JAVA_HOME%\lib\tools.jar】变量值之间用英文；符号隔开。
+
+
+（三、）path环境变量
+
+作用：指定命令搜索路径，在i命令行下面执行命令如javac编译java程序时，它会到PATH变量所指定的路径中查找看是否能找到相应的命令程序。我们需要把jdk安装目录下的bin目录增加到现有的PATH变量中，bin目录中包含经常要用到的可执行文件如javac/java/javadoc等待，设置好PATH变量后，就可以在任何目录下执行javac/java等工具了。
+
+在系统变量里找到Path变量，这是系统自带的，不用新建。双击Path，由于原来的变量值已经存在，故应在已有的变量后加上英文；符号“【%JAVA_HOME%\bin】和【%JAVA_HOME%\jre\bin】。
+
+Path：【%JAVA_HOME%\bin】和【%JAVA_HOME%\jre\bin】注意变量值之间用英文；符号隔开。
+
+
+
+四、 测试环境。
+
+
+检验是否配置成功 运行cmd 分别输入java，javac， java -version （java 和 -version 之间有空格）。
+
+
+tip总结 ：
+
+打开环境变量--在系统变量中：
+新增变量【JAVA_HOME】变量值【D:\Java\jdk1.8.0_25】
+新增变量【CLASSPATH】变量值【.;%JAVA_HOME%\lib】和【%JAVA_HOME%\lib\tools.jar】
+编辑变量【Path】增加变量值【%JAVA_HOME%\bin】和【%JAVA_HOME%\jre\bin】
+多个变量值之前用英文；符号隔开，原有变量值后面增加变量需要加上英文；符号隔开。
+
+测试：
+Java，javac，java –version

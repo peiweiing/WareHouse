@@ -2,6 +2,8 @@
 
 【vscode】：
 
+搜索安装插件:{chinese(中文包)；live server(开发本地服务器，为页面提供实时重载)}
+
 1. ctrl+d   选中重复代码
 2. ctrl+z   撤销操作
 3. Ctrl+y   取消撤销操作

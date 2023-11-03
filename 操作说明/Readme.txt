@@ -71,7 +71,7 @@ tip：查看连接状态：git remote -v
    git status
    git add .
    git commit -m'xxxxaaa'
-   git push origin masterm
+   git push origin master
 
 
 

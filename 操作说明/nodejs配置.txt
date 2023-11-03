@@ -1,0 +1,46 @@
+一、在软件安装的文件夹下面需要有这两个文件夹，没有则创建两个文件夹【node_global】【node_cache】；
+
+二、打开cmd窗口，修改默认文件夹：
+npm config set prefix "D:\Server\nodejs\node_global"
+npm config set cache "D:\Server\nodejs\node_cache"
+
+
+三、环境变量配置：
+系统变量-新增变量名【NODE_PATH】，变量值【D:\Server\nodejs\node_global\node_modules】
+系统变量-变量名【Path】中新增node_global文件夹路径变量值【D:\Server\nodejs\node_global】
+系统变量-变量名【Path】中新增变量值【%NODE PATH%】
+将用户变量名【Path】下npm默认路径【C:Users\AppData\Roaming\npm】修改为node_global文件所在路径【D:\Server\nodejs\node_global】
+
+四、
+查看当前镜像源【npm config get registry】；
+切换淘宝镜像源【npm config set registry https://registry.npm.taobao.org】；
+恢复官方地址源【npm config set registry https://registry.npmjs.org】；
+
+
+nodemon在文件发生变化时自动重启node
+安装：npm install -g nodemon
+使用：nodemon server.js
+
+
+node报错解决
+
+1. Cannot set headers after they are sent to the client
+
+翻译：将请求头发送到客户端后无法设置请求头
+原因：客户端发送一次请求的时候，服务器端给出了多次响应
+解决：在你的每次响应后添加return，避免多余响应。
+
+2.express error: express deprecated res.send(status): Use res.sendStatus(status) instead 
+
+翻译：express 已弃用 res.send（status）：改用res.sendStatus（status）相反
+原因：express将数字当成状态码
+解决：将返回结果与空字符串拼接为字符串或将数字 toString() 直接变成字符串
+
+3.无法加载文件 C:\Users\ASUS\AppData\Roaming\npm\express.ps1，因为在此系统上禁止运行脚本
+
+解决：在win10中找到powershell -- 以管理员身份运行PowerShell -- 输入set-ExecutionPolicy RemoteSigned -- 选A -- 输入get-ExecutionPolicy -- ok，问题解决
+
+ 
+
+
+

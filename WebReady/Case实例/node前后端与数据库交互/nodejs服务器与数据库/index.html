@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/vue/dist/vue.min.js"></script>
+    <script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
+</head>
+<body>
+        <div id='demodiv'>
+            <h1>http-resource的这种数据请求方式是vue官方提供的  但是注意 在vue2.0之后官方已经停止对当前http库进行维护  官方转头推荐我们使用axios等第三方http库来进行数据的请求</h1>
+                <button @click="funa()">点我使用vue-resource请求get</button>
+                <button @click="funb()">点我使用vue-resource请求post</button>
+
+
+                <table border="1">
+                    <tr v-for="(v,i) in dataarr">
+                        <td>{{v.uname}}</td>
+                        <td>{{v.age}}</td>
+                    </tr>
+                </table>
+        </div>
+        <script>
+        
+            new Vue({
+                el:"#demodiv",
+                data:{
+                    dataarr:[]
+                },
+                methods:{
+                    funa(){
+                        // get请求
+                        // 第一个参数 请求地址  
+                        // 发送数据 有两种方式  
+                        // 第一种方式 就是在get方法中传入第二个参数{params:{key:val,key:val}}
+                        // this.$http.get(
+                        //     "http://localhost:3000/get",
+                        //     {params:{uname:"xixi"}}
+                        //     ).then(function(data){
+                        //     console.log(data)
+                        // },function(err){
+                        //     console.log(err)
+                        // })
+
+                        // get第二种方式进行数据的发送直接在请求地址的后面拼接数据 ？key=val&key=val
+                        this.$http.get(
+                            "http://localhost:3000/get?uname=xixi"
+                            ).then(function(data){
+                          
+                            this.dataarr=data.body.list
+                            console.log(this.dataarr)
+                        },function(err){
+                            console.log(err)
+                        })
+
+                    },
+                    funb(){
+                        // 发送post
+                        this.$http.post("http://localhost:3000/post",{uname:"xixi"},{emulateJSON:true}).then(function(data){
+                            console.log(data);
+                        },
+                        function(err){
+                            console.log(err);
+                        }
+                        )
+                    }
+                }
+            })
+        </script>
+</body>
+</html>
