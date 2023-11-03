@@ -52,6 +52,8 @@ Git基础命令
  git remote add origin https://github.com/peiweiing/xxxxx.git
  git pull origin master
 
+
+git config --global http.sslverify false 是git命令中的一条配置命令,该命令可用于禁用Git和HTTP协议之间的SSL/TLS证书验证。
  
 
 tip：查看连接状态：git remote -v
