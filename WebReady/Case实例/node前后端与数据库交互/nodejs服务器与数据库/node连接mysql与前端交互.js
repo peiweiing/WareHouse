@@ -1,3 +1,24 @@
+// os获取操作系统信息
+const os = require('os')
+const arch = os.arch() // cpu架构
+const kernel = os.type() // 操作系统内核
+const pf = os.platform() // 操作系统平台
+const uptime = os.uptime() // 系统开机时间// dealTime(uptime) // dealTime 处理时间格式
+const hn = os.hostname() // 主机名
+const hdir = os.homedir() // 主目录
+const totalMem = os.totalmem() // 内存大小
+const freeMem = os.freemem() // 空闲内存// dealMem(totalMem)  dealMem(freeMem)  // dealMem 处理内存格式
+const cpus = os.cpus() //cpu信息
+// 网卡信息
+const networksObj = os.networkInterfaces()
+for (let nw in networksObj) {
+  let objArr = networksObj[nw]
+    // 这里objArr 已经获取了网卡信息 下面是获取指定字段的信息
+  objArr.forEach((obj, idx) => {
+    // console.log(obj) // 逻辑
+  })
+}
+
 
 // 1.先引入express模块，express是一个函数
 var express = require("express") 
@@ -130,7 +151,7 @@ process.on("exit",()=>{
 })
 
  
-app.listen(3020) //监听端口号
+app.listen(3000) //监听端口号
 console.log("ok")
 
 
